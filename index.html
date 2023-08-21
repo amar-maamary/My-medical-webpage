@@ -1,0 +1,132 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@500&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div class="loader-container">
+    <div class="loader">
+      <img src="https://m.media-amazon.com/images/I/61bYeXRkTwL._AC_UF894,1000_QL80_.jpg" alt="Lifeline">
+      <div class="slide-box">
+        <div class="solid"></div>
+      </div>
+    </div>
+    <div class="heading">
+      <h1>Loading</h1>
+      <div class="dot" id="d1"></div>
+      <div class="dot" id="d2"></div>
+      <div class="dot" id="d3"></div>
+    </div>
+  </div>
+
+
+  <section class="introduction">
+  <!-- Nav Bar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><i class="bi bi-journal-medical"></i> Dr.<span class="brand-title-style">Check</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: auto;">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Articles
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                <li><a class="dropdown-item" href="#">Breaking Medical News</a></li>
+                <li><a class="dropdown-item" href="#">Other Medical News</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Other related Articles</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dictionnary</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+              <button class="btn get-sign-in-form" type="submit">Sign In</button>
+              <button class="btn get-sign-up-form" type="submit">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header  -->
+    <header>
+      <!-- Call to action parag  -->
+      <div class="card w-50" id="call_to_action_card">
+        <div class="card-body">
+          <h2>Ready to Elevate Your Medical Journey? </h2>
+          <h5 class="card-text">Explore our platform to store your patient information securely, delve into insightful medical articles, and challenge yourself with our interactive dictionary game. Are you prepared to take control of your health education and make informed decisions?</h5>
+          <button id="add-client-btn" class="btn" type="submit"><i class="bi bi-plus"></i> Add a client</button>
+        </div>
+      </div>
+    </header>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <h1>About Us</h1>
+    <div class="about-grid">
+      <div class="about-div">
+        <h2>Welcome to Dr.Check,</h2>
+        <h5>your trusted hub for all things medical and health-related. Our mission is to empower individuals with knowledge, provide tools for efficient patient information management, and make learning about medical concepts an engaging experience.</h5>
+      </div>
+      <img class="random-image" src="https://source.unsplash.com/random/?medicine,medical,patient">
+    </div>
+  </section>
+
+
+  <!--Features -->
+  <section class="section3">
+    <div class="cards">
+    <div class="card">
+    <section>
+    <h1>Laboratory Services</h1>
+    <h4>Lorem ipsum dolor sit amet</h4>
+    </section>
+    </div>
+    <div class="card">
+    <section>
+    <h1>General Treatment</h1>
+    <h4>Lorem ipsum dolor sit amet</h4>
+    </section>
+    </div>
+    <div class="card">
+    <section>
+    <h1>Orthopedician</h1>
+    <h4>Lorem ipsum dolor sit amet</h4>
+    </section>
+    </div>
+    </div>
+    <div class="content">
+    <h1>We are well experienced doctors</h1>
+    <p>Lorem ipsum dolor sit amet</p>
+    </div>
+  </section>
+
+ 
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>
