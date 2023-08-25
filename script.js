@@ -29,17 +29,12 @@ setInterval(() => {
 
 
 const preloader = document.querySelector(".loader-container");
-// var bubblesDiv = document.querySelector(".bubbles");
-// var bubbles = [];
 window.addEventListener("load", function loading(){
     preloader.style.display = "none";
-    // for (var i = 0; i < 128; i++){
-    //     var bubble = document.createElement("div");
-    //     bubble.innerHTML = `<div class='bubble' style='--size:${2+Math.random()*4}rem; --distance:${6+Math.random()*4}rem; --position:${-5+Math.random()*110}%; --time:${2+Math.random()*2}s; --delay:${-1*(2+Math.random()*2)}s'></div>`
-    //     bubbles.push(bubble);
-    // }
-    // console.log(bubbles);
-    // bubbles.forEach(bubb =>{
-    //     bubblesDiv.appendChild(bubb);
-    // })
 });
+
+function addClass() {
+    document.body.classList.add("sent");
+  }
+  
+  sendLetter.addEventListener("click", addClass);

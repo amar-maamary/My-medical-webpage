@@ -9,6 +9,9 @@
     --main-font-color: rgba(0, 0, 0, 0.55);
     --main-box-shadow:0 .5rem 1rem rgba(0,0,0,0.1) 
 }
+body{
+    padding-top: 67px;
+}
 html::-webkit-scrollbar{
     width: .8rem;
   }
@@ -100,15 +103,16 @@ button:hover, button:focus{
 
 /* Introduction */
 .introduction{
-    background-image:linear-gradient(rgba(255,255,255,.5), rgba(255, 255, 255, 0)), url("https://hips.hearstapps.com/hmg-prod/images/types-of-doctors-1600114658.jpg?crop=1xw:0.8425829875518672xh;center,top&resize=1200:*");
-    height: 95vh;
+    background-image:linear-gradient(to right, #0cd2c8,rgba(255, 255, 255, 0),  rgba(255, 255, 255, 0)), url("https://hips.hearstapps.com/hmg-prod/images/types-of-doctors-1600114658.jpg?crop=1xw:0.8425829875518672xh;center,top&resize=1200:*");
+    height: 85vh;
     background-position-x: right;
     background-position-y: center;
     background-size: 100%;
 }
 
 /*  Navbar  */
-nav{
+
+.navbar{
     background-color: var(--main-gray);
     box-shadow: var(--main-box-shadow);
     padding-right: 4%;
@@ -160,13 +164,13 @@ nav{
 header{
     display: grid;
     grid-template: auto / 1fr 1fr;
-    height: 90vh;
+    height: auto;
     margin: auto;
 }
 #call_to_action_card{
     width: 80%!important;
     margin: auto;
-    margin-top: 20%;
+    margin-top: 10%;
     margin-left: 10%; 
     height: auto;
     border-radius: 0.50rem;
@@ -204,6 +208,7 @@ h5{
 }
 .about-div h5{
     line-height: 1.4;
+    font-size: 22px;
 }
 .contact-us-btn{
     background-color: var(--main-blue);
@@ -239,8 +244,14 @@ h5{
 /*  Articles Nav    */
 .articles-nav{
     width:100%;
-    background-image: linear-gradient(to right, #0cd2c8,#0cd2c87e,transparent, #0cd2c86e), url('https://static.vecteezy.com/system/resources/previews/009/732/698/non_2x/healthcare-medical-services-doctor-holding-in-hand-red-heart-shape-and-medical-icon-network-connection-on-virtual-screen-health-care-medicine-technology-network-concept-illustration-vector.jpg');
+    background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('https://www.oma.org/uploadedfiles/oma/media/pagetree/newsroom/omr/summer-2023/summer23-omr-landing-page-hrm-listicle.jpg');
     background-size:cover;
+    /* linear-gradient(to right, #0cd2c8,#0cd2c8a9,transparent, #0cd2c8a9), */
+    /*  https://www.oma.org/contentassets/8beb95743d1a49099aedfc71f62e5dee/rxrenewal-aboutreport-resized.jpg*/
+    /* https://www.oma.org/uploadedfiles/oma/media/pagetree/newsroom/omr/summer-2023/summer23-omr-landing-page-hrm-listicle.jpg */
+    /* https://img.freepik.com/premium-photo/healthcare-medical-doctor-working-with-professional-team-physician-nursing-assistant_34200-767.jpg?w=2000 */
+    /* https://static.vecteezy.com/system/resources/previews/009/732/698/non_2x/healthcare-medical-services-doctor-holding-in-hand-red-heart-shape-and-medical-icon-network-connection-on-virtual-screen-health-care-medicine-technology-network-concept-illustration-vector.jpg */
+   /* https://www.parents.com/thmb/mTkwpp5_LnFzER7oIUnw7kGu_O0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/MomPediatricianFever-2000-807830341ce24f36aac53d293a5e7d56.jpg */
     background-position: left;
     position:relative;
     padding:3vh 0;
@@ -256,7 +267,7 @@ h5{
 .articles-nav .cards .card{
     display:block;
     margin:10px 0;
-    background:var(--main-gray);
+    background:#f4f4f4cc;
     width:80%;
     transition:0.5s;
     cursor:pointer;
@@ -271,33 +282,42 @@ h5{
 }
     
 .articles-nav .cards .card section{
-    padding:1rem;
+    padding:1.5rem 1rem;
 }
     
 .articles-nav .cards .card section h4{
     font-weight:200;
     font-size: 26px;
 }
-    
+ 
+.articles-nav .cards .card section a{
+    text-decoration: none;
+}
+
 .articles-nav .cards .card section h1{
     color:var(--main-blue);
     font-weight: 400;
     font-size: 30px;
+    text-decoration: none;
 }
     
+
 .articles-nav .content{
     position:absolute;
-    top:20vh;
-    right:2vw;
+    top:25vh;
+    right:6vw;
     width:40%;
 }
     
 .articles-nav .content h1{
     font-size:2.5em;
+    color: var(--main-blue);
+    text-shadow: 4px 4px 2px rgba(73, 70, 70, 0.55);
 }
     
 .articles-nav .content p{
     line-height:1.4em;
+    text-align: center;
     letter-spacing:0.08em;
     font-size:1.4em;
     color:rgba(1,1,1,0.7);
@@ -305,68 +325,119 @@ h5{
 
  /* Footer */ 
 .footer{
-    text-align: center;
-    margin-bottom: 20px;
-    /* background-image: linear-gradient(to right, var(--main-gray), transparent); */
+    text-align: left;
     background-color: var(--main-gray);
-    /* background-position: right;
-    background-size: 100%; */
-    height: 30vh;
-    padding: 25px;
+    padding: 4%;
+    height: 80vh;
     object-fit: cover;
     display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-template: 1fr 1fr 1fr/ 1fr 1fr;
+    padding-bottom: 5%!important;
+    row-gap: 15%;
 }
-/* .main{
-    background-color: var(--main-blue);
-    margin-top: 100px;
+.footer-sign-up-input{
+    border-bottom: 1px solid #cccbcb;
+    width: 90%;
+    margin-top: 20px;
 }
-.footer {
-    z-index: 1;
-    display:grid;
-    position: relative;
-    grid-area: footer;
-    min-height:12rem;
+.footer-input{
+    border: none;
+    background-color: transparent;
+    width: 90%;
+    color: #cccbcb;
+}
+.footer-input:focus{
+    outline: none;
+    color: var(--main-blue);
+}
+.bi-arrows-angle-expand{
+    font-size: 20px;  
+    padding-bottom: 2px;
+    color: var(--main-orange)
+}
+.footer-img{
+    width: 90%;
+    background-image: linear-gradient(to right, var(--main-gray), transparent, transparent, var(--main-gray)),linear-gradient( var(--main-gray), transparent,transparent, var(--main-gray)), url('footer-bg.png');
+    background-position: right;
+    background-size: 100%;
+    object-fit: cover;
+    border: none;
+    height: 250px;
+}
+.footer-in-grid{
+    display: grid;
+    grid-template: auto/ auto auto auto;
+    /* padding-top: 8%; */
+    justify-items: center;
 
 }
-.footer .bubbles{
+.footer-link{
+    text-decoration: none;
+    color: var(--main-blue)
+}
+.footer-link:hover{
+    color: var(--main-orange);
+}
+.footer button{
+    background-color: transparent;
+    border: none!important;
+    box-shadow: none;
+    padding: 0%!important;
+    /* margin-top: -47px!important; */
+    margin-right: 0px!important;
+    color: var(--main-blue);
+    font-size: 16px!important;
+    display:contents
+}
+.footer button:hover{
+    color: var(--main-orange);
+}
+.footer .copyright{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    justify-self: center;
+}
+
+
+/* Articles Page  */
+
+.nav{
+    background-color: transparent;
+    font-size: larger;
+    font-weight: 450;
+    padding: 1%;
+    width: 100%;
+}
+.link2{
+    color: var(--main-font-color);
+    display: inline-block;
+    position: relative;
+}
+.link2:hover{
+    color: var(--main-font-color);
+}
+.link2:focus{
+    color: var(--main-font-color);
+}
+.link2.active{
+    background-color: transparent!important;
+}
+.link2:after{
+    content: '';
+    position: absolute;
     width: 90%;
-    position: absolute;
-    top:0;
-    left:0;
-    right:0;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--main-orange);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
 }
-.footer .bubbles .bubble{
-    background-color: var(--main-blue);
-    position: absolute;
-    left:var(--position, 50%);
-    border-radius:100%;
-    animation:bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s),
-        bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
-    transform:translate(-50%, 100%);
+.link2:hover:after, .link:focus:after, .link2.active:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
-@keyframes bubble-size {
-0%, 75% {
-    width:var(--size, 4rem);
-    height:var(--size, 4rem);
-}
-100% {
-    width:0rem;
-    height:0rem;
-}
-}
-@keyframes bubble-move {
-0% {
-    bottom:-4rem;
-}
-100% {
-    bottom:var(--distance, 10rem);
-}
-}
-.content{
-    z-index: 10;
-} */
-    
     
     
     
