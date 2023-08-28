@@ -7,7 +7,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@500&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" type="text/css" />
   <link href="contactStyle.css" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/4e0faa3cbb.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -26,31 +28,89 @@
       <div class="dot" id="d3"></div>
     </div>
   </div>
-  <div class="wrapper centered">
-    <article class="letter">
-      <div class="side">
-        <h1>Contact us</h1>
-        <p>
-          <textarea placeholder="Your message"></textarea>
-        </p>
+
+  <section class="main">
+  <!-- Nav Bar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#about-section"><i class="bi bi-journal-medical"></i> Dr.<span class="brand-title-style">Check</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: auto;">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:5500/index.html#about-section">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Articles
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item br-news-btn" href="articles.html">Breaking Medical News</a></li>
+              <li><a class="dropdown-item md-news-btn"  type="button" href="articles.html">Other Medical News</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item other-news-btn" type="button" href="articles.html">Other related Articles</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Dictionnary</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+            <button class="btn get-sign-in-form" type="submit">Sign In</button>
+            <button class="btn get-sign-up-form" type="submit">Sign Up</button>
+        </form>
       </div>
-      <div class="side">
-        <p>
-          <input type="text" placeholder="Your name" >
-        </p>
-        <p>
-          <input type="email" placeholder="Your email" >
-        </p>
-        <p>
-          <button id="sendLetter">Send</button>
-        </p>
-      </div>
-    </article>
-    <div class="envelope front"></div>
-    <div class="envelope back"></div>
-  </div>
-  <p class="result-message centered">Thank you for your message</p>
-  <script src="script.js"></script>
+    </div>
+  </nav>
+
+<section class="contact-us-page">
+<!-- Website logo and email -->
+<div class="website-logo-email">
+  <a class="navbar-brand" href="#about-section" style="font-size: 3rem; display: block;"><i class="bi bi-journal-medical" style="padding-right: 5px; font-size: 3rem;"></i>Dr.<span class="brand-title-style">Check</span></a>
+  <label>Our Email : </label><input type="text" value="kamar.maamary@gmail.com" id="copiedEmail" readonly><i class="fa-solid fa-clone" onclick="copyEmail()" onmouseout="removePop()">  <span class="tooltiptext" id="myTooltip">Copy to clipboard</span></i>
+</div>
+
+
+<!-- Message -->
+<div>
+<div class="wrapper to-right">
+  <article class="letter">
+    <div class="side">
+      <h1>Contact Us</h1>
+      <p>
+        <textarea placeholder="Your message"></textarea>
+      </p>
+    </div>
+    <div class="side">
+      <p style="padding-top: 1rem;">
+        <input type="text"  placeholder="Your name" >
+      </p>
+      <p>
+        <input type="email" placeholder="Your email" >
+      </p>
+      <p>
+        <button id="sendLetter">Send</button>
+      </p>
+    </div>
+  </article>
+  <div class="envelope front"></div>
+  <div class="envelope back"></div>
+</div>
+  <p class="result-message to-right">Thank you for your message</p>
+</div>
+
+</section>
+</section>
+
+  <script src="contactScript.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 

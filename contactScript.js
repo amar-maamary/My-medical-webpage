@@ -35,38 +35,28 @@ window.addEventListener("load", function loading(){
     elements.style.display = "block";
 });
 
-///////////////////////////////// ------  Home Page  ------ /////////////////////////////////
 
-/////////////////////////////////   Moving Cards    /////////////////////////////////
-let navCardsDiv = document.querySelector(".cards");
-console.log(navCardsDiv);
-let navCards = document.querySelectorAll(".nav-card");
+/////////////////////////////////   Animating Message   /////////////////////////////////
+function addClass() {
+    document.body.classList.add("sent");
+  }
+  
+  sendLetter.addEventListener("click", addClass);
 
-function movingCard(){
-    navCards.forEach((navCard, i) =>{
-        setTimeout(() => {
-            navCard.style.animation = "movingCard 4s linear infinite";
-            }, i*4000);
-    })
-};
+/////////////////////////////////   Copy Email   /////////////////////////////////
 
-movingCard();
-
-navCardsDiv.addEventListener('mouseover', ()=>{
-    navCards.forEach((navCard) =>{
-    navCard.style.animation = "none";})
-});
-
-navCardsDiv.addEventListener('mouseout', ()=>{
-    navCards.forEach((navCard) =>{
-        navCard.style.animation = "movingCard 4s linear infinite";
-    })
-});
-
-
-
-
-
-
-
-
+function copyEmail(){
+    console.log("1");
+    // Get the text field
+    var copiedEmail = document.getElementById("copiedEmail");
+    console.log("1");
+    // Select the text field
+    copiedEmail.select();
+    copiedEmail.setSelectionRange(0, 99999); // For mobile devices
+    console.log("1");
+        // Copy the text inside the text field
+    navigator.clipboard.writeText(copiedEmail.value);
+    console.log("1");
+    // Alert the copied text
+    alert("Copied the text: " + copiedEmail.value);
+}
