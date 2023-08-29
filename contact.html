@@ -50,10 +50,10 @@
               Articles
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-              <li><a class="dropdown-item br-news-btn" href="articles.html">Breaking Medical News</a></li>
-              <li><a class="dropdown-item md-news-btn"  type="button" href="articles.html">Other Medical News</a></li>
+              <li><a class="dropdown-item br-news-btn" href="brArticles.html">Breaking Medical News</a></li>
+              <li><a class="dropdown-item md-news-btn"  type="button" href="mdArticles.html">Other Medical News</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item other-news-btn" type="button" href="articles.html">Other related Articles</a></li>
+              <li><a class="dropdown-item other-news-btn" type="button" href="otherArticles.html">Other related Articles</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -75,8 +75,29 @@
 <!-- Website logo and email -->
 <div class="website-logo-email">
   <a class="navbar-brand" href="#about-section" style="font-size: 3rem; display: block;"><i class="bi bi-journal-medical" style="padding-right: 5px; font-size: 3rem;"></i>Dr.<span class="brand-title-style">Check</span></a>
-  <label>Our Email : </label><input type="text" value="kamar.maamary@gmail.com" id="copiedEmail" readonly><i class="fa-solid fa-clone" onclick="copyEmail()" onmouseout="removePop()">  <span class="tooltiptext" id="myTooltip">Copy to clipboard</span></i>
+  <label>Our Email : </label><input type="text" value="kamar.maamary@gmail.com" id="copiedEmail" readonly>
+  <i onclick="copyEmail()" class="fa-solid fa-clone" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Copy Email</h3>
+          <button type="button" class="btn-close" style="opacity: 1;" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          The Email has been successfuly copied to your cilpboard.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn contact-page-buttons" style="margin-top: 10px ;"  data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
 
 
 <!-- Message -->
@@ -97,14 +118,14 @@
         <input type="email" placeholder="Your email" >
       </p>
       <p>
-        <button id="sendLetter">Send</button>
+        <button id="sendLetter" class="contact-page-buttons">Send</button>
       </p>
     </div>
   </article>
   <div class="envelope front"></div>
   <div class="envelope back"></div>
 </div>
-  <p class="result-message to-right">Thank you for your message</p>
+  <h4 class="result-message to-right">Thank you for your message</h4>
 </div>
 
 </section>

@@ -45,18 +45,9 @@ function addClass() {
 
 /////////////////////////////////   Copy Email   /////////////////////////////////
 
-function copyEmail(){
-    console.log("1");
-    // Get the text field
-    var copiedEmail = document.getElementById("copiedEmail");
-    console.log("1");
-    // Select the text field
-    copiedEmail.select();
-    copiedEmail.setSelectionRange(0, 99999); // For mobile devices
-    console.log("1");
-        // Copy the text inside the text field
-    navigator.clipboard.writeText(copiedEmail.value);
-    console.log("1");
-    // Alert the copied text
-    alert("Copied the text: " + copiedEmail.value);
-}
+function copyEmail() {
+    var copyText = document.getElementById("copiedEmail");
+    copyText.select();
+    navigator.clipboard.writeText(copyText.value);
+  }
+  

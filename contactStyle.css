@@ -9,7 +9,7 @@
 
 body {
   margin: 0;
-  padding: 8%;
+  padding: 10%;
   background-color: var(--main-gray);
   color: var(--main-font-color);
   text-align: center;
@@ -22,9 +22,8 @@ body {
 }
 .website-logo-email{
   justify-self: start;
-  position: relative;
-  margin: auto;
-  margin-top: 10%;
+  margin-top: 24%;
+  margin-left: -10%;
   width: 90%;
 }
 .website-logo-email input{
@@ -48,11 +47,10 @@ h1 {
   color: var(--main-blue);
   padding-bottom: 2%;
 }
-textarea, input, button {
+textarea, input, .contact-page-buttons {
   line-height: 1.5rem;
   border: 0;
   outline: none;
-  appearance: none;
 }
 textarea, input {
   color: var(--main-font-color);
@@ -71,24 +69,38 @@ input {
  margin-bottom: 0.5rem;
  font-style: italic;
 }
-
-button {
+.btn-close{
+  background-color: transparent;
+  border: none!important;
+  box-shadow: none;
+}
+.btn-close:hover, .btn-close:focus{
+  background-color: transparent!important;
+  border: none!important;
+  box-shadow: none;
+}
+.contact-page-buttons {
  padding: 0.5rem 1rem;
  margin-top: -2%;
  border-radius: 0.25rem;
- background-color: var(--main-orange);
+ background-color: var(--main-orange)!important;
  box-shadow: var(--main-box-shadow);
  border: 4px solid rgba(0,0,0,0.1) !important;
  box-sizing: border-box;
  color: white;
  font-size: 1rem;
  transition: background-color 0.2s;
-  &:hover,:focus {
-    outline: none;
-    background-color: var(--main-blue);
-    border:  4px solid  #7be0e0!important;
-    box-shadow: none!important;
-  }
+}
+.contact-page-buttons:hover{
+  outline: none;
+  border:  4px solid  #7be0e0!important;
+  box-shadow: none!important;
+  background-color: var(--main-orange)!important;
+  color: white;
+}
+.contact-page-buttons:focus {
+  background-color: var(--main-blue)!important;
+  color: white;
 }
 input[type=text]:focus,
 input[type=email]:focus,
@@ -179,6 +191,7 @@ textarea:focus {
   transition: all 0.3s 2s;
   transform: translateY(9rem);
   z-index: -9999;
+  font-weight: 400;
 }
 .sent {
   & .letter {
@@ -232,6 +245,18 @@ textarea:focus {
   100%{transform: translateY(-8rem) scale(0.3, 0.5);}
 }
 
-
-
-
+.modal{
+  background: #f4f4f411;
+  z-index: 10000000;
+}
+.modal-content{
+  background-color: var(--main-gray);
+}
+.modal-title{
+  text-align: center !important;
+  width: 100%;
+  color: var(--main-blue)
+}
+.modal button:hover , .modal button:focus{
+  background-color: var(--main-blue);
+}

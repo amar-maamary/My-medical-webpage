@@ -1,0 +1,192 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Articles</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@500&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="articlesStyle.css"  rel="stylesheet">
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div class="loader-container">
+    <div class="loader">
+      <img src="https://m.media-amazon.com/images/I/61bYeXRkTwL._AC_UF894,1000_QL80_.jpg" alt="Lifeline">
+      <div class="slide-box">
+        <div class="solid"></div>
+      </div>
+    </div>
+    <div class="heading">
+      <h1>Loading</h1>
+      <div class="dot" id="d1"></div>
+      <div class="dot" id="d2"></div>
+      <div class="dot" id="d3"></div>
+    </div>
+  </div>
+
+<section class="main">
+
+  <!-- Nav Bar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="http://127.0.0.1:5500/index.html#about-section"><i class="bi bi-journal-medical"></i> Dr.<span class="brand-title-style">Check</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: auto;">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active1" href="http://127.0.0.1:5500/index.html#about-section">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" aria-current="page" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Articles
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                <li><a class="dropdown-item br-news-btn"  type="button">Breaking Medical News</a></li>
+                <li><a class="dropdown-item md-news-btn" type="button">Other Medical News</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item other-news-btn active" type="button">Other related Articles</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dictionnary</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+              <button class="btn get-sign-in-form" type="submit">Sign In</button>
+              <button class="btn get-sign-up-form" type="submit">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Articles Nav  -->
+    <nav class="nav nav-pills nav-justified">
+      <a class="nav-link link2 br-news-btn" type="button">Breaking Medical News</a>
+      <a class="nav-link link2 md-news-btn" type="button">Other Medical News</a>
+      <a class="nav-link link2 other-news-btn active" aria-current="page" type="button">Other related Articles</a>
+    </nav>
+
+
+    <!-- Articles -->
+    <div id="articles-div" class="band">
+
+    <!-- <div class="item-1">
+          <a href="https://design.tutsplus.com/articles/international-artist-feature-malaysia--cms-26852" class="card-extra">
+            <div class="thumb" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/flex-1.jpg);"></div>
+            <article>
+              <h1>International Artist Feature: Malaysia</h1>
+              <span>Mary Winkler</span>
+            </article>
+          </a>
+    </div>
+    <div class="card">
+          <a href="https://webdesign.tutsplus.com/articles/how-to-conduct-remote-usability-testing--cms-27045" class="card-extra">
+            <div class="thumb" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/users-2.png);"></div>
+            <article>
+              <h1>How to Conduct Remote Usability Testing</h1>
+              <span>Harry Brignull</span>
+            </article>
+          </a>
+    </div>
+    <div class="card">
+      <a href="https://design.tutsplus.com/articles/envato-tuts-community-challenge-created-by-you-july-edition--cms-26724" class="card-extra">
+        <div class="thumb" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/flex-5.jpg);"></div>
+        <article>
+          <h1>Created by You, July Edition</h1>
+          <p>Welcome to our monthly feature of fantastic tutorial results created by you, the Envato Tuts+ community! </p>
+          <span>Melody Nieves</span>
+        </article>
+      </a>
+    </div>
+    <div class="item-4 card">
+          <a href="https://webdesign.tutsplus.com/tutorials/how-to-code-a-scrolling-alien-lander-website--cms-26826" class="card-extra">
+            <div class="thumb" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/landing.png);"></div>
+            <article>
+              <h1>How to Code a Scrolling “Alien Lander” Website</h1>
+              <p>We’ll be putting things together so that as you scroll down from the top of the page you’ll see an “Alien Lander” making its way to touch down.</p>
+              <span>Kezz Bracey</span>
+            </article>
+          </a>
+    </div>
+    <div class="item-5 card">
+          <a href="https://design.tutsplus.com/tutorials/stranger-things-inspired-text-effect--cms-27139" class="card-extra">
+            <div class="thumb" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/strange.jpg);"></div>
+            <article>
+              <h1>How to Create a “Stranger Things” Text Effect in Adobe Photoshop</h1>
+              <span>Rose</span>
+            </article>
+          </a>
+    </div>
+    <div class="item-6 card">
+      <a href="https://photography.tutsplus.com/articles/5-inspirational-business-portraits-and-how-to-make-your-own--cms-27338" class="card-extra">
+        <div class="thumb" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/flor.jpg);"></div>
+        <article>
+          <h1>5 Inspirational Business Portraits and How to Make Your Own</h1>
+          
+          <span>Marie Gardiner</span>
+        </article>
+      </a>
+    </div>
+    <div class="item-7 card">
+      <a href="https://webdesign.tutsplus.com/articles/notes-from-behind-the-firewall-the-state-of-web-design-in-china--cms-22281" class="card-extra">
+        <div class="thumb" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/china.png);"></div>
+        <article>
+          <h1>Notes From Behind the Firewall: The State of Web Design in China</h1>
+          <span>Kendra Schaefer</span>
+        </article>
+      </a>
+    </div> -->
+
+    </div>
+
+    <!-- Back to top button -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="bi bi-caret-up-fill"></i></button>
+
+    <!-- https://codepen.io/mavrK/pen/jZKoaV -->
+    <!-- Footer -->
+    <section class="footer"> 
+      <div>
+        <a class="navbar-brand" href="#about-section" style="padding-bottom: 50px;"><i class="bi bi-journal-medical" style="padding-right: 5px;"></i>Dr.<span class="brand-title-style">Check</span></a>
+        <p>Empowering Doctors, Enriching Care: Your Complete Medical Resource.</p>
+      </div>
+      <div class="footer-in-grid">
+        <div class="footer-articles-nav">
+        <a class="footer-link" href="brArticles.html">Articles</a>
+        <a class="footer-link" href="brArticles.html">Breaking Medical News</a>
+        <a class="footer-link" href="mdArticles.html">Other Medical News</a>
+        <a class="footer-link" href="otherArticles.html">Other related Articles</a>
+        </div>
+        <a class="footer-link" href="#">Dictionnary</a>
+        <a class="footer-link" href="#about-section">About</a>
+        <a class="footer-link" href="contact.html">Contact Us</a>
+      </div>
+      <footer class="copyright">© 2023-2024 Amar Maamary</footer>
+    </section>
+    
+  </section>
+    <script src="articlesScript.js"></script>
+    <script>
+    articlesDiv.innerHTML=''
+   articles.fetchArticles('https://newsapi.org/v2/everything?' +
+        'q=-actors +health +medicine +medical -films -LGBTQ&' +
+        'sortBy=popularity&' +
+        'language=en&' + 
+        'apiKey=cf47e25f0cec4ec4857160d98754e556');
+    </script>
+    <script src="https://kit.fontawesome.com/4e0faa3cbb.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ </body>
+  
+  </html>
