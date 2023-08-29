@@ -43,11 +43,32 @@ function addClass() {
   
   sendLetter.addEventListener("click", addClass);
 
-/////////////////////////////////   Copy Email   /////////////////////////////////
 
+/////////////////////////////////   Copy Email   /////////////////////////////////
 function copyEmail() {
     var copyText = document.getElementById("copiedEmail");
     copyText.select();
     navigator.clipboard.writeText(copyText.value);
   }
   
+/////////////////////////////////   Send mail   /////////////////////////////////
+function sendMail(){
+    var params = {
+        name : document.getElementById("name").value,
+        email : document.getElementById("email").value,
+        message : document.getElementById("message").value,
+    };
+    const serviceId = "service_uskjm4m";
+    const templateId = "template_owlyal6";
+    emailjs.send(serviceId,templateId,params)
+    .then(
+        res => {
+            console.log(res);
+            alert("message has been sent successfuly");
+        })
+    .catch(err => console.log(err))
+};
+
+
+
+
