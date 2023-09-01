@@ -44,14 +44,18 @@ function addClass() {
   sendLetter.addEventListener("click", addClass);
 
 
-/////////////////////////////////   Copy Email   /////////////////////////////////
+/////////////////////////////////   Copy Email   ///////////////////////////////// 
 function copyEmail() {
     var copyText = document.getElementById("copiedEmail");
     copyText.select();
     navigator.clipboard.writeText(copyText.value);
+    alert("This Email is 'Successfuly' copied to your clipboard")
   }
+
+  
   
 /////////////////////////////////   Send mail   /////////////////////////////////
+const sendMailModal = document.getElementById("exampleModal1");
 function sendMail(){
     var params = {
         name : document.getElementById("name").value,
@@ -60,15 +64,27 @@ function sendMail(){
     };
     const serviceId = "service_uskjm4m";
     const templateId = "template_owlyal6";
-    emailjs.send(serviceId,templateId,params)
-    .then(
-        res => {
-            console.log(res);
-            alert("message has been sent successfuly");
-        })
-    .catch(err => console.log(err))
+    if (params.name !== '' || params.email !=='' || params.message !== ""){
+        emailjs.send(serviceId,templateId,params)
+        .then(
+            res => {
+                sendMailModal.style.display = "block";
+                console.log(res);
+                // alert("message has been sent successfuly");
+            })
+        .catch(err => console.log(err))
+    }
 };
-
-
+function closeModal(){
+    // sendMailModal.classList.add("fade");
+    sendMailModal.classList.add("fade");
+    sendMailModal.style.display = "none";
+}
+window.onclick = function(event) {
+    if(event.target == sendMailModal) {
+        sendMailModal.classList.add("fade");
+        sendMailModal.style.display = "none";
+    }
+  }
 
 

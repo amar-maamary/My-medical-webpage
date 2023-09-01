@@ -61,8 +61,8 @@ let articles ={
         
         //looping over all articles 
         data.forEach((articleData, i )=> {
-
-            //creating a div to contain all the Articles
+            if (articleData.title !== null){
+                        //creating a div to contain all the Articles
             var card = document.createElement("div");
             card.classList.add("card");
             card.classList.add("card-extra");
@@ -87,7 +87,8 @@ let articles ={
             //getting the article title
             var cardTitle = document.createElement("h1");
             // cardTitle.classList.add("card-title");
-            title =  articleData.title.split("-");
+            title =  articleData.title;
+            title = title.split("-");
             cardTitle.innerText = title[0] ;
 
             //getting article description
@@ -125,15 +126,11 @@ let articles ={
             articlesDiv.appendChild(card);
 
             // console.log(articlesDiv);
+            }
         });
     }
 }
 
-//Default search (top news)
-// articlesDiv.innerHTML=''
-// articles.fetchArticles('https://newsapi.org/v2/top-headlines?' +
-// 'country=us&category=health&q=medical&science&' +
-// 'apiKey=cf47e25f0cec4ec4857160d98754e556');
 
 //Getting search buttons 
 let brNewsBtn = document.querySelectorAll(".br-news-btn"); // nodelist 
@@ -181,7 +178,7 @@ mdNewsBtn.forEach(btn =>{
         'q=-actors +health +medicine +medical -films -LGBTQ&' +
         'searchIn=description&'+ 
         'language=en&' + 
-        'sortBy=popularity&' +
+        'sortBy=publishedAt&' +
         'apiKey=cf47e25f0cec4ec4857160d98754e556';
         //calling functio form articles object
         articles.fetchArticles(url);
@@ -207,7 +204,7 @@ otherNewsBtn.forEach(btn =>{
         //create a var for the proper url
         var url = 'https://newsapi.org/v2/everything?' +
         'q=-actors +health +medicine +medical -films -LGBTQ&' +
-        'sortBy=popularity&' +
+        'sortBy=publishedAt&' +
         'language=en&' + 
         'apiKey=cf47e25f0cec4ec4857160d98754e556';
         //calling functio form articles object

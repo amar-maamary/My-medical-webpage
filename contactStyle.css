@@ -17,7 +17,7 @@ body {
 }
 .contact-us-page{
   display: grid;
-  grid-template: 1fr/ 1fr 1fr;
+  grid-template: 1fr / 1fr 1fr;
   row-gap: 10%;
 }
 .website-logo-email{
@@ -246,7 +246,7 @@ textarea:focus {
 }
 
 .modal{
-  background: #f4f4f411;
+  background: #535050b0 !important;
   z-index: 10000000;
 }
 .modal-content{
@@ -259,4 +259,7 @@ textarea:focus {
 }
 .modal button:hover , .modal button:focus{
   background-color: var(--main-blue);
+}
+.important{
+  color: var(--main-orange);
 }

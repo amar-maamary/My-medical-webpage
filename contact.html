@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -10,14 +11,20 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link href="contactStyle.css" rel="stylesheet" type="text/css" />
   <script src="https://kit.fontawesome.com/4e0faa3cbb.js" crossorigin="anonymous"></script>
-  <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-</script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript">
    (function(){
       emailjs.init("q1q0iXithWErPn9Tk");
    })();
 </script>
+<script>
+  $(document).ready(function(){
+    // Enable popovers everywhere
+      $('[data-bs-toggle="popover"]').popover();  
+  });
+  </script>
 </head>
 
 <body>
@@ -84,10 +91,10 @@
 <div class="website-logo-email">
   <a class="navbar-brand" href="#about-section" style="font-size: 3rem; display: block;"><i class="bi bi-journal-medical" style="padding-right: 5px; font-size: 3rem;"></i>Dr.<span class="brand-title-style">Check</span></a>
   <label>Our Email : </label><input type="text" value="kamar.maamary@gmail.com" id="copiedEmail" readonly>
-  <i onclick="copyEmail()" class="fa-solid fa-clone" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
-  
+  <i onclick="copyEmail()" class="fa-solid fa-clone" type="button" tabindex="0"  data-bs-toggle="popover" title="Copy Email" data-bs-placement="right" data-bs-trigger="hover"></i>
+
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -95,7 +102,7 @@
           <button type="button" class="btn-close" style="opacity: 1;" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          The Email has been successfuly copied to your cilpboard.
+          The Email has been <span class="important">successfuly</span> copied to your cilpboard.
         </div>
         <div class="modal-footer">
           <button type="button" class="btn contact-page-buttons" style="margin-top: 10px ;"  data-bs-dismiss="modal">Close</button>
@@ -103,8 +110,26 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
+<!-- Alert after sending -->
+<div class="modal modal1 " id="exampleModal1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Send Mail</h3>
+        <button type="button" class="btn-close" style="opacity: 1;" onclick="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+        Your Email has been <span class="important">successfuly</span> sent to our Email. We will check your message as soon as possible. Thank you.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn contact-page-buttons" style="margin-top: 10px ;" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
 <!-- Message -->
 <div>
@@ -118,10 +143,10 @@
     </div>
     <div class="side">
       <p>
-        <input type="text" id="name" placeholder="Your name" >
+        <input type="text" id="name" placeholder="Your name">
       </p>
       <p>
-        <input type="email" id="email" placeholder="Your email" >
+        <input type="email" id="email" placeholder="Your email">
       </p>
       <p>
         <button id="sendLetter" class="contact-page-buttons" onclick="sendMail()">Send</button>
@@ -133,6 +158,7 @@
 </div>
   <h4 class="result-message to-right">Thank you for your message</h4>
 </div>
+
 
 </section>
 </section>

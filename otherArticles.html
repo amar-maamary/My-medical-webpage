@@ -1,5 +1,5 @@
+<!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -182,7 +182,7 @@
     articlesDiv.innerHTML=''
    articles.fetchArticles('https://newsapi.org/v2/everything?' +
         'q=-actors +health +medicine +medical -films -LGBTQ&' +
-        'sortBy=popularity&' +
+        'sortBy=publishedAt&' +
         'language=en&' + 
         'apiKey=cf47e25f0cec4ec4857160d98754e556');
     </script>
