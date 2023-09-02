@@ -35,6 +35,7 @@ window.addEventListener("load", function loading(){
     elements.style.display = "block";
 });
 
+//Sign in up moves
 const signUpButton = document.getElementById("signUp");
 const signInButton = document.getElementById("signIn");
 const container = document.getElementById("container");
