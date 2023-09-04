@@ -57,12 +57,12 @@ let articles ={
     //Displaying data in html function
     displayArticles: function(data){
         //accessing the articles object
-        data = data.articles;
+        data = data.results;
         
         //looping over all articles 
         data.forEach((articleData, i )=> {
-            if (articleData.title !== null){
-                        //creating a div to contain all the Articles
+            if (articleData.title !== null & articleData.description !== null & articleData.url !== null){
+            //creating a div to contain all the Articles
             var card = document.createElement("div");
             card.classList.add("card");
             card.classList.add("card-extra");
@@ -71,13 +71,17 @@ let articles ={
 
             //getting link to the article
             var link = document.createElement("a");
-            link.href = articleData.url;
+            link.href = articleData.link;
             link.target = "_blank";
 
             //getting the image
             var cardImg = document.createElement("div");
-            cardImg.src = articleData.urlToImage;
-            cardImg.style.backgroundImage = "url(" + articleData.urlToImage +")"
+            if ( articleData.image_url === null){
+                var imageURL = "https://source.unsplash.com/random/?" + i + "medicine,medical,patient,noyellow";
+            } else{
+                var imageURL = articleData.image_url;
+            }
+            cardImg.style.backgroundImage = "url(" + imageURL +")"
             cardImg.classList.add("thumb");
 
             //creating a div (card-body) to contain all text inside this card
@@ -107,8 +111,14 @@ let articles ={
             var cardFooter = document.createElement("span");
             // cardFooter.classList.add("card-text");
             // cardFooter.classList.add("text-muted");
-            publishDate =  articleData.publishedAt.split("T");
-            cardFooter.innerHTML = "Source: " + articleData.source.name + " </br> Author: " + articleData.author + " </br>  " + publishDate[0];
+            publishDate =  articleData.pubDate.split(" ");
+            if ( articleData.creator === null){
+                var creater = "Unknown";
+            } else{
+                var creater = articleData.creator
+            }
+            creater = articleData.creator
+            cardFooter.innerHTML = "Source: " + articleData.source_id+ " </br> Author: " + creater + " </br>  " + publishDate[0];
            
             //appending content to the card body
             cardBody.appendChild(cardTitle);
@@ -202,11 +212,14 @@ otherNewsBtn.forEach(btn =>{
         //clear previous search result
         articlesDiv.innerHTML = '';
         //create a var for the proper url
-        var url = 'https://newsapi.org/v2/everything?' +
-        'q=-actors +health +medicine +medical -films -LGBTQ&' +
-        'sortBy=publishedAt&' +
+        var url = 'https://newsdata.io/api/1/news?' +
+        'q=NOT actors AND health AND medicine AND medical NOT films NOT LGBTQ&' +
+        'country=us&category=health&q=medical&' +
         'language=en&' + 
-        'apiKey=cf47e25f0cec4ec4857160d98754e556';
+        'apiKey=pub_288443d8b7e3d8ae0992f6daa547ed3664c4e';
+
+        //https://newsdata.io/api/1/news?apikey=pub_288443d8b7e3d8ae0992f6daa547ed3664c4e
+        // 'https://newsdata.io/api/1/archive?apikey=pub_288443d8b7e3d8ae0992f6daa547ed3664c4e&' + 'q=-actors +health +medicine +medical -films -LGBTQ&' + 'language=en&' + 'from_date=2023-01-19&';
         //calling functio form articles object
         articles.fetchArticles(url);
         mdNewsBtn.forEach(mdBt =>{

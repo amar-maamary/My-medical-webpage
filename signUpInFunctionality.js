@@ -187,3 +187,44 @@ facebookBtnSignIn.addEventListener('click', (e) =>{
 facebookBtnSignUp.addEventListener('click', (e) =>{
   facebookSignFunction();
 })
+
+function facebookSignFunction(){
+  signInWithPopup(auth, facebookprovider)
+  .then((result) => {
+    const user = result.user;
+    const credential = FacebookAuthProvider.credentialFromResult(result);
+    const accessToken = credential.accessToken;
+    var username = user.displayName;
+    var email = user.email;
+    const dt = new Date();
+
+    const { isNewUser } = getAdditionalUserInfo(result);
+    if (isNewUser) {
+      set(ref(database, 'users/' + user.uid), {
+        username : username,
+        email: email,
+      });
+      alert(`Welcome ${username}`);
+    } else {
+      const dt = new Date();
+      update(ref(database, 'users/' + user.uid), {
+        last_login : dt,
+      });
+      alert(`Welcome Back ${username}`);
+    } 
+
+  })
+  .catch((error) => {
+    switch (error.code) {
+      case 'auth/user-disabled':
+        alert(`The '${email}' user account has been disabled by an administrator.`);
+        break;
+      case 'auth/operation-not-allowed':
+        alert(`Error during sign up.`);
+        break;
+      default:
+        alert(error.message);
+        break;
+    }
+  });
+}
