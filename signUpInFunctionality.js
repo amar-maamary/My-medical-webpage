@@ -1,7 +1,7 @@
  // Import the functions you need from the SDKs you need
  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
  import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
- import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, getAdditionalUserInfo, FacebookAuthProvider } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
+ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, getAdditionalUserInfo, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -176,55 +176,21 @@ function signWithGoogleFunction(){
         break;
     }
   });
-}
+};
 
 
-///////////////////// Git Hub btn //////////////////////////
-const facebookprovider = new FacebookAuthProvider();
-facebookBtnSignIn.addEventListener('click', (e) =>{
-  facebookSignFunction();
-});
-facebookBtnSignUp.addEventListener('click', (e) =>{
-  facebookSignFunction();
-})
-
-function facebookSignFunction(){
-  signInWithPopup(auth, facebookprovider)
-  .then((result) => {
-    const user = result.user;
-    const credential = FacebookAuthProvider.credentialFromResult(result);
-    const accessToken = credential.accessToken;
-    var username = user.displayName;
-    var email = user.email;
-    const dt = new Date();
-
-    const { isNewUser } = getAdditionalUserInfo(result);
-    if (isNewUser) {
-      set(ref(database, 'users/' + user.uid), {
-        username : username,
-        email: email,
-      });
-      alert(`Welcome ${username}`);
-    } else {
-      const dt = new Date();
-      update(ref(database, 'users/' + user.uid), {
-        last_login : dt,
-      });
-      alert(`Welcome Back ${username}`);
-    } 
-
+/////// Email verification //////
+sendVerificationEmailBtn.addEventListener("click", (e)=>{
+  var emailInput = document.getElementById("verEmail");
+  var email = emailInput.value;
+  sendPasswordResetEmail(auth, email)
+  .then(() => {
+    alert("Password reset email sent!");
+    emailInput.value = "";
   })
   .catch((error) => {
-    switch (error.code) {
-      case 'auth/user-disabled':
-        alert(`The '${email}' user account has been disabled by an administrator.`);
-        break;
-      case 'auth/operation-not-allowed':
-        alert(`Error during sign up.`);
-        break;
-      default:
-        alert(error.message);
-        break;
-    }
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorMessage);
   });
-}
+})

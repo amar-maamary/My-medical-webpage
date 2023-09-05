@@ -22,25 +22,6 @@ body{
   margin: 20px 0 30px;
 }
 
-.social-container {
-  margin: 20px 0;
-}
-
-.social-container a {
-  border: 1px solid #dddddd;
-  border-radius: 50%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 5px;
-  height: 40px;
-  width: 40px;
-  transition: background-color 0.8s;
-  transition-timing-function: ease;
-}
-.social-container a:hover{
-  background-color: var(--main-orange);
-}
 .container a {
   color: var(--main-font-color);
   text-decoration: none;
@@ -52,7 +33,6 @@ body{
   color: var(--main-font-color);
   font-size: 20px!important;
   padding: 10px 30px;
-  text-align: center;
   letter-spacing: 1px;
   font-weight: 500;
   transition: background-color 0.6s;
@@ -69,6 +49,26 @@ body{
   background-color: var(--main-color)!important;
 }
 
+.social-container {
+  border: none;
+  margin: 13px 0;
+  width: 100%;
+  padding: 8px 30px!important;
+  font-family: inherit;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+  transition-timing-function: ease;
+  text-transform: capitalize;
+  box-shadow: var(--main-box-shadow);
+  font-weight: 500;
+  color: var(--main-font-color);
+  background-color: var(--main-color)!important;
+}
+
+.social-container a {
+  border-radius: 0.5rem;
+  margin: 0 5px;
+}
 .container button.ghost {
   background-color: var(--main-orange)!important;
 }
@@ -306,3 +306,47 @@ body{
   }
 }
   
+
+.modal{
+  background: #535050b0 !important;
+  z-index: 10000000;
+  text-align: center;
+}
+.modal-content{
+  background-color: var(--main-gray);
+}
+.modal input{
+  background-color: white;
+  border-radius: 0.5rem;
+  width: 60%;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  font-family: inherit;
+}
+.modal input:focus{
+  outline-color: var(--main-blue);
+  background-color: #faf9f9;
+  font-weight: 500;
+}
+.modal-title{
+  text-align: center !important;
+  width: 100%;
+  color: var(--main-blue)
+}
+.modal button:hover , .modal button:focus{
+  background-color: var(--main-blue);
+}
+.important{
+  color: var(--main-orange);
+}
+#closeBtn{
+  background-color: var(--main-orange);
+}
+#sendVerificationEmailBtn{
+  background-color: var(--main-blue);
+}
+#closeBtn:hover{
+  background-color: #fc9e7a;
+  border-color: var(--main-orange)!important;
+}

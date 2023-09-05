@@ -78,11 +78,9 @@
     <div class="form-container sign-up-container">
       <form id="signUpForm">
         <h1>Sign Up</h1>
-        <div class="social-container">
-          <a href="#" class="social"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social" id="googleBtnSignUp"><i class="fab fa-google"></i></a>
-          <a href="#" class="social" id="facebookBtnSignUp"><i class="fa-brands fa-facebook-f"></i></a>
-        </div>
+        <button class="social-container" id="googleBtnSignUp">
+          <a href="#" class="social">With Google <i class="fab fa-google"></i></a>
+        </button>
         <span>or use your email for registration</span>
         <input type="text" id="name" placeholder="Name" />
         <input type="email" id="email" placeholder="Email" />
@@ -93,15 +91,13 @@
     <div class="form-container sign-in-container">
       <form id="signInForm">
         <h1>Sign In</h1>
-        <div class="social-container">
-          <a href="#" class="social"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social" id="googleBtnSignIn"><i class="fab fa-google"></i></a>
-          <a href="#" class="social" id="facebookBtnSignIn"><i class="fa-brands fa-facebook-f"></i></a>
-        </div>
+        <button class="social-container">
+          <a href="#" class="social" id="googleBtnSignIn">With Google <i class="fab fa-google"></i></a>
+        </button>
         <span>or use your account</span>
         <input type="email" id="uEmail" placeholder="Email" />
         <input type="password" id="uPassword" placeholder="Password" />
-        <a href="#" style="color: var(--main-blue)">Forgot your password?</a>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: var(--main-blue)">Forgot your password?</a>
         <button id="signInBtn" class="btn">Sign In</button>
       </form>
     </div>
@@ -120,6 +116,27 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Password Reset</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Lost your password? Please enter your email address. You will receive a link to create a new password.
+        <input type="email" id="verEmail" placeholder="Email" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" id="sendVerificationEmailBtn">Send Email</button>
+        <button type="button" class="btn" id="closeBtn" data-bs-dismiss="modal">Back To Sign In</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </section>
 <script src="signInUpScript.js"></script>
 <script src="signUpInFunctionality.js"  type="module"></script>
