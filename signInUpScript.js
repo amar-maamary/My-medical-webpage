@@ -48,4 +48,16 @@ signInButton.addEventListener("click", () => {
   container.classList.remove("right-panel-active");
 }); 
 
-//
+//homeEmail
+var email = document.getElementById("email");
+email.value = localStorage.getItem("homeEmail") || "";
+
+// btn-close
+const closeBtns = document.querySelectorAll(".btn-close");
+closeBtns.forEach((btn) =>{
+    btn.addEventListener("click", (e)=>{
+        var parentAlert = e.target.parentElement;
+        console.log(parentAlert)
+        parentAlert.style.display = "none"
+})
+})

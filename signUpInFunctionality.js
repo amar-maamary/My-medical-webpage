@@ -19,7 +19,6 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth(app);
 
-
 ///////////////////// Sign Up //////////////////////////
 signUpBtn.addEventListener("click", (e) =>{
   e.preventDefault();
@@ -36,25 +35,27 @@ signUpBtn.addEventListener("click", (e) =>{
       username : username,
       email: email,
     })
-    alert("user created");
+    positiveAlert.style.display = "block";
+    positiveAlertMessage.innerText =  ` Welcome ${username}, User is successfully created! `;
     signUpForm.reset();
   })
   .catch((error) => {
+    negativeAlert.style.display = "block";
     switch (error.code) {
       case 'auth/email-already-in-use':
-        alert(`Email address ${email} already in use.`);
+        errorAlertMessage.innerText = ` Email address ${email} already in use.`;
         break;
       case 'auth/invalid-email':
-        alert(`Email address ${email} is invalid.`);
+        errorAlertMessage.innerText = ` Email address ${email} is invalid.`;
         break;
       case 'auth/operation-not-allowed':
-        alert(`Error during sign up.`);
+        errorAlertMessage.innerText = ` Error during sign up.`;
         break;
       case 'auth/weak-password':
-        alert('Password is not strong enough. Add additional characters including special characters and numbers. Note: password should contain at least 6 characters.');
+        errorAlertMessage.innerText = ' Password is not strong enough. Add additional characters including special characters and numbers. Note: password should contain at least 6 characters.';
         break;
       default:
-        alert(error.message);
+        errorAlertMessage.innerText = error.message;
         break;
     }
   });
@@ -70,30 +71,35 @@ signInBtn.addEventListener("click", (e) =>{
   signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     const user = userCredential.user;
+    var username = user.displayName;
     const dt = new Date();
     //Update log in date in to database
     update(ref(database, 'users/' + user.uid), {
     last_login : dt,
     })
-    alert("user loged in!");
+    positiveAlert.style.display = "block";
+    // positiveAlertMessage.innerText = " User successfully loged in!";
+    positiveAlertMessage.innerText = `Welcome Back ${username} !`;
     signInForm.reset();
   })
   .catch((error) => {
+    negativeAlert.style.display = "block";
     switch (error.code) {
+      // errorAlertMessage.classList.add("mystyle");
       case 'auth/invalid-email':
-        alert(`Email '${email}' is invalid. Please make sure you are entering the email correctly.`);
+        errorAlertMessage.innerText = ` Email '${email}' is invalid. Please make sure you are entering the right email.`;
         break;
       case 'auth/user-disabled':
-        alert(`The '${email}' user account has been disabled by an administrator.`);
+        errorAlertMessage.innerText = ` The '${email}' user account has been disabled by an administrator.`;
         break;
       case 'auth/user-not-found':
-        alert(`There is no user record corresponding to this email '${email}'.`);
+        errorAlertMessage.innerText =` There is no user record corresponding to this email '${email}'.`;
         break;
       case 'auth/wrong-password':
-        alert('The password is invalid or the user does not have a password.');
+        errorAlertMessage.innerText =' The password is invalid or the user does not have a password.';
         break;
       default:
-        alert(error.message);
+        errorAlertMessage.innerText = error.message;
         break;
     }
   });
@@ -152,27 +158,31 @@ function signWithGoogleFunction(){
         username : username,
         email: email,
       });
-      alert(`Welcome ${username}`);
+      positiveAlert.style.display = "block";
+      positiveAlertMessage.innerText = `Welcome ${username}, User is successfully created!`;
     } else {
       const dt = new Date();
       update(ref(database, 'users/' + user.uid), {
         last_login : dt,
       });
-      alert(`Welcome Back ${username}`);
+      positiveAlert.style.display = "block";
+      positiveAlertMessage.innerText = `Welcome Back ${username} !`;
     } 
     
   })
     
   .catch((error) => {
+    // negativeAlert.classList.add("show");
+    negativeAlert.style.display = "block";
     switch (error.code) {
       case 'auth/user-disabled':
-        alert(`The '${email}' user account has been disabled by an administrator.`);
+        errorAlertMessage.innerText = ` The '${email}' user account has been disabled by an administrator.`;
         break;
       case 'auth/operation-not-allowed':
-        alert(`Error during sign up.`);
+        errorAlertMessage.innerText = ` Error during sign up.`;
         break;
       default:
-        alert(error.message);
+        errorAlertMessage.innerText = error.message;
         break;
     }
   });
@@ -185,12 +195,14 @@ sendVerificationEmailBtn.addEventListener("click", (e)=>{
   var email = emailInput.value;
   sendPasswordResetEmail(auth, email)
   .then(() => {
-    alert("Password reset email sent!");
+    positiveAlert.style.display = "block";
+    positiveAlertMessage.innerText = "Password Reset email is successfully sent!";
     emailInput.value = "";
   })
   .catch((error) => {
+    negativeAlert.style.display = "block";
     const errorCode = error.code;
     const errorMessage = error.message;
-    console.log(errorMessage);
+    errorAlertMessage.innerText = errorMessage;
   });
 })

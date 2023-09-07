@@ -72,9 +72,16 @@
       </div>
     </div>
   </nav>
+  <section class="alert alert-dismissible" id = "positiveAlert" role="alert">
+    <i class="bi bi-check-circle"></i><strong>Hello ! </strong><span id="positiveAlertMessage"> This is a message.</span>
+    <button type="button" class="btn-close"></button>
+  </section>
+  <section class="alert alert-dismissible" id = "negativeAlert" role="alert">
+    <i class="bi bi-x-octagon-fill"></i><strong>Error ! </strong><span id="errorAlertMessage"> This is an error message.</span>
+    <button type="button" class="btn-close" ></button>
+  </section>
 
-
-  <div class="container right-panel-active" id="container">
+  <section class="container right-panel-active" id="container">
     <div class="form-container sign-up-container">
       <form id="signUpForm">
         <h1>Sign Up</h1>
@@ -115,10 +122,10 @@
         </div> 
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<section class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -126,7 +133,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Lost your password? Please enter your email address. You will receive a link to create a new password.
+        <span class="important">Lost your password? </span>Please enter your email address. You will receive a link to create a new password.
         <input type="email" id="verEmail" placeholder="Email" />
       </div>
       <div class="modal-footer">
@@ -135,7 +142,7 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
 </section>
 <script src="signInUpScript.js"></script>

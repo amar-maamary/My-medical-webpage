@@ -64,7 +64,11 @@ navCardsDiv.addEventListener('mouseout', ()=>{
 });
 
 
-
+// //// Saving email to local storage
+var homeEmail = document.getElementById("home-email");
+homeEmail.addEventListener("change", () =>{
+    localStorage.setItem("homeEmail", homeEmail.value);
+})
 
 
 

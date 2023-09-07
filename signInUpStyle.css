@@ -1,6 +1,5 @@
 :root {
   --main-color: #a7eff8;
-  --secondary-color: #2193b0;
   --gradient: linear-gradient(
     135deg,
     var(--main-color),
@@ -306,7 +305,6 @@ body{
   }
 }
   
-
 .modal{
   background: #535050b0 !important;
   z-index: 10000000;
@@ -338,7 +336,7 @@ body{
   background-color: var(--main-blue);
 }
 .important{
-  color: var(--main-orange);
+  color: var(--main-orange)!important;
 }
 #closeBtn{
   background-color: var(--main-orange);
@@ -349,4 +347,40 @@ body{
 #closeBtn:hover{
   background-color: #fc9e7a;
   border-color: var(--main-orange)!important;
+}
+
+#negativeAlert{
+  box-shadow: var(--main-box-shadow);
+  margin-right: 30%;
+  width: 60%;
+  left: 20%;
+  margin-top: 3%;
+  background-color: #fc9f7ac9;
+  font-size: 20px!important;
+  border-color: var(--main-orange);
+}
+#positiveAlert{
+  box-shadow: var(--main-box-shadow);
+  margin-right: 30%;
+  width: 60%;
+  left: 20%;
+  margin-top: 3%;
+  background-color: #7be0e0b6!important;
+  font-size: 20px!important;
+  border-color: var(--main-blue);
+}
+.alert button{
+  border: none!important;
+  box-shadow: none;
+  font-size: 20px!important;
+  display: block!important;
+  margin: auto!important;
+  padding: 25px 20px!important;
+}
+.alert{
+  display: none;
+}
+.bi-x-octagon-fill, .bi-check-circle{
+  font-size: 30px!important;
+  padding-right: 20px;
 }
