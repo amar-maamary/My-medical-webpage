@@ -86,7 +86,7 @@
     
     
  /* Articles cards */
-.band {
+/* .band {
 width: 90%;
 max-width: 1240px;
 margin: 8% auto;
@@ -96,9 +96,21 @@ display: grid;
 
 grid-template-columns: 1fr;
 grid-template-rows: auto;
-grid-gap: 20px;
+grid-gap: 20px; */
 
-}
+/* } */
+.band {
+    width: 90%;
+    max-width: 90vw;
+    margin: 5% auto;
+    
+    position: relative;
+    display: grid;
+    
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 50px;
+    }
 .band a{
     text-decoration: none;
 }

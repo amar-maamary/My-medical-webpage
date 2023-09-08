@@ -31,45 +31,45 @@
 <section class="main">
 
   <!-- Nav Bar -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="http://127.0.0.1:5500/index.html#about-section"><i class="bi bi-journal-medical"></i> Dr.<span class="brand-title-style">Check</span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: auto;">
+  <nav class="navbar  fixed-top navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="http://127.0.0.1:5500/index.html#about-section"><i class="bi bi-journal-medical"></i> Dr.<span class="brand-title-style">Check</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: auto;">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="http://127.0.0.1:5500/index.html#about-section">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active1" href="http://127.0.0.1:5500/index.html#about-section">About</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" aria-current="page" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Articles
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item br-news-btn"  type="button">Breaking Medical News</a></li>
-                <li><a class="dropdown-item md-news-btn active" type="button">Other Medical News</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item other-news-btn" type="button">Other related Articles</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Dictionnary</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact Us</a>
-            </li>
-          </ul>
-          <form class="d-flex">
-            <a href="sign-in-page.html" class="btn get-sign-in-form" >Sign In</a>
-            <a href="sign-up-page.html" class="btn get-sign-up-form">Sign Up</a> 
-          </form>
-        </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Articles
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item br-news-btn" href="brArticles.html">Breaking Medical News</a></li>
+              <li><a class="dropdown-item md-news-btn"  type="button" href="mdArticles.html">Other Medical News</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item other-news-btn" type="button" href="otherArticles.html">Other related Articles</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="dictionary.html">Dictionnary</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <a href="sign-in-page.html" class="btn get-sign-in-form" >Sign In</a>
+          <a href="sign-up-page.html" class="btn get-sign-up-form">Sign Up</a> 
+        </form>
       </div>
-    </nav>
+    </div>
+  </nav>
 
     <section class="footer"> 
       <div>
@@ -83,7 +83,7 @@
         <a class="footer-link" href="mdArticles.html">Other Medical News</a>
         <a class="footer-link" href="otherArticles.html">Other related Articles</a>
         </div>
-        <a class="footer-link" href="#">Dictionnary</a>
+        <a class="footer-link" href="dictionnary.html">Dictionnary</a>
         <a class="footer-link" href="http://127.0.0.1:5500/index.html#about-section">About</a>
         <a class="footer-link" href="contact.html">Contact Us</a>
       </div>
@@ -93,6 +93,7 @@
   </section>
 
     <!-- Script  -->
+    <script src="dictionary.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
  </body>
   

@@ -1,5 +1,6 @@
 /* Grneral styles */
 :root{
+    --main-color: #a7eff8;
     --main-orange: #FF8A5B;
     --main-blue: #25CED1;
     --main-gray: #F4F4F4;
@@ -44,7 +45,9 @@ button:hover, button:focus{
 }
 button:active {
     transform: scale(0.95);
+    background-color: var(--main-color);
 }
+
 /* All cards style */
 .card{
     border-radius: 0.5rem!important;
@@ -185,7 +188,7 @@ button:active {
 
 /*Home Introduction */
 .introduction{
-    /*  linear-gradient(to right, #0cd2c8,rgba(255, 255, 255, 0),  rgba(255, 255, 255, 0)), */
+    /* https://www.grantthornton.in/globalassets/1.-member-firms/india/new-homepage/media/1.-hero-banners_repeat-visits/1440x600px_hero_banner_shutterstock_1089540233.jpg */
     /* https://hips.hearstapps.com/hmg-prod/images/types-of-doctors-1600114658.jpg?crop=1xw:0.8425829875518672xh;center,top&resize=1200:* */
     background-image: linear-gradient(to right,  #0cd2c8ab,rgba(255, 255, 255, 0),  rgba(255, 255, 255, 0), #0cd2c8ab), url("https://www.grantthornton.in/globalassets/1.-member-firms/india/new-homepage/media/1.-hero-banners_repeat-visits/1440x600px_hero_banner_shutterstock_1089540233.jpg");
      /* https://info.primarycare.hms.harvard.edu/hubfs/6.23.jpg */
@@ -213,6 +216,9 @@ header{
     padding: 5%;
     background-color:rgba(244, 244, 244, 0.849);
     box-shadow: var(--main-box-shadow);
+    grid-column-start: 1;
+    grid-column-end: 3;
+    justify-self: center; 
 }
 h5{
     padding-top: 2%;
@@ -228,7 +234,7 @@ h5{
 
 /*  About section   */
 .about-section h1{
-    padding-top: 4%;
+    padding-top: 80px;
     text-align: center;
     font-size: 2.5rem;
     color: var(--main-font-color);
@@ -236,16 +242,15 @@ h5{
 .about-grid{
     width: 90%;
     display: grid;
-    grid-template: auto/ 1fr 1fr;
+    grid-template: auto/ 1fr;
     justify-content: center;
     justify-items: center;
     column-gap: 7%;
-    margin: 4%;
+    row-gap: 5%;
 }
 .about-div{
     margin: 4%;
-    margin-left: 9%;
-    padding: 4%;
+    margin-left: 13%;
 }
 .about-div h5{
     line-height: 1.4;
@@ -419,17 +424,16 @@ h5{
     background-color: var(--main-gray);
     padding: 4%;
     padding-top: 2%;
-    height: 30vh;
+    padding-bottom: 0px;
+    height: auto;
     object-fit: cover;
     display: grid;
-    grid-template: 1fr  1fr/ 1fr 1fr;
-    padding-bottom: 5%!important;
-    row-gap: 25%;
+    row-gap: 10%;
+    grid-template-rows: repeat(3, 1fr);
 }
 .footer-in-grid{
     display: grid;
     grid-template: auto/ auto auto auto auto;
-    /* padding-top: 8%; */
     justify-items: center;
 
 }
@@ -457,13 +461,43 @@ h5{
     color: var(--main-orange);
 }
 .footer .copyright{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    justify-self: center;
+    /* grid-column-start: 1;
+    grid-column-end: 3;*/
+    justify-self: center; 
 }
 
 
-
+@media only screen and (min-width: 850px){
+    /* .introduction{
+        height: 85vh;
+    } */
+    .header{
+        grid-template: auto / 1fr 1fr;
+    }
+    #call_to_action_card{
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .about-section h1{
+        padding-top: 4%;
+    }
+    .about-grid{
+        grid-template: auto/ 1fr 1fr;
+        margin: 4%;
+    }
+    .about-div{
+        margin-left: 9%; 
+        padding: 4%;
+    }
+    .footer{
+        grid-template: 1fr  1fr/ 1fr 1fr;
+        row-gap: 25%;
+    }
+    .footer .copyright{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
     
     
     
