@@ -110,7 +110,9 @@ const user = auth.currentUser;
 onAuthStateChanged(auth, (user) => {
   if (user) {
   const uid = user.uid;
-  // window.location.replace("http://127.0.0.1:5500/index.html");
+  // getSignInForm.style.display = "none";
+  // getSignUpForm.style.display = 'none';
+  window.location.replace("http://127.0.0.1:5500/index.html");
   } 
   else {
   // User is signed out

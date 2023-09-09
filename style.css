@@ -185,6 +185,55 @@ button:active {
 .dropdown-item.active{
     background-color: var(--main-orange)!important;
 }
+/* .profile{
+    display: none;
+} */
+.offcanvas{
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    height: auto!important;
+    background-color: var(--main-gray);
+}
+.btn-close{
+    background-color: rgba(0,0,0,0.1);
+}
+.btn-close:active{
+    background-color: var(--main-color);
+}
+.fa-user-doctor{
+    color: var(--main-orange);
+    font-size: 32px;
+    padding-top: 8px;
+    padding-bottom: 0px;
+    padding-right: 8px;
+    padding-left: 8px;
+    border-radius: 0.5rem;
+    border: 3px solid var(--main-orange);
+/* rgb(85, 84, 84) */
+}
+#profile-photo{
+    margin-right: 10px;
+    border-radius: 0.5rem; 
+    border: none!important;
+    padding: 0px!important;
+}
+#profile-photo:focus, #profile-photo:hover{
+    background-color: var(--main-gray)!important;
+    border: none;
+}
+
+#profile-photo:active{
+    .fa-user-doctor{
+        color: var(--main-blue);
+        border-color: var(--main-blue);
+    }
+}
+#userNameNav{
+    align-self: center!important;
+    text-align: center!important;
+    color: var(--main-font-color);
+    text-decoration: none;
+}
 
 /*Home Introduction */
 .introduction{
@@ -425,7 +474,7 @@ h5{
     padding: 4%;
     padding-top: 2%;
     padding-bottom: 0px;
-    height: auto;
+    height: 50vh;
     object-fit: cover;
     display: grid;
     row-gap: 10%;
@@ -471,6 +520,9 @@ h5{
     /* .introduction{
         height: 85vh;
     } */
+    #userNameNav{
+        display: none;
+    }
     .header{
         grid-template: auto / 1fr 1fr;
     }
@@ -492,6 +544,7 @@ h5{
     .footer{
         grid-template: 1fr  1fr/ 1fr 1fr;
         row-gap: 25%;
+        height: 33vh;
     }
     .footer .copyright{
         grid-column-start: 1;

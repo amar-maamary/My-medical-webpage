@@ -35,11 +35,10 @@ window.addEventListener("load", function loading(){
     elements.style.display = "block";
 });
 
-///////////////////////////////// ------  Home Page  ------ /////////////////////////////////
 
 /////////////////////////////////   Moving Cards    /////////////////////////////////
 let navCardsDiv = document.querySelector(".cards");
-console.log(navCardsDiv);
+
 let navCards = document.querySelectorAll(".nav-card");
 
 function movingCard(){
@@ -64,7 +63,7 @@ navCardsDiv.addEventListener('mouseout', ()=>{
 });
 
 
-// //// Saving email to local storage
+////// Saving email to local storage
 var homeEmail = document.getElementById("home-email");
 homeEmail.addEventListener("change", () =>{
     localStorage.setItem("homeEmail", homeEmail.value);
