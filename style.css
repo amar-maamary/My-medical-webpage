@@ -117,6 +117,9 @@ button:active {
 }
 
 /*  Navbar  */
+#getSignInForm, #getSignUpForm{
+    display: none;
+}
 .navbar{
     background-color: var(--main-gray);
     box-shadow: var(--main-box-shadow);
@@ -185,14 +188,101 @@ button:active {
 .dropdown-item.active{
     background-color: var(--main-orange)!important;
 }
-/* .profile{
+.profile{
     display: none;
-} */
+}
+.profile:hover{
+    .userName{
+        color: rgb(95, 93, 93);
+    }
+    .fa-user-doctor{
+        color: var(--main-orange);
+        border-color: var(--main-orange);
+    }
+    .profile-photo{
+        box-shadow: none;
+        background-color: var(--main-gray)!important;
+        border: none!important;
+    }
+}
+
+.profile:active{
+    .fa-user-doctor{
+        color: var(--main-blue);
+        border-color: var(--main-blue);
+        transform: scale(0.95);
+    }
+    .userName{
+        color: var(--main-font-color);
+    }
+} 
+
+nav .fa-user-doctor{
+    color: var(--main-orange);
+    font-size: 24px;
+    padding-top: 6px;
+    padding-bottom: 0px;
+    padding-right: 6px;
+    padding-left: 6px;
+    border-radius: 0.5rem;
+    border: 3px solid var(--main-orange);
+/* rgb(85, 84, 84) */
+}
+nav .profile-photo{
+    margin-right: 10px;
+    border-radius: 0.5rem; 
+    border: none!important;
+    padding: 0px!important;
+}
+.userName{
+    align-self: center!important;
+    text-align: center!important;
+    color: var(--main-font-color);
+    text-decoration: none;
+}
 .offcanvas{
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
     height: auto!important;
     background-color: var(--main-gray);
+    width: 50vw;
+}
+.offcanvas-header{
+    justify-content: flex-end;
+    column-gap: 10px;
+}
+.offcanvas-title{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+.offcanvas .fa-user-doctor{
+    color: var(--main-orange);
+    font-size: 64px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-right: 9px;
+    padding-left: 9px;
+    border-radius: 0.5rem;
+    border: 3px solid var(--main-orange);
+}
+.offcanvas button{
+    border: none!important;
+    box-shadow: none!important;
+    background-color: var(--main-gray);
+}
+.offcanvas span{
+    background-image:  url("https://png.pngitem.com/pimgs/s/509-5099522_vector-graphics-hd-png-download.png")!important;
+    /* https://img.favpng.com/6/13/12/computer-icons-button-png-favpng-3Nj3nmPdiFWb57xkpqdtscaMz_t.jpg */
+    /* https://png.pngitem.com/pimgs/s/509-5099522_vector-graphics-hd-png-download.png */
+    /* https://cdn.iconscout.com/icon/free/png-256/free-pencil-pen-ui-erase-tool-interface-ui-2-14001.png */
+    background-size: 100%;
+    background-color: var(--main-gray);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30px;
+    height: 30px;
 }
 .btn-close{
     background-color: rgba(0,0,0,0.1);
@@ -200,41 +290,59 @@ button:active {
 .btn-close:active{
     background-color: var(--main-color);
 }
-.fa-user-doctor{
-    color: var(--main-orange);
-    font-size: 32px;
-    padding-top: 8px;
-    padding-bottom: 0px;
-    padding-right: 8px;
-    padding-left: 8px;
-    border-radius: 0.5rem;
-    border: 3px solid var(--main-orange);
-/* rgb(85, 84, 84) */
-}
-#profile-photo{
-    margin-right: 10px;
-    border-radius: 0.5rem; 
-    border: none!important;
-    padding: 0px!important;
-}
-#profile-photo:focus, #profile-photo:hover{
-    background-color: var(--main-gray)!important;
-    border: none;
-}
-
-#profile-photo:active{
-    .fa-user-doctor{
-        color: var(--main-blue);
-        border-color: var(--main-blue);
+#profilePhotoBtn:hover{
+    .border-light{
+        border-color: var(--main-orange)!important;
     }
 }
-#userNameNav{
-    align-self: center!important;
-    text-align: center!important;
-    color: var(--main-font-color);
-    text-decoration: none;
+.profile-item{
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    border-radius: 0.5rem;
 }
-
+.profile-item p{
+    display: inline;
+    padding-left: 10px;
+}
+.profile-item:hover{
+    background-color: #42d1d4b0;
+}
+.modal-body .fa-user-doctor{
+    color: var(--main-orange);
+    font-size: 64px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-right: 9px;
+    padding-left: 9px;
+    border-radius: 0.5rem;
+    border: 3px solid var(--main-orange);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.modal-body input{
+    margin: 10px;
+}
+.modal{
+    background: #535050b0 !important;
+    z-index: 10000000;
+  }
+  .modal-content{
+    background-color: var(--main-gray);
+    text-align: center;
+  }
+  .modal-title{
+    text-align: center !important;
+    width: 100%;
+    color: var(--main-blue)
+  }
+  .modal button:hover , .modal button:focus{
+    background-color: var(--main-blue);
+  }
+  .important{
+    color: var(--main-orange);
+  }   
 /*Home Introduction */
 .introduction{
     /* https://www.grantthornton.in/globalassets/1.-member-firms/india/new-homepage/media/1.-hero-banners_repeat-visits/1440x600px_hero_banner_shutterstock_1089540233.jpg */
@@ -520,8 +628,11 @@ h5{
     /* .introduction{
         height: 85vh;
     } */
-    #userNameNav{
+    /* .userName{
         display: none;
+    } */
+    .offcanvas{
+        width: 25vw;
     }
     .header{
         grid-template: auto / 1fr 1fr;
@@ -551,7 +662,6 @@ h5{
         grid-column-end: 3;
     }
 }
-    
     
     
     

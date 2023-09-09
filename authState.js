@@ -19,18 +19,28 @@ const auth = getAuth();
 function authStateHandler () {
   const signInButton = document.getElementById("getSignInForm");
   const signUpButton = document.getElementById("getSignUpForm");
-
+  const profileForm = document.querySelector(".profile");
+  const userEmail = document.querySelector(".emailh");
+  const userName = document.querySelectorAll(".userName");
 
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
       // User is signed in, hide the sign-in and sign-up buttons
+      console.log(user);
+
       signInButton.style.display = "none";
       signUpButton.style.display = "none";
+      profileForm.style.display = "block";
+      userEmail.innerText = user.email;
+      userName.forEach(one =>{
+        one.innerText = user.displayName;
+      })
     } else {
       // User is signed out, show the sign-in and sign-up buttons
       signInButton.style.display = "block";
       signUpButton.style.display = "block";
+      profileForm.style.display = "none";
     }
   });
 };
