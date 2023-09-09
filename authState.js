@@ -22,7 +22,8 @@ function authStateHandler () {
   const profileForm = document.querySelector(".profile");
   const userEmail = document.querySelector(".emailh");
   const userName = document.querySelectorAll(".userName");
-
+  const profilePhoto = document.querySelectorAll(".profile-photo");
+  // const photoFile = document.getElementById("photo-file");
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -36,13 +37,28 @@ onAuthStateChanged(auth, (user) => {
       userName.forEach(one =>{
         one.innerText = user.displayName;
       })
+      profilePhoto.forEach(photo =>{
+        photo.innerHTML = `<img src = ${user.photoURL} class="profile-main-photo">`
+      })
+      // photoFile.addEventListener("change", (e) =>{
+      //   profilePhoto.forEach(photo =>{
+      //     photo.innerHTML = `<img src = ${URL.createObjectURL(photoFile.files[0])} class="profile-main-photo">`
+      //   })
+      // })
     } else {
       // User is signed out, show the sign-in and sign-up buttons
       signInButton.style.display = "block";
       signUpButton.style.display = "block";
-      profileForm.style.display = "none";
+      profilePhoto.forEach(photo =>{
+        photo.style.display = "none";
+      });
+      userName.forEach(uname =>{
+        uname.style.display = "none";
+      })
     }
   });
 };
+
+
 
 export default authStateHandler;

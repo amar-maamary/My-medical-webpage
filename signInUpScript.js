@@ -28,18 +28,21 @@ setInterval(() => {
 
 }, 2050);
 
+
 let preloader = document.querySelector(".loader-container");
 let elements = document.querySelector(".main");
 window.addEventListener("load", function loading(){
     preloader.style.display = "none";
     elements.style.display = "block";
+    signInButton.style.display = "block";
+    signUpButton.style.display = "block";
+    
 });
 
 //Sign in up moves
 const signUpButton = document.getElementById("signUp");
 const signInButton = document.getElementById("signIn");
 const container = document.getElementById("container");
-
 signUpButton.addEventListener("click", () => {
   container.classList.add("right-panel-active");
 });

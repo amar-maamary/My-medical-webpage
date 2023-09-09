@@ -234,6 +234,13 @@ nav .profile-photo{
     border: none!important;
     padding: 0px!important;
 }
+.profile-main-photo{
+    border-radius: 0.5rem;
+}
+nav .profile-main-photo{
+    width: 35px;
+    height: 35px;
+}
 .userName{
     align-self: center!important;
     text-align: center!important;
@@ -291,7 +298,7 @@ nav .profile-photo{
     background-color: var(--main-color);
 }
 #profilePhotoBtn:hover{
-    .border-light{
+    .rounded-circle{
         border-color: var(--main-orange)!important;
     }
 }
@@ -311,18 +318,51 @@ nav .profile-photo{
 }
 .modal-body .fa-user-doctor{
     color: var(--main-orange);
-    font-size: 64px;
+    font-size: 250px;
     padding-top: 10px;
     padding-bottom: 0px;
     padding-right: 9px;
     padding-left: 9px;
     border-radius: 0.5rem;
     border: 3px solid var(--main-orange);
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.modal-body .profile-main-photo{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 50%;
+
 }
 .modal-body input{
-    margin: 10px;
+    display: none;
+}
+.modal-body label{
+    /* border: 2px solid var(--main-blue); */
+    border-radius: 0.5rem;
+    background-color: var(--main-blue);
+    color: var(--main-font-color);
+    box-shadow: var(--main-box-shadow);
+    border: 4px solid rgba(0,0,0,0.1) !important;
+    padding: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.modal-body label:hover, .modal-body label:focus{
+    border:  4px solid  #7be0e0!important;
+    box-shadow: none!important;
+}
+.modal-body label:active {
+    transform: scale(0.95);
+    background-color: var(--main-color);
+}
+.btn-close{
+    background-color: var(--main-gray)!important;
+    border: none!important;
+    box-shadow: none!important;
+}
+.btn-close:hover, .btn-close:focus{
+    border:none!important;
 }
 .modal{
     background: #535050b0 !important;

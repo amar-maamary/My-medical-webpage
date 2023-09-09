@@ -82,7 +82,7 @@
       </div>
       <div class="offcanvas-body">
         <div class="offcanvas-title"> 
-          <div><button id="profilePhotoBtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-user-doctor position-relative"><span class="position-absolute top-0 start-100 translate-middle p-2 border border-light rounded-circle"></span></i></button></div>
+          <div style="position: relative;"  id="profilePhotoBtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><button class="profile-photo" type="button" ><i class="fa-solid fa-user-doctor position-relative"></i></button><span class="position-absolute bottom-0 translate-middle border border-light rounded-circle"></span></div>
           <h5 class="userName" >User Name</h5>
         </div>
         <hr>
@@ -117,11 +117,10 @@
       </div>
       <div class="modal-body">
         <p>Having a profile photo helps recognizing your email</p>
-        <i class="fa-solid fa-user-doctor position-relative"></i>
+        <div class="profile-photo"><i class="fa-solid fa-user-doctor position-relative"></i></div>
         <div>
-          <input type="text" placeholder="Image URL">
-          <p>Or</p>
-          <input type="file" accept="image/jpeg, image/jpg. image/png" placeholder="Upload image">
+          <label for="inputFile">Update Profile</label>
+          <input type="file" id="photo-file" accept="image/jpeg, image/jpg. image/png" placeholder="Upload image">
         </div>
       </div>
     </div>
