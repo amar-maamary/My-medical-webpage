@@ -15,6 +15,10 @@
 body{
   background-color: var(--main-gray);
 }
+
+#getSignInForm, #getSignUpForm{
+  display: block;
+}
 .container p {
   line-height: 20px;
   letter-spacing: 0.5px;
@@ -376,6 +380,7 @@ body{
   display: block!important;
   margin: auto!important;
   padding: 25px 20px!important;
+  background-color: transparent!important;
 }
 .alert{
   display: none;
@@ -383,4 +388,12 @@ body{
 .bi-x-octagon-fill, .bi-check-circle{
   font-size: 30px!important;
   padding-right: 20px;
+}
+.logImage{
+  border-radius: 0.5rem;
+  width: 80%;
+  max-height: 50vh;
+  object-fit: cover;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }

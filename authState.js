@@ -1,4 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
+import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
 
 const firebaseConfig = {
@@ -13,6 +14,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
 const auth = getAuth();
 
 
@@ -23,7 +25,7 @@ function authStateHandler () {
   const userEmail = document.querySelector(".emailh");
   const userName = document.querySelectorAll(".userName");
   const profilePhoto = document.querySelectorAll(".profile-photo");
-  // const photoFile = document.getElementById("photo-file");
+  const photoFile = document.getElementById("photo-file");
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -40,11 +42,15 @@ onAuthStateChanged(auth, (user) => {
       profilePhoto.forEach(photo =>{
         photo.innerHTML = `<img src = ${user.photoURL} class="profile-main-photo">`
       })
-      // photoFile.addEventListener("change", (e) =>{
-      //   profilePhoto.forEach(photo =>{
-      //     photo.innerHTML = `<img src = ${URL.createObjectURL(photoFile.files[0])} class="profile-main-photo">`
-      //   })
-      // })
+      photoFile.addEventListener("change", (e) =>{
+        profilePhoto.forEach(photo =>{
+          var urlink = URL.createObjectURL(photoFile.files[0]);
+          photo.innerHTML = `<img src = ${urlink} class="profile-main-photo">`
+          update(ref(database, 'users/' + user.uid), {
+            photoUrl: urlink,
+            })
+        })
+      })
     } else {
       // User is signed out, show the sign-in and sign-up buttons
       signInButton.style.display = "block";

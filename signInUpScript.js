@@ -55,7 +55,7 @@ signInButton.addEventListener("click", () => {
 var email = document.getElementById("email");
 email.value = localStorage.getItem("homeEmail") || "";
 
-// btn-close
+//btn-close
 const closeBtns = document.querySelectorAll(".btn-close");
 closeBtns.forEach((btn) =>{
     btn.addEventListener("click", (e)=>{
@@ -64,3 +64,4 @@ closeBtns.forEach((btn) =>{
         parentAlert.style.display = "none"
 })
 })
+
