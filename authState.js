@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
 import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA7HdEG7u5PL5CuEhCFugjFoFAIwT15xHE",
@@ -64,7 +64,17 @@ onAuthStateChanged(auth, (user) => {
     }
   });
 };
-
+///////////////////// Log out btn //////////////////////////
+ logOutBtn.addEventListener("click", (e) =>{
+   signOut(auth).then(() => {
+       // Sign-out successful.
+       alert('user loget out');
+     }).catch((error) => {
+       const errorCode = error.code;
+       const errorMessage = error.message;
+       alert(errorMessage);
+     });
+ })
 
 
 export default authStateHandler;
