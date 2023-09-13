@@ -208,15 +208,3 @@ onAuthStateChanged(auth, (user) => {
 });
 
 
-///////////////////// Log out btn //////////////////////////
-//  logOutBtn.addEventListener("click", (e) =>{
-//    signOut(auth).then(() => {
-//        // Sign-out successful.
-//        alert('user loget out');
-//      }).catch((error) => {
-//        const errorCode = error.code;
-//        const errorMessage = error.message;
-//        alert(errorMessage);
-//      });
-//  })
-
