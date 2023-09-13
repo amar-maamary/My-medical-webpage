@@ -39,16 +39,18 @@ onAuthStateChanged(auth, (user) => {
       userName.forEach(one =>{
         one.innerText = user.displayName;
       })
+      var image = localStorage.getItem("profileImg") || user.photoURL; 
       profilePhoto.forEach(photo =>{
-        photo.innerHTML = `<img src = ${user.photoURL} class="profile-main-photo">`
+        photo.innerHTML = `<img src = ${image} class="profile-main-photo">` || `<img src = ${image} class="profile-main-photo">`;
       })
       photoFile.addEventListener("change", (e) =>{
         profilePhoto.forEach(photo =>{
           var urlink = URL.createObjectURL(photoFile.files[0]);
           photo.innerHTML = `<img src = ${urlink} class="profile-main-photo">`
           update(ref(database, 'users/' + user.uid), {
-            photoUrl: urlink,
+            profile_picture: urlink,
             })
+          localStorage.setItem("profileImg", urlink);
         })
       })
     } else {
@@ -64,17 +66,21 @@ onAuthStateChanged(auth, (user) => {
     }
   });
 };
+
+
 ///////////////////// Log out btn //////////////////////////
  logOutBtn.addEventListener("click", (e) =>{
    signOut(auth).then(() => {
        // Sign-out successful.
-       alert('user loget out');
+       alert('User loget out! ');
      }).catch((error) => {
        const errorCode = error.code;
        const errorMessage = error.message;
        alert(errorMessage);
      });
  })
+
+
 
 
 export default authStateHandler;
