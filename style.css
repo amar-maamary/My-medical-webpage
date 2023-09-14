@@ -669,6 +669,7 @@ h5{
     display: grid;
     grid-template: auto/ auto auto auto auto;
     justify-items: center;
+    column-gap: 10px;
 
 }
 .footer-articles-nav{

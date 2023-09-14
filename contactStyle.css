@@ -16,25 +16,24 @@ body {
 
 .contact-us-page{
   display: grid;
-  grid-template: 1fr / 1fr 1fr;
+  grid-template: 1fr 1fr/ 1fr;
   row-gap: 10%;
   text-align: center;
 }
 
 .website-logo-email{
-  justify-self: start;
+  justify-self: center;
   margin-top: 24%;
-  margin-left: -10%;
-  width: 90%;
+  width: 100%;
 }
 .website-logo-email input{
-  width:66%;
+  width:76%;
   background: none;
   font-size: 1.5rem;
-  padding-left: 2%;
 }
 .website-logo-email label{
   font-size: 1.5rem;
+  display: block;
 }
 .website-logo-email input[type=text]:focus{
   background: none;
@@ -113,7 +112,7 @@ textarea:focus {
   outline: none;
 }
 .wrapper {
-  width: 35rem;
+  width: 30rem;
   background-color: var(--main-gray);
   box-shadow: var(--main-box-shadow);
 }
@@ -223,8 +222,7 @@ textarea:focus {
 }
 .to-right {
   position: absolute;
-  left: 40%;
-  right: 0;
+  left: 0;
   margin: 1rem auto;
 }
 @keyframes closeLetter {
@@ -265,4 +263,29 @@ textarea:focus {
 }
 .important{
   color: var(--main-orange);
+}
+
+@media only screen and (min-width: 850px){
+  .contact-us-page{
+    grid-template: 1fr / 1fr 1fr;
+  }
+  .website-logo-email{
+    justify-self: start;
+    margin-left: -10%;
+    width: 90%;
+  }
+  .website-logo-email input{
+    width:66%;
+    padding-left: 2%;
+  }
+  .website-logo-email label{
+    display: inline;
+  }
+  .to-right {
+    left: 40%;
+    right: 0;
+  }
+  .wrapper {
+    width: 35rem;
+  }
 }
