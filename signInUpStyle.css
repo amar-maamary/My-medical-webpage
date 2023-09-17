@@ -8,15 +8,22 @@
   --main-orange: #FF8A5B;
   --main-blue: #25CED1;
   --main-gray: #F4F4F4;
-  --main-transparent-gray: #f4f4f4cc;
+  --main-transparent-gray: #eeececcc;
   --main-font-color: rgba(0, 0, 0, 0.55);
+  --main-dark-font-color: rgba(37, 37, 37, 0.55);
   --main-box-shadow:0 .5rem 1rem rgba(0,0,0,0.1);
+
+  --white: #FFFFFF;
+--grey: #AAAAAA;
+--primary: #75420E;
+--light: #F2E8E4;
+--dark: #553B08;
 }
 body{
   background-color: var(--main-gray);
 }
 
-#getSignInForm, #getSignUpForm{
+/* #getSignInForm, #getSignUpForm{
   display: block;
 }
 .container p {
@@ -307,7 +314,7 @@ body{
   .container.right-panel-active .overlay-right {
     transform: translateX(20%);
   }
-}
+} */
   
 .modal{
   background: #535050b0 !important;
@@ -396,4 +403,112 @@ body{
   object-fit: cover;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
+}
+
+
+
+
+
+
+
+
+.container main {
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  column-gap: 10%;
+}
+.container img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.container form, p, .social-sign-up {
+  width: 70%;
+}
+
+  .container form h4 {
+    color: var(--main-font-color);
+    margin-bottom: 1em;
+  }
+  .container form .form-control {
+    background-color: #e5e2e9;
+    opacity: 0.7;
+    margin-bottom: 1.5em;
+  }
+  .container form .form-control:focus{
+    background-color: white;
+    box-shadow: 0 0 0 0.25rem #a7eff8;
+}
+
+  .container form .submit-btn {
+    background-color: var(--main-orange);
+    color: var(--white);
+    width: 100%;
+  }
+  .container form .submit-btn:hover {
+    background-color: white;
+    color: var(--main-font-color);
+    /* border-color: var(--main-orange)!important; */
+  }
+
+
+.container p {
+  color: var(--grey);
+}
+.hr-lines{
+  position: relative;
+  max-width: 500px;
+  margin: 45px 0;
+  text-align: center;
+}
+.hr-lines::before {
+    content:" ";
+    height: 2px;
+    width: 150px;
+    background: var(--grey);
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+  .hr-lines:after {
+    content:" ";
+    height: 2px;
+    width: 150px;
+    background: var(--grey);
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+  }
+
+
+  .container .social-sign-up button {
+    width: 100%;
+    border-color: var(--main-orange)!important;
+    background-color: white;
+  }
+  .container .social-sign-up button:hover {
+    background: var(--main-orange);
+    color: var(--white);
+    border-color: rgba(0,0,0,0.1)!important;
+  }
+  .container .social-sign-up .fa-google {
+    background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+
+.container .sign-in {
+  margin: 1em 0;
+  text-align: center;
+}
+.container a {
+  color: var(--main-blue)
 }

@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
-import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
+import { getDatabase, set, ref, update, onValue } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
 
 const firebaseConfig = {
@@ -16,7 +16,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth();
-
 
 function authStateHandler () {
   const signInButton = document.getElementById("getSignInForm");
@@ -35,25 +34,68 @@ onAuthStateChanged(auth, (user) => {
       signInButton.style.display = "none";
       signUpButton.style.display = "none";
       profileForm.style.display = "block";
-      userEmail.innerText = user.email;
-      userName.forEach(one =>{
-        one.innerText = user.displayName;
-      })
-      var image = localStorage.getItem("profileImg") || user.photoURL; 
-      profilePhoto.forEach(photo =>{
-        photo.innerHTML = `<img src = ${image} class="profile-main-photo">` || `<img src = ${image} class="profile-main-photo">`;
-      })
+
+      // var firebaseRef = ref(database, 'users/' + user.uid);
+      // onValue(firebaseRef, (snapshot) =>{
+      //   snapshot.forEach((element) => {
+      //     console.log(element.val());
+      //   });
+      // })
+
+      onValue( ref(database, 'users/' + user.uid), (snapshot) => {
+        userName.forEach(one =>{
+          one.innerText = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+        });
+        userEmail.innerText = (snapshot.val() && snapshot.val().email) || 'Anonymous';
+
+        // localStorage.getItem("profileImg")
+        var imagedata = snapshot.val() && snapshot.val().profile_picture ;
+        console.log(imagedata)
+        var image = imagedata  || user.photoURL ;
+        console.log(image)
+        profilePhoto.forEach(photo =>{
+          if (image === null || image === "Anonymous"){
+            photo.innerHTML = `<i class="fa-solid fa-user-doctor"></i>`;
+          }else{
+            photo.innerHTML = `<img src = ${image} class="profile-main-photo">` || `<img src = ${image} class="profile-main-photo">`|| `<i class="fa-solid fa-user-doctor"></i>`;
+          }
+        })
+      });
+      
       photoFile.addEventListener("change", (e) =>{
         profilePhoto.forEach(photo =>{
           var urlink = URL.createObjectURL(photoFile.files[0]);
+          console.log("urlink: " + urlink);
           photo.innerHTML = `<img src = ${urlink} class="profile-main-photo">`
+          // console.log("urlink: " + urlink);
           update(ref(database, 'users/' + user.uid), {
             profile_picture: urlink,
             })
-          localStorage.setItem("profileImg", urlink);
+          // localStorage.setItem("profileImg", urlink);
         })
       })
-    } else {
+      // userEmail.innerText = user.email;
+
+      // userName.forEach(one =>{
+      //   one.innerText = user.displayName;
+      // });
+
+      // var image = localStorage.getItem("profileImg") || user.photoURL; 
+    //   profilePhoto.forEach(photo =>{
+    //     photo.innerHTML = `<img src = ${image} class="profile-main-photo">` || `<img src = ${image} class="profile-main-photo">` || `<i class="fa-solid fa-user-doctor"></i>`;
+    //   })
+      // photoFile.addEventListener("change", (e) =>{
+      //   profilePhoto.forEach(photo =>{
+      //     var urlink = URL.createObjectURL(photoFile.files[0]);
+      //     photo.innerHTML = `<img src = ${urlink} class="profile-main-photo">`
+      //     update(ref(database, 'users/' + user.uid), {
+      //       profile_picture: urlink,
+      //       })
+      //     localStorage.setItem("profileImg", urlink);
+      //   })
+      // })
+    } 
+    else {
       // User is signed out, show the sign-in and sign-up buttons
       signInButton.style.display = "block";
       signUpButton.style.display = "block";

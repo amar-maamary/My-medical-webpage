@@ -67,6 +67,12 @@ button:active {
     z-index: 1000;
     position: absolute;
 }
+.loader-container h1{
+    font-size: 2rem!important;
+    color: black!important;
+    margin: 0!important;
+    padding: 0!important;
+}
 
 .loader{
     position: relative; 
@@ -254,6 +260,9 @@ nav .profile-main-photo{
     background-color: var(--main-gray);
     width: 50vw;
 }
+#profilePhotoBtn img{
+    object-fit: cover;
+}
 .offcanvas-header{
     justify-content: flex-end;
     column-gap: 10px;
@@ -439,7 +448,7 @@ header{
     grid-column-end: 3;
     justify-self: center; 
 }
-h5{
+.main h5{
     padding-top: 2%;
     padding-bottom: 2%;
     font-weight: 400;

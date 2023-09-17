@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Home</title>
+  <title>Patient</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/4e0faa3cbb.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
@@ -33,20 +33,20 @@
   <!-- Nav Bar -->
   <nav class="navbar  fixed-top navbar-expand-lg navbar-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#about-section"><i class="bi bi-journal-medical"></i> Dr.<span class="brand-title-style">Check</span></a>
+        <a class="navbar-brand" href="http://127.0.0.1:5500/index.html#about-section"><i class="bi bi-journal-medical"></i> Dr.<span class="brand-title-style">Check</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarScroll">
           <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: auto;">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link" href="index.html">Home</a>
               <li class="nav-item">
-                <a class="nav-link" href="#about-section">About</a>
+                <a class="nav-link" href="http://127.0.0.1:5500/index.html#about-section">About</a>
               </li>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Articles
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
@@ -63,7 +63,7 @@
               <a class="nav-link" href="contact.html">Contact Us</a>
             </li>
           </ul>
-          <form class="d-flex profile" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+          <form class="d-flex profile active" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
             <button class="profile-photo" type="button" ><i class="fa-solid fa-user-doctor"></i></button>
             <a class="userName">user name</a>
           </form>
@@ -87,19 +87,19 @@
           <h5 class="userName" >User Name</h5>
         </div>
         <hr>
-        <a href="profile.html">
-        <div class="profile-item"> 
+        <div class="profile-item">
+          <a>
             <i class="fa-regular fa-user"></i>
             <p>Your profile</p>
+          </a>
         </div>
-        </a>
         <hr>
-        <a href="patient.html">
-          <div class="profile-item">
-              <i class="fa-regular fa-address-card"></i>
-              <p>Your patients list</p>
-          </div>
-        </a>
+        <div class="profile-item active">
+          <a>
+            <i class="fa-regular fa-address-card"></i>
+            <p>Your patients list</p>
+          </a>
+        </div>
         <hr>
         <div class="profile-item" id="logOutBtn" type="button" data-bs-dismiss="offcanvas" aria-label="Close">
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
@@ -129,105 +129,10 @@
   </div>
 </div>
 
-    <section class="introduction">
-    <!-- Header  -->
-    <header>
-      <!-- Call to action parag  -->
-      <div class="card w-50" id="call_to_action_card">
-        <div class="card-body">
-          <h2>Ready to Elevate Your Medical Journey? </h2>
-          <h5 class="card-text">Explore our platform to store your patient information securely, delve into insightful medical articles, and challenge yourself with our interactive dictionary game. Are you prepared to take control of your health education and make informed decisions?</h5>
-          <button id="check-patients-btn" class="btn" type="submit"><i class="bi bi-list-ul"></i>Check patients list</button>
-        </div>
-      </div>
-    </header>
-  </section>
-
-  <!-- About Section -->
-  <section class="about-section" id="about-section">
-    <h1>About Us</h1>
-    <div class="about-grid">
-      <div class="about-div">
-        <h2>Welcome to Dr.Check,</h2>
-        <h5>your trusted hub for all things medical and health-related. Our mission is to empower individuals with <b>knowledge</b>, provide tools for efficient <b>patient information management</b>, and make learning about <b>medical concepts</b> an engaging experience.</h5>
-        <a href="contact.html"><button class="btn contact-us-btn"><i class="bi bi-envelope-fill"></i> Contact Us</button></a>
-      </div>
-      <img class="random-image" src="https://source.unsplash.com/random/?medicine,medical,patient,noyellow">
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <h1 class="services-title">Our Services</h1>
-  <section class="services">
-    <div>
-      <i class="bi bi-check-circle" ></i>
-      <h4>Trustworthy Resoures</h4>
-      <p>All of our resourses are full of integrity with their uptodate information and data.</p>
-    </div>
-    <div>
-      <i class="bi bi-shield-lock-fill"></i>
-      <h4>High Security</h4>
-      <p>Our storage with high security is a reliable place to save your patient information.</p>
-    </div>
-    <div class="technologyDiv">
-      <i class="bi bi-tools"></i>
-      <h4>Advanced Equipment</h4>
-      <p>We are using enhanced technology to make our services reachable.</p>
-    </div>
-    </section>
-
-  <!-- Articles Nav -->
-  <section class="articles-nav">
-    <div class="artilces-nav-intro">
-      <h1>We have plenty of articles!</h1>
-    </div>
-    <div class="cards">
-      <a href="brArticles.html" class="br-news-btn" type="button">
-        <div class="card nav-card">
-        <section>
-        <h1>Breaking Medical News</h1>
-        <h4>Top medical news for today</h4>
-        </section>
-        </div>
-      </a>
-      <a href="mdArticles.html" class="md-news-btn" type="button">
-        <div class="card nav-card">
-        <section>
-        <h1>Other Medical News</h1>
-        <h4>This week medical news</h4>
-        </section>
-        </div>
-      </a>
-      <a href="otherArticles.html" class="other-news-btn" type="button">
-        <div class="card nav-card">
-        <section>
-        <h1>Other related Articles</h1>
-        <h4>Random articles about health </h4>
-        </section>
-        </div>
-      </a>
-    </div>
-    <div class="content">
-    <h1>We have plenty of articles!</h1>
-    <p>You can use this navbar to navigate into articles you would like to read.</p>
-    </div>
-  </section>
-
-  <div class="home-sign-up-div">
-    <div class="sign-up-related-home">
-      <h2 style="padding-bottom: 10px; color: var(--main-orange)">Still don't have an account! Sign Up!</h2>
-      <p style="color: var(--main-blue)">No Credit Card Required</p>
-      <div class="home-sign-up-input-group">
-        <input class="home-sign-up-input" type="email" id="home-email" placeholder="Your Email"><a href="sign-up-page.html"><i class="bi bi-arrows-angle-expand"></i></a>
-      </div>
-    </div>
-    <div class="home-sign-up-img"></div>
-  </div>
-
   <!-- Footer -->
   <section class="footer"> 
     <div> 
-      <a class="navbar-brand" href="#about-section" style="padding-bottom: 50px;"><i class="bi bi-journal-medical" style="padding-right: 5px;"></i>Dr.<span class="brand-title-style">Check</span></a>
+      <a class="navbar-brand" href="http://127.0.0.1:5500/index.html#about-section" style="padding-bottom: 50px;"><i class="bi bi-journal-medical" style="padding-right: 5px;"></i>Dr.<span class="brand-title-style">Check</span></a>
       <p>Empowering Doctors, Enriching Care: Your Complete Medical Resource.</p>
     </div>
     <div class="footer-in-grid">
@@ -238,14 +143,13 @@
       <a class="footer-link" href="otherArticles.html">Other related Articles</a>
       </div>
       <a class="footer-link" href="dictionary.html">Dictionnary</a>
-      <a class="footer-link" href="#about-section">About</a>
+      <a class="footer-link" href="http://127.0.0.1:5500/index.html#about-section">About</a>
       <a class="footer-link" href="contact.html">Contact Us</a>
     </div>
     <footer class="copyright">© 2023-2024 Amar Maamary</footer>
   </section>
 
   </section>
-  <!-- marwa.al.shahal@gmail.com -->
   <script src="script.js"></script>
   <script type="module">
     import authStateHandler from "./authState.js";

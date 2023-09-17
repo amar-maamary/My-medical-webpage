@@ -1,6 +1,6 @@
  // Import the functions you need from the SDKs you need
  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
- import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
+ import { getDatabase, set, ref, update, onValue } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, getAdditionalUserInfo, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
 
 // Your web app's Firebase configuration
@@ -37,7 +37,6 @@ signUpBtn.addEventListener("click", (e) =>{
     })
     positiveAlert.style.display = "block";
     positiveAlertMessage.innerText =  ` Welcome ${username}, User is successfully created! `;
-    signUpForm.reset();
   })
   .catch((error) => {
     negativeAlert.style.display = "block";
@@ -79,8 +78,11 @@ signInBtn.addEventListener("click", (e) =>{
     })
     positiveAlert.style.display = "block";
     // positiveAlertMessage.innerText = " User successfully loged in!";
-    positiveAlertMessage.innerText = `Welcome Back ${username} !`;
-    signInForm.reset();
+    onValue( ref(database, 'users/' + user.uid), (snapshot) => {
+      // userName.forEach(one =>{
+        var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+        positiveAlertMessage.innerText = `Welcome Back ${username} !`;
+      });
   })
   .catch((error) => {
     negativeAlert.style.display = "block";
@@ -184,7 +186,6 @@ const user = auth.currentUser;
 onAuthStateChanged(auth, (user) => {
   if (user) {
   const uid = user.uid;
-  // window.location.replace("http://127.0.0.1:5500/index.html");
   getSignInForm.style.display= "none";
   getSignUpForm.style.display= "none";
   positiveAlert.style.display = "block";
