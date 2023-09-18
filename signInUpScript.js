@@ -31,25 +31,27 @@ setInterval(() => {
 
 let preloader = document.querySelector(".loader-container");
 let elements = document.querySelector(".main");
+const signInButtonNav = document.getElementById("getSignInForm");
+const signUpButtonNav = document.getElementById("getSignUpForm");
 window.addEventListener("load", function loading(){
     preloader.style.display = "none";
     elements.style.display = "block";
-    signInButton.style.display = "block";
-    signUpButton.style.display = "block";
+    signInButtonNav.style.display = "block";
+    signUpButtonNav.style.display = "block";
     
 });
 
 //Sign in up moves
-const signUpButton = document.getElementById("signUp");
-const signInButton = document.getElementById("signIn");
-const container = document.getElementById("container");
-signUpButton.addEventListener("click", () => {
-  container.classList.add("right-panel-active");
-});
+// const signUpButton = document.getElementById("signUp");
+// const signInButton = document.getElementById("signIn");
+// const container = document.getElementById("container");
+// signUpButton.addEventListener("click", () => {
+//   container.classList.add("right-panel-active");
+// });
 
-signInButton.addEventListener("click", () => {
-  container.classList.remove("right-panel-active");
-}); 
+// signInButton.addEventListener("click", () => {
+//   container.classList.remove("right-panel-active");
+// }); 
 
 //homeEmail
 var email = document.getElementById("email");

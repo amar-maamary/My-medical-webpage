@@ -19,53 +19,13 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth(app);
 
-///////////////////// Sign Up //////////////////////////
-signUpBtn.addEventListener("click", (e) =>{
-  e.preventDefault();
-
-  var username = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var password = document.getElementById("password").value;
-
-  createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    const user = userCredential.user;
-    //Add to database
-    set(ref(database, 'users/' + user.uid), {
-      username : username,
-      email: email,
-    })
-    positiveAlert.style.display = "block";
-    positiveAlertMessage.innerText =  ` Welcome ${username}, User is successfully created! `;
-  })
-  .catch((error) => {
-    negativeAlert.style.display = "block";
-    switch (error.code) {
-      case 'auth/email-already-in-use':
-        errorAlertMessage.innerText = ` Email address ${email} already in use.`;
-        break;
-      case 'auth/invalid-email':
-        errorAlertMessage.innerText = ` Email address ${email} is invalid.`;
-        break;
-      case 'auth/operation-not-allowed':
-        errorAlertMessage.innerText = ` Error during sign up.`;
-        break;
-      case 'auth/weak-password':
-        errorAlertMessage.innerText = ' Password is not strong enough. Add additional characters including special characters and numbers. Note: password should contain at least 6 characters.';
-        break;
-      default:
-        errorAlertMessage.innerText = error.message;
-        break;
-    }
-  });
-});
  
 ///////////////////// Sign In //////////////////////////
-signInBtn.addEventListener("click", (e) =>{
+signInForm.addEventListener("submit", (e) =>{
   e.preventDefault();
 
-  var email = document.getElementById("uEmail").value;
-  var password = document.getElementById("uPassword").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
 
   signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
@@ -108,10 +68,7 @@ signInBtn.addEventListener("click", (e) =>{
 });
 ///////////////////// Google Btn //////////////////////////
 const googleProvider = new GoogleAuthProvider(app);
-googleBtnSignIn.addEventListener("click", (e) =>{
-  signWithGoogleFunction()
-});
-googleBtnSignUp.addEventListener("click", (e) =>{
+googleSign.addEventListener("click", (e) =>{
   signWithGoogleFunction()
 });
 
@@ -146,7 +103,6 @@ function signWithGoogleFunction(){
   })
     
   .catch((error) => {
-    // negativeAlert.classList.add("show");
     negativeAlert.style.display = "block";
     switch (error.code) {
       case 'auth/user-disabled':
@@ -199,7 +155,6 @@ onAuthStateChanged(auth, (user) => {
   // https://i.pinimg.com/originals/90/04/b2/9004b278c6a1d58c9fdf4a1b05222127.gif
   container.style.backgroundColor = "var(--main-gray)";
   container.style.textAlign = 'center';
-  container.style.boxShadow = 'none';
   container.style.height = 'auto';
 } 
   else {
