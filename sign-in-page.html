@@ -65,6 +65,10 @@
             <a class="nav-link" href="contact.html">Contact Us</a>
           </li>
         </ul>
+        <form class="d-flex profile" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+          <button class="profile-photo" type="button" ><i class="fa-solid fa-user-doctor"></i></button>
+          <a class="userName">user name</a>
+        </form>
         <form class="d-flex">
           <a href="sign-in-page.html" aria-current="page"  class="btn get-sign-in-form active" id="getSignInForm" >Sign In</a>
           <a href="sign-up-page.html" class="btn get-sign-up-form" id="getSignUpForm">Sign Up</a> 
@@ -76,55 +80,12 @@
 <!-- Alerts -->
 <section class="alert alert-dismissible" id = "positiveAlert" role="alert">
   <i class="bi bi-check-circle"></i><strong>Hello ! </strong><span id="positiveAlertMessage">You have your account ready.</span>
-  <button type="button" class="btn-close"></button>
+  <button type="button" class="btn-close close"></button>
 </section>
 <section class="alert alert-dismissible" id = "negativeAlert" role="alert">
   <i class="bi bi-x-octagon-fill"></i><strong>Error ! </strong><span id="errorAlertMessage"> Something wrong has happend.</span>
-  <button type="button" class="btn-close" ></button>
+  <button type="button" class="btn-close close" ></button>
 </section>
-
-<!-- <section class="container" id="container">
-  <div class="form-container sign-up-container">
-    <form id="signUpForm">
-      <h1>Sign Up</h1>
-      <button class="social-container" type="button" id="googleBtnSignUp">
-        <a class="social">With Google <i class="fab fa-google"></i></a>
-      </button>
-      <span>or use your email for registration</span>
-      <input type="text" id="name" placeholder="Name" />
-      <input type="email" id="email" placeholder="Email" />
-      <input type="password" id="password" placeholder="Password" />
-      <button class="btn" id="signUpBtn" type="button">Sign Up</button>
-    </form>
-  </div>
-  <div class="form-container sign-in-container">
-    <form id="signInForm">
-      <h1>Sign In</h1>
-      <button class="social-container" type="button" id="googleBtnSignIn">
-        <a class="social">With Google <i class="fab fa-google"></i></a>
-      </button>
-      <span>or use your account</span>
-      <input type="email" id="uEmail" placeholder="Email" />
-      <input type="password" id="uPassword" placeholder="Password" />
-      <a  data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: var(--main-blue)">Forgot your password?</a>
-      <button id="signInBtn" class="btn" type="button">Sign In</button>
-    </form>
-  </div>
-  <div class="overlay-container">
-    <div class="overlay">
-      <div class="overlay-panel overlay-left">
-        <h1>Welcome Back!</h1>
-        <p>Please login with your personal info</p>
-        <button class="ghost btn" id="signIn">Sign In</button>
-      </div>
-      <div class="overlay-panel overlay-right">
-        <h1>Hello, Friend!</h1>
-        <p>Enter your personal details and start your journey with us</p>
-        <button class="ghost btn" id="signUp">Sign Up</button>
-      </div> 
-    </div>
-  </div>
-</section> -->
 
 
 <!-- https://www.pngmart.com/files/6/Healthcare-PNG-Transparent.png -->
@@ -176,7 +137,7 @@
       </div>
       <div class="modal-body">
         <span class="important">Lost your password? </span> Please enter your email address. You will receive a link to create a new password.
-        <input type="email" id="verEmail" placeholder="Enter your email" />
+        <input type="email" id="verEmail" class="form-control" placeholder="Enter your email" required>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn" id="sendVerificationEmailBtn">Send Email</button>

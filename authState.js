@@ -74,26 +74,6 @@ onAuthStateChanged(auth, (user) => {
           // localStorage.setItem("profileImg", urlink);
         })
       })
-      // userEmail.innerText = user.email;
-
-      // userName.forEach(one =>{
-      //   one.innerText = user.displayName;
-      // });
-
-      // var image = localStorage.getItem("profileImg") || user.photoURL; 
-    //   profilePhoto.forEach(photo =>{
-    //     photo.innerHTML = `<img src = ${image} class="profile-main-photo">` || `<img src = ${image} class="profile-main-photo">` || `<i class="fa-solid fa-user-doctor"></i>`;
-    //   })
-      // photoFile.addEventListener("change", (e) =>{
-      //   profilePhoto.forEach(photo =>{
-      //     var urlink = URL.createObjectURL(photoFile.files[0]);
-      //     photo.innerHTML = `<img src = ${urlink} class="profile-main-photo">`
-      //     update(ref(database, 'users/' + user.uid), {
-      //       profile_picture: urlink,
-      //       })
-      //     localStorage.setItem("profileImg", urlink);
-      //   })
-      // })
     } 
     else {
       // User is signed out, show the sign-in and sign-up buttons

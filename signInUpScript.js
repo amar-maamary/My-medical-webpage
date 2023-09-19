@@ -53,17 +53,20 @@ window.addEventListener("load", function loading(){
 //   container.classList.remove("right-panel-active");
 // }); 
 
-//homeEmail
-var email = document.getElementById("email");
-email.value = localStorage.getItem("homeEmail") || "";
+
 
 //btn-close
-const closeBtns = document.querySelectorAll(".btn-close");
+const closeBtns = document.querySelectorAll(".close");
 closeBtns.forEach((btn) =>{
     btn.addEventListener("click", (e)=>{
         var parentAlert = e.target.parentElement;
         console.log(parentAlert)
-        parentAlert.style.display = "none"
+        parentAlert.style.display = "none";
 })
 })
 
+//homeEmail
+var email = document.getElementById("email");
+var verEmail = document.getElementById("verEmail");
+email.value = localStorage.getItem("homeEmail") || "";
+verEmail.value = localStorage.getItem("homeEmail") || "";

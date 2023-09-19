@@ -346,7 +346,7 @@ nav .profile-main-photo{
         color: var(--main-blue)
     }
 }
-.modal-body .fa-user-doctor{
+.changeProfileModal .fa-user-doctor{
     color: var(--main-orange);
     font-size: 250px;
     padding-top: 10px;
@@ -358,16 +358,16 @@ nav .profile-main-photo{
     margin-top: 20px;
     margin-bottom: 30px;
 }
-.modal-body .profile-main-photo{
+.changeProfileModal .profile-main-photo{
     margin-top: 20px;
     margin-bottom: 30px;
     width: 50%;
     max-height: 50vh;
 }
-.modal-body input{
+.changeProfileModal input{
     display: none;
 }
-.modal-body label{
+.changeProfileModal label{
     /* border: 2px solid var(--main-blue); */
     border-radius: 0.5rem;
     background-color: var(--main-blue);
@@ -378,11 +378,11 @@ nav .profile-main-photo{
     padding-left: 15px;
     padding-right: 15px;
 }
-.modal-body label:hover, .modal-body label:focus{
+.changeProfileModal label:hover, .changeProfileModal label:focus{
     border:  4px solid  #7be0e0!important;
     box-shadow: none!important;
 }
-.modal-body label:active {
+.changeProfileModal label:active {
     transform: scale(0.95);
     background-color: var(--main-color);
 }
@@ -398,21 +398,25 @@ nav .profile-main-photo{
     background: #535050b0 !important;
     z-index: 10000000;
   }
-  .modal-content{
-    background-color: var(--main-gray);
-    text-align: center;
-  }
-  .modal-title{
-    text-align: center !important;
-    width: 100%;
-    color: var(--main-blue)
-  }
-  .modal button:hover , .modal button:focus{
-    background-color: var(--main-blue);
-  }
-  .important{
-    color: var(--main-orange);
-  }   
+.modal-content{
+background-color: var(--main-gray);
+text-align: center;
+}
+.modal-title{
+text-align: center !important;
+width: 100%;
+color: var(--main-blue)
+}
+.modal button:hover , .modal button:focus{
+background-color: var(--main-blue);
+}
+.important{
+color: var(--main-orange);
+}   
+
+
+
+
 /*Home Introduction */
 .introduction{
     /* https://www.grantthornton.in/globalassets/1.-member-firms/india/new-homepage/media/1.-hero-banners_repeat-visits/1440x600px_hero_banner_shutterstock_1089540233.jpg */

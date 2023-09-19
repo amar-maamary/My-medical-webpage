@@ -323,19 +323,9 @@ body{
   background-color: var(--main-gray);
 }
 .modal input{
-  background-color: white;
-  border-radius: 0.5rem;
   width: 60%;
-  border: none;
-  padding: 12px 15px;
-  margin: 8px 0;
-  font-family: inherit;
-}
-.modal input:focus{
-  outline-color: var(--main-blue);
-  background-color: #faf9f9;
-  font-weight: 500;
-}
+  margin: 1.5em auto;
+} 
 .modal-title{
   text-align: center !important;
   width: 100%;
