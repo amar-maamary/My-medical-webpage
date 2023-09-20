@@ -68,37 +68,7 @@
     width: 100%;
 }
 
-/* #articles-div{
-    margin: 4%;
-    padding: 2%;
-}
-#articles-div .card{
-    margin: auto;
-    margin-bottom: 50px!important; 
-    border-radius: 0.25rem;
-    width: 80% !important;
-}  
-#articles-div .card .card-img-top{
-    border-radius: 0.25rem!important;
-    max-height: 50vh;
-    object-fit: cover;
- }   */
-    
-    
- /* Articles cards */
-/* .band {
-width: 90%;
-max-width: 1240px;
-margin: 8% auto;
 
-position: relative;
-display: grid;
-
-grid-template-columns: 1fr;
-grid-template-rows: auto;
-grid-gap: 20px; */
-
-/* } */
 .band {
     width: 90%;
     max-width: 90vw;

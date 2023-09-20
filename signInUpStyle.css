@@ -15,14 +15,17 @@
 
   --white: #FFFFFF;
 --grey: #AAAAAA;
---primary: #75420E;
 --light: #F2E8E4;
---dark: #553B08;
 }
 body{
   background-color: var(--main-gray);
 }
-
+/* #getSignInForm, #getSignUpForm{
+  display: none;
+}
+.profile{
+  display: block;
+} */
 /* #getSignInForm, #getSignUpForm{
   display: block;
 }

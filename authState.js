@@ -57,7 +57,7 @@ onAuthStateChanged(auth, (user) => {
           if (image === null || image === "Anonymous"){
             photo.innerHTML = `<i class="fa-solid fa-user-doctor"></i>`;
           }else{
-            photo.innerHTML = `<img src = ${image} class="profile-main-photo">` || `<img src = ${image} class="profile-main-photo">`|| `<i class="fa-solid fa-user-doctor"></i>`;
+            photo.innerHTML = `<img src = "${image}" class="profile-main-photo">` || `<img src = "${image}" class="profile-main-photo">`|| `<i class="fa-solid fa-user-doctor"></i>`;
           }
         })
       });
@@ -66,7 +66,7 @@ onAuthStateChanged(auth, (user) => {
         profilePhoto.forEach(photo =>{
           var urlink = URL.createObjectURL(photoFile.files[0]);
           console.log("urlink: " + urlink);
-          photo.innerHTML = `<img src = ${urlink} class="profile-main-photo">`
+          photo.innerHTML = `<img src = "${urlink}" class="profile-main-photo">`
           // console.log("urlink: " + urlink);
           update(ref(database, 'users/' + user.uid), {
             profile_picture: urlink,

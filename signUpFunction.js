@@ -115,6 +115,7 @@ function signWithGoogleFunction(){
   });
 };
 
+const profileForm = document.querySelector(".profile");
 /////////////////// Custumize my HTML when user is signed in //////////////////////////
 const user = auth.currentUser;
 onAuthStateChanged(auth, (user) => {
@@ -122,6 +123,8 @@ onAuthStateChanged(auth, (user) => {
   const uid = user.uid;
   getSignInForm.style.display= "none";
   getSignUpForm.style.display= "none";
+  profileForm.style.display = "block";
+
   positiveAlert.style.display = "block";
   container.innerHTML = `<img class="logImage" src="https://i.pinimg.com/originals/4e/26/c4/4e26c49b5f91d42e883f4b2cbf34d772.gif">`;
   container.style.backgroundColor = "var(--main-gray)";
@@ -130,6 +133,13 @@ onAuthStateChanged(auth, (user) => {
 } 
   else {
   // User is signed out
-
+  signInButton.style.display = "block";
+  signUpButton.style.display = "block";
+  profilePhoto.forEach(photo =>{
+    photo.style.display = "none";
+  });
+  userName.forEach(uname =>{
+    uname.style.display = "none";
+  })
   }
 });

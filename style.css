@@ -123,9 +123,6 @@ button:active {
 }
 
 /*  Navbar  */
-#getSignInForm, #getSignUpForm{
-    display: none;
-}
 .navbar{
     background-color: var(--main-gray);
     box-shadow: var(--main-box-shadow);
@@ -133,6 +130,7 @@ button:active {
     padding-left: 4%; 
     font-size: 20px;
 }
+/* Nav Brand */
 .navbar-brand{
     font-size: 30px;
     padding-top: 0px;
@@ -147,11 +145,34 @@ button:active {
     text-decoration: underline;
     color: var(--main-blue);
 }
+/* Nav links  */
 .nav-link.active{
     color: var(--main-blue)!important;
 }
 .nav-link:focus{
     color: var(--main-orange)!important; 
+}
+.about-section:target{
+    scroll-margin-top: 40px;
+}
+/* Nav dropdown */
+.dropdown-menu{
+    background-color: var(--main-gray);
+    border: 4px solid rgba(0,0,0,0.1) !important;
+    box-sizing: border-box;
+}
+.dropdown-item:hover{
+    background-color: var(--main-blue);
+}
+.dropdown-item:focus{
+    background-color: var(--main-orange);
+}
+.dropdown-item.active{
+    background-color: var(--main-orange)!important;
+}
+/* Nav sign-in-up buttons */
+#getSignInForm, #getSignUpForm{
+    display: none;
 }
 .get-sign-in-form{
     background-color: var(--main-blue);
@@ -171,32 +192,12 @@ button:active {
 .get-sign-up-form:hover, .get-sign-up-form:focus, .get-sign-up-form.active{
     border:  4px solid #fda17c!important;
     box-shadow: none!important;
-    /* background-color: #fc9e7a!important; */
 }
 .get-sign-in-form:hover, .get-sign-in-form:focus, .get-sign-in-form.active{
     border:  4px solid  #7be0e0!important;
     box-shadow: none!important;
 }
-.about-section:target{
-    scroll-margin-top: 40px;
-}
-.dropdown-menu{
-    background-color: var(--main-gray);
-    border: 4px solid rgba(0,0,0,0.1) !important;
-    box-sizing: border-box;
-}
-.dropdown-item:hover{
-    background-color: var(--main-blue);
-}
-.dropdown-item:focus{
-    background-color: var(--main-orange);
-}
-.dropdown-item.active{
-    background-color: var(--main-orange)!important;
-}
-.profile{
-    display: none;
-}
+/* Profile section in Nav */
 .profile:hover{
     .userName{
         color: rgb(95, 93, 93);
@@ -232,7 +233,6 @@ nav .fa-user-doctor{
     padding-left: 6px;
     border-radius: 0.5rem;
     border: 3px solid var(--main-orange);
-/* rgb(85, 84, 84) */
 }
 nav .profile-photo{
     margin-right: 10px;
@@ -240,6 +240,7 @@ nav .profile-photo{
     border: none!important;
     padding: 0px!important;
 }
+/* Choosen photo */
 .profile-main-photo{
     border-radius: 0.5rem;
 }
@@ -253,15 +254,14 @@ nav .profile-main-photo{
     color: var(--main-font-color);
     text-decoration: none;
 }
+
+/* Profile Offcanvas */
 .offcanvas{
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
     height: auto!important;
     background-color: var(--main-gray);
     width: 50vw;
-}
-#profilePhotoBtn img{
-    object-fit: cover;
 }
 .offcanvas-header{
     justify-content: flex-end;
@@ -271,6 +271,9 @@ nav .profile-main-photo{
     width: 80%;
     margin: auto;
     text-align: center;
+}
+#profilePhotoBtn img{
+    object-fit: cover;
 }
 .offcanvas .fa-user-doctor{
     color: var(--main-orange);
@@ -294,9 +297,6 @@ nav .profile-main-photo{
 }
 .offcanvas span{
     background-image:  url("https://png.pngitem.com/pimgs/s/509-5099522_vector-graphics-hd-png-download.png")!important;
-    /* https://img.favpng.com/6/13/12/computer-icons-button-png-favpng-3Nj3nmPdiFWb57xkpqdtscaMz_t.jpg */
-    /* https://png.pngitem.com/pimgs/s/509-5099522_vector-graphics-hd-png-download.png */
-    /* https://cdn.iconscout.com/icon/free/png-256/free-pencil-pen-ui-erase-tool-interface-ui-2-14001.png */
     background-size: 100%;
     background-color: var(--main-gray);
     object-fit: cover;
