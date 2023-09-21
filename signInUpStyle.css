@@ -18,7 +18,11 @@
 --light: #F2E8E4;
 }
 body{
+  padding-top: 0!important;
   background-color: var(--main-gray);
+}
+.main{
+  margin-top: 100px;
 }
 /* .profile{
   display: block;} */
@@ -404,30 +408,19 @@ body{
 
 
 
-
-
-
-
 .container main {
   margin-top: 3%;
   display: flex;
   justify-content: center;
   column-gap: 10%;
 }
-/* .container img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  margin-bottom: 20px;
-} */
+
 .container img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 0.5rem;
   margin-bottom: 20px;
-  /* margin-top: 20px; */
 }
 
 .container form, p, .social-sign {
@@ -460,7 +453,6 @@ body{
   .container form .submit-btn:hover {
     background-color: white;
     color: var(--main-font-color);
-    /* border-color: var(--main-orange)!important; */
   }
 
 

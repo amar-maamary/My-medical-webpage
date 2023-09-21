@@ -44,7 +44,7 @@
     </div>
   </div>
   
-  <section class="main">
+  <section class="main main-body">
 
   <!-- Nav Bar -->
   <nav class="navbar  fixed-top navbar-expand-lg navbar-light">
@@ -146,7 +146,7 @@
 </div>
 
 
-<section class="contact-us-page">
+<!-- <section class="contact-us-page"> -->
 
 <!-- Website logo and email -->
 <!-- <div class="website-logo-email">
@@ -174,38 +174,14 @@
 </div>
 </div>
 
-<!-- Message -->
-<!-- <div>
-<div class="wrapper to-right">
-  <article class="letter">
-    <div class="side">
-      <h1>Contact Us</h1>
-      <p>
-        <textarea placeholder="Your message" id="message"></textarea>
-      </p>
-    </div>
-    <div class="side">
-      <p>
-        <input type="text" id="name" placeholder="Your name">
-      </p>
-      <p>
-        <input type="email" id="email" placeholder="Your email">
-      </p>
-      <p>
-        <button id="sendLetter" class="contact-page-buttons" onclick="sendMail()">Send</button>
-      </p>
-    </div>
-  </article>
-  <div class="envelope front"></div>
-  <div class="envelope back"></div>
-</div>
-  <h4 class="result-message to-right">Thank you for your message</h4>
-</div> -->
-
-
-<div class="container d-flex justify-content-center align-items-center">
-  <!-- SVG -->
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 563" fill="none">
+	
+	
+<!-- Form -->
+<section class="container" id="container">
+	<main class="main row">
+  
+	  <div class="left col">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 563" fill="none">
 			<g id="Image">
 					<g id="g14">
 							<g id="g16">
@@ -500,42 +476,47 @@
 					</g>
 			</g>
 	</svg>
+	  </div>
+  
+	  <div class="right col">
+		<form id="contact-us-form">
+			<h3 class="title">Talk to Us</h3>
 	
+				<!-- Name -->
+				<div class="mb-3">
+					<label for="name" class="form-label">Name</label>
+			<input type="text" class="form-control" id="name" placeholder="Enter your name"  required>
+				</div>
 	
-<!-- Form -->
+				<!-- E-mail -->
+				<div class="mb-3">
+					<label for="email" class="form-label">Email</label>
+			<input type="email" class="form-control" id="email" placeholder="Enter your email"  required>
+				</div>
 	
-	<form id="contact-us-form">
-		<h3 class="title text-center mb-4">Talk to Us</h3>
-
-			<!-- Name -->
-			<div class="mb-3">
-				<label for="name" class="form-label">Name</label>
-		<input type="text" class="form-control" id="name" placeholder="Enter your name"  required>
-			</div>
-
-			<!-- E-mail -->
-			<div class="mb-3">
-				<label for="email" class="form-label">Email</label>
-		<input type="email" class="form-control" id="email" placeholder="Enter your email"  required>
-			</div>
-
-			<!-- Message -->
-			<div class="mb-3 message">
-				<label for="message" class="form-label">Message</label>
-			<textarea id="message" class="form-control" rows="7" placeholder="Enter your message"></textarea>
-			</div>
-
-			<!-- Submit btn -->
-			<div class="text-center">
-				<button type="submit" class="btn" tabIndex="-1">Send message</button>
-			</div>
-	</form>
+				<!-- Message -->
+				<div class="mb-3 message">
+					<label for="message" class="form-label">Message</label>
+				<textarea id="message" class="form-control" rows="7" placeholder="Enter your message"></textarea>
+				</div>
 	
-</div>
+				<!-- Submit btn -->
+				<div class="text-center">
+					<button type="submit" class="btn submit-btn" tabIndex="-1">Send message</button>
+				</div>
+		</form>
+
+	  </div>
+	</main>
+  </section>
+	
+
+	
+
 
 
 </section>
-</section>
+<!-- </section> -->
   <script src="contactScript.js"></script>
   <script type="module">
     import authStateHandler from "./authState.js";
