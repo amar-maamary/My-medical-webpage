@@ -19,6 +19,11 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth(app);
 
+
+const userName = document.querySelectorAll(".userName");
+const profilePhoto = document.querySelectorAll(".profile-photo");
+const profileForm = document.querySelector(".profile");
+
 ///////////////////// Sign Up //////////////////////////
 signUpForm.addEventListener("submit", (e) =>{
   e.preventDefault();
@@ -115,7 +120,7 @@ function signWithGoogleFunction(){
   });
 };
 
-const profileForm = document.querySelector(".profile");
+
 /////////////////// Custumize my HTML when user is signed in //////////////////////////
 const user = auth.currentUser;
 onAuthStateChanged(auth, (user) => {
@@ -133,8 +138,6 @@ onAuthStateChanged(auth, (user) => {
 } 
   else {
   // User is signed out
-  signInButton.style.display = "block";
-  signUpButton.style.display = "block";
   profilePhoto.forEach(photo =>{
     photo.style.display = "none";
   });

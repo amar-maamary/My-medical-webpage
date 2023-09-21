@@ -33,6 +33,7 @@ let preloader = document.querySelector(".loader-container");
 let elements = document.querySelector(".main");
 const signInButtonNav = document.getElementById("getSignInForm");
 const signUpButtonNav = document.getElementById("getSignUpForm");
+// const 
 window.addEventListener("load", function loading(){
     preloader.style.display = "none";
     elements.style.display = "block";

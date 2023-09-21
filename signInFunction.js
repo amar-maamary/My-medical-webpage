@@ -19,7 +19,11 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth(app);
 
- 
+const userName = document.querySelectorAll(".userName");
+const profilePhoto = document.querySelectorAll(".profile-photo");
+const profileForm = document.querySelector(".profile");
+
+
 ///////////////////// Sign In //////////////////////////
 signInForm.addEventListener("submit", (e) =>{
   e.preventDefault();
@@ -144,7 +148,10 @@ onAuthStateChanged(auth, (user) => {
   const uid = user.uid;
   getSignInForm.style.display= "none";
   getSignUpForm.style.display= "none";
+  profileForm.style.display = "block";
+
   positiveAlert.style.display = "block";
+  
   container.innerHTML = `<img class="logImage" src="https://i.pinimg.com/originals/4e/26/c4/4e26c49b5f91d42e883f4b2cbf34d772.gif">`;
   // https://i.pinimg.com/originals/e0/6d/07/e06d076ea97ea30d49ef18bc16b37956.gif
   // https://cdn.dribbble.com/users/856306/screenshots/4120104/medical_building_800x600.gif
@@ -159,6 +166,12 @@ onAuthStateChanged(auth, (user) => {
 } 
   else {
   // User is signed out
+  profilePhoto.forEach(photo =>{
+    photo.style.display = "none";
+  });
+  userName.forEach(uname =>{
+    uname.style.display = "none";
+  })
 
   }
 });

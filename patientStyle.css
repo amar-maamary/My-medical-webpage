@@ -1,0 +1,37 @@
+:root{
+    --main-orange: #FF8A5B;
+    --main-blue: #25CED1;
+    --main-gray: #F4F4F4;
+    --main-transparent-gray: #f4f4f4cc;
+    --main-font-color: rgba(0, 0, 0, 0.55);
+    --main-box-shadow:0 .5rem 1rem rgba(0,0,0,0.1) ;
+    --orange: rgb(248, 140, 98);
+}
+.generalDataDiv{
+    margin: 50px 4%!important;
+    width: 90%;
+    height: 50vh;
+    display: block;
+    margin: auto;
+}
+
+.svg_box {
+	/* margin: 0 auto; */
+	width: 100%;
+	/* display: block; */
+    position: relative;
+    top: -15%!important;
+    /* padding: 0!important; */
+}
+svg {
+	width: 100%;
+	height: auto;
+	max-width: 400px;
+	max-height: 400px;
+	/* padding: 0; */
+	/* margin: 0 auto; */
+	/* display: block; */
+}
+text{
+    fill: var(--main-font-color);
+}
