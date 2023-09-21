@@ -20,8 +20,8 @@
 body{
   background-color: var(--main-gray);
 }
-.profile{
-  display: block;}
+/* .profile{
+  display: block;} */
 /* #getSignInForm, #getSignUpForm{
   display: none;
 }
