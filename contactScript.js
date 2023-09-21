@@ -37,26 +37,28 @@ window.addEventListener("load", function loading(){
 
 
 /////////////////////////////////   Animating Message   /////////////////////////////////
-function addClass() {
-    document.body.classList.add("sent");
-  }
+// function addClass() {
+//     document.body.classList.add("sent");
+//   }
   
-  sendLetter.addEventListener("click", addClass);
+//   sendLetter.addEventListener("click", addClass);
 
 
 /////////////////////////////////   Copy Email   ///////////////////////////////// 
-function copyEmail() {
-    var copyText = document.getElementById("copiedEmail");
-    copyText.select();
-    navigator.clipboard.writeText(copyText.value);
-    alert("This Email is 'Successfuly' copied to your clipboard")
-  }
+// function copyEmail() {
+//     var copyText = document.getElementById("copiedEmail");
+//     copyText.select();
+//     navigator.clipboard.writeText(copyText.value);
+//     alert("This Email is 'Successfuly' copied to your clipboard")
+//   }
 
   
   
 /////////////////////////////////   Send mail   /////////////////////////////////
 const sendMailModal = document.getElementById("exampleModal1");
-function sendMail(){
+const contactUsForm = document.getElementById("contact-us-form");
+contactUsForm.addEventListener("submit", (e)=>{
+    e.preventDefault();
     var params = {
         name : document.getElementById("name").value,
         email : document.getElementById("email").value,
@@ -74,7 +76,8 @@ function sendMail(){
             })
         .catch(err => console.log(err))
     }
-};
+    contactUsForm.reset();
+});
 function closeModal(){
     // sendMailModal.classList.add("fade");
     sendMailModal.classList.add("fade");

@@ -429,12 +429,15 @@ body{
 }
 
 .container form, p, .social-sign {
-  width: 70%;
+  width: 80%;
 }
 
-  .container form h4 {
+  .container form h3 {
     color: var(--main-font-color);
     margin-bottom: 1em;
+  }
+  .container label {
+    font-weight: 450;
   }
   .container form .form-control {
     /* background-color: #e5e2e9; */
