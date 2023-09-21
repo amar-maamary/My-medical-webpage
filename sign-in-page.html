@@ -76,6 +76,60 @@
       </div>
     </div>
   </nav>
+<!-- User  -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h6 id="offcanvasRightLabel" class="emailh">user@email.com</h6>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="offcanvas-title"> 
+      <div style="position: relative;"  id="profilePhotoBtn" type="button" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-toggle="modal" data-bs-target="#exampleModal"><button class="profile-photo" type="button" ><i class="fa-solid fa-user-doctor position-relative"></i></button><span class="position-absolute bottom-0 translate-middle border border-light rounded-circle"></span></div>
+      <h5 class="userName" >User Name</h5>
+    </div>
+    <hr>
+    <a href="profile.html">
+    <div class="profile-item"> 
+        <i class="fa-regular fa-user"></i>
+        <p>Your profile</p>
+    </div>
+    </a>
+    <hr>
+    <a href="patient.html">
+      <div class="profile-item">
+          <i class="fa-regular fa-address-card"></i>
+          <p>Your patients list</p>
+      </div>
+    </a>
+    <hr>
+    <div class="profile-item" id="logOutBtn" type="button" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <p>Sign out</p>
+    </div>
+    <hr>
+  </div>
+</div>
+
+<!-- Change profile modal -->
+<div class="modal fade changeProfileModal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Profile Image</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+    <p>Having a profile photo helps recognizing your account</p>
+    <div class="profile-photo"><i class="fa-solid fa-user-doctor position-relative"></i></div>
+    <div>
+      <label for="photo-file">Update Profile</label>
+      <input type="file" id="photo-file" accept="image/jpeg, image/jpg. image/png" placeholder="Upload image">
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
 
 <!-- Alerts -->
 <section class="alert alert-dismissible" id = "positiveAlert" role="alert">
