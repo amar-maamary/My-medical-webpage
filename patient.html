@@ -130,9 +130,20 @@
 </div>
 </div>
 
+<section id="privacy-error">
+  <section class="alert alert-dismissible" id = "negativeAlert" role="alert">
+    <i class="bi bi-x-octagon-fill"></i><strong>Sorry ! </strong><span id="errorAlertMessage"> You need to sign in to get your patients data.</span>
+    <button type="button" class="btn-close close" ></button>
+  </section>
+  <!-- https://i.pinimg.com/originals/0f/65/c2/0f65c227b3198b5e00e6f19a2b4712de.gif -->
+  <!--  https://i.pinimg.com/originals/e5/2d/5e/e52d5ea42a74e13d9accc60768559d93.gif -->
+  <!-- https://i.pinimg.com/originals/21/fa/6b/21fa6bf976b9b3e7ce096fcf8efc4b2e.gif -->
+  <!-- https://i.pinimg.com/originals/d8/a3/b4/d8a3b4e53021cdc56f17226299135693.gif -->
+  <img  src="https://i.pinimg.com/originals/21/fa/6b/21fa6bf976b9b3e7ce096fcf8efc4b2e.gif" class="logImage">
+</section>
 
 <!-- Patient Body -->
-<section>
+<section id="patient-page-body">
   <section>
     <div class="generalDataDiv card">
       <div class="svg_box">
@@ -177,6 +188,7 @@
     import authStateHandler from "./authState.js";
     authStateHandler();
   </script>
+  <script type="module" src="privacy.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 

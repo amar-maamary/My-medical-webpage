@@ -35,3 +35,43 @@ svg {
 text{
     fill: var(--main-font-color);
 }
+
+
+#privacy-error{
+    display: none;
+}
+
+#negativeAlert{
+    box-shadow: var(--main-box-shadow);
+    margin-right: 30%;
+    width: 60%;
+    left: 20%;
+    margin-top: 3%;
+    background-color: #fc9f7ac9;
+    font-size: 20px!important;
+    border-color: var(--main-orange);
+  }
+.alert button{
+    border: none!important;
+    box-shadow: none;
+    font-size: 20px!important;
+    display: block!important;
+    margin: auto!important;
+    padding: 25px 20px!important;
+    background-color: transparent!important;
+}
+.bi-x-octagon-fill{
+    font-size: 30px!important;
+    padding-right: 20px;
+}
+.logImage{
+    border-radius: 0.5rem;
+    width: 50%!important;
+    max-height: 60vh;
+    object-fit: cover;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    display: block;
+    margin: auto;
+    margin-bottom: 5%;
+  }

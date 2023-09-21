@@ -16,12 +16,7 @@ body {
 .main-body{
   padding-top: 100px;
 }
-/* .contact-us-page{
-  display: grid;
-  grid-template: 1fr 1fr/ 1fr;
-  row-gap: 10%;
-  justify-content: center!important;
-} */
+
 .modal{
   background: #535050b0 !important;
   z-index: 10000000;
@@ -72,7 +67,7 @@ svg {
 	height: 21rem;
   display: block;
   margin: auto;
-  margin-top: 20%!important;
+  margin-top: 30%!important;
 }
 
 .container #envelope {
@@ -110,6 +105,9 @@ svg {
   100% {
     opacity: 1;
   }
+}
+.container {
+  margin-bottom: 2%;
 }
 
 .container main {

@@ -66,3 +66,12 @@ function ResetBtn() {
 	window.clearInterval(window.timer);
 	loader();
 };
+
+const closeBtns = document.querySelectorAll(".close");
+closeBtns.forEach((btn) =>{
+    btn.addEventListener("click", (e)=>{
+        var parentAlert = e.target.parentElement;
+        console.log(parentAlert)
+        parentAlert.style.display = "none";
+})
+})
