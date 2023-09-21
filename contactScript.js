@@ -89,5 +89,7 @@ window.onclick = function(event) {
         sendMailModal.style.display = "none";
     }
   }
+  var email = document.getElementById("email");
+  email.value = localStorage.getItem("homeEmail") || "";
 
 

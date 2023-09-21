@@ -104,5 +104,4 @@ onAuthStateChanged(auth, (user) => {
 
 
 
-
 export default authStateHandler;

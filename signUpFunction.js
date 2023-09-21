@@ -129,6 +129,12 @@ onAuthStateChanged(auth, (user) => {
   getSignInForm.style.display= "none";
   getSignUpForm.style.display= "none";
   profileForm.style.display = "block";
+  profilePhoto.forEach(photo =>{
+    photo.style.display = "block";
+  });
+  userName.forEach(uname =>{
+    uname.style.display = "block";
+  })
 
   positiveAlert.style.display = "block";
   container.innerHTML = `<img class="logImage" src="https://i.pinimg.com/originals/4e/26/c4/4e26c49b5f91d42e883f4b2cbf34d772.gif">`;

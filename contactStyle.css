@@ -22,7 +22,6 @@ body {
   display: grid;
   grid-template: 1fr 1fr/ 1fr;
   row-gap: 10%;
-  text-align: center;
 }
 
 /* .website-logo-email{
@@ -341,6 +340,13 @@ svg {
 	height: 90vh;
 }
 
+.container form h3 {
+  color: var(--main-font-color);
+  margin-bottom: 1em;
+}
+.container label {
+  font-weight: 450;
+}
 .container form {
 	min-width: 25rem;
 }

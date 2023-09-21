@@ -149,17 +149,16 @@ onAuthStateChanged(auth, (user) => {
   getSignInForm.style.display= "none";
   getSignUpForm.style.display= "none";
   profileForm.style.display = "block";
+  profilePhoto.forEach(photo =>{
+    photo.style.display = "block";
+  });
+  userName.forEach(uname =>{
+    uname.style.display = "block";
+  })
 
   positiveAlert.style.display = "block";
   
   container.innerHTML = `<img class="logImage" src="https://i.pinimg.com/originals/4e/26/c4/4e26c49b5f91d42e883f4b2cbf34d772.gif">`;
-  // https://i.pinimg.com/originals/e0/6d/07/e06d076ea97ea30d49ef18bc16b37956.gif
-  // https://cdn.dribbble.com/users/856306/screenshots/4120104/medical_building_800x600.gif
-  // https://i.pinimg.com/originals/4e/26/c4/4e26c49b5f91d42e883f4b2cbf34d772.gif
-  // https://cdn.dribbble.com/users/60266/screenshots/1560009/media/26a57b3dcc85c5907edb12d65e9076fa.gif
-  // https://i.pinimg.com/originals/c0/c9/c2/c0c9c2a6b0a99053b87b14114c876000.gif
-  // https://i.pinimg.com/originals/c0/7b/09/c07b0987532e9e70532f5a7efb9d9643.gif
-  // https://i.pinimg.com/originals/90/04/b2/9004b278c6a1d58c9fdf4a1b05222127.gif
   container.style.backgroundColor = "var(--main-gray)";
   container.style.textAlign = 'center';
   container.style.height = 'auto';
