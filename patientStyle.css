@@ -10,9 +10,13 @@
 .generalDataDiv{
     margin: 50px 4%!important;
     width: 90%;
-    height: 50vh;
-    display: block;
+    height: 40vh;
+    display: grid;
     margin: auto;
+    padding: 50px 0px; 
+    text-align: center;
+    grid-template: 1fr / 1fr 1fr 1fr 1fr;
+    justify-content: center;
 }
 
 .svg_box {
@@ -20,8 +24,11 @@
 	width: 100%;
 	/* display: block; */
     position: relative;
-    top: -15%!important;
-    /* padding: 0!important; */
+    top: -72px!important;
+
+}
+#text{
+ height: 20px;
 }
 svg {
 	width: 100%;
@@ -32,8 +39,9 @@ svg {
 	/* margin: 0 auto; */
 	/* display: block; */
 }
-text{
+#myTimer{
     fill: var(--main-font-color);
+    font-weight: 500;
 }
 
 
@@ -75,3 +83,12 @@ text{
     margin: auto;
     margin-bottom: 5%;
   }
+.generalDataDiv .fa-circle-user{
+    font-size: 40px;
+    color: #fc9f7ac9;
+    margin-bottom: 30px;
+}
+.generalDataDiv h5{
+    color: rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+}

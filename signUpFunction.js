@@ -137,6 +137,7 @@ onAuthStateChanged(auth, (user) => {
   })
 
   positiveAlert.style.display = "block";
+  
   container.innerHTML = `<img class="logImage" src="https://i.pinimg.com/originals/4e/26/c4/4e26c49b5f91d42e883f4b2cbf34d772.gif">`;
   container.style.backgroundColor = "var(--main-gray)";
   container.style.textAlign = 'center';

@@ -46,9 +46,9 @@ function loader() {
 	// math trick 2*pi*57 = 358, must be less than 360 degree (20000)
 	window.timer = window.setInterval(function () {
 		circle.setAttribute("stroke-dasharray", angle + ", 20000");
-		myTimer.innerHTML = parseInt(angle/188.4*100) + '%';
+		myTimer.innerHTML = parseInt(angle/219.8*100) + '%';
 
-		if (angle >= 188.4) {
+		if (angle >= 219.8) {
 			window.clearInterval(window.timer);
 			console.log('Stopped in IF statment');
 		}

@@ -95,6 +95,7 @@ onAuthStateChanged(auth, (user) => {
    signOut(auth).then(() => {
        // Sign-out successful.
        alert('User loget out! ');
+       location.reload()
      }).catch((error) => {
        const errorCode = error.code;
        const errorMessage = error.message;

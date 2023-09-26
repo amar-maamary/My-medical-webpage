@@ -70,4 +70,3 @@ closeBtns.forEach((btn) =>{
 var email = document.getElementById("email");
 var verEmail = document.getElementById("verEmail");
 email.value = localStorage.getItem("homeEmail") || "";
-verEmail.value = localStorage.getItem("homeEmail") || "";

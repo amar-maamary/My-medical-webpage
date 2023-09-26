@@ -77,90 +77,57 @@
     </div>
   </nav>
 
-  <!-- User  -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header">
-      <h6 id="offcanvasRightLabel" class="emailh">user@email.com</h6>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <div class="offcanvas-title"> 
-        <div style="position: relative;"  id="profilePhotoBtn" type="button" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-toggle="modal" data-bs-target="#exampleModal"><button class="profile-photo" type="button" ><i class="fa-solid fa-user-doctor position-relative"></i></button><span class="position-absolute bottom-0 translate-middle border border-light rounded-circle"></span></div>
-        <h5 class="userName" >User Name</h5>
-      </div>
-      <hr>
-      <a href="profile.html">
-      <div class="profile-item"> 
-          <i class="fa-regular fa-user"></i>
-          <p>Your profile</p>
-      </div>
-      </a>
-      <hr>
-      <a href="patient.html">
-        <div class="profile-item">
-            <i class="fa-regular fa-address-card"></i>
-            <p>Your patients list</p>
-        </div>
-      </a>
-      <hr>
-      <div class="profile-item" id="logOutBtn" type="button" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-arrow-right-from-bracket"></i>
-          <p>Sign out</p>
-      </div>
-      <hr>
-    </div>
+<!-- User  -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h6 id="offcanvasRightLabel" class="emailh">user@email.com</h6>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <!-- User  -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header">
-      <h6 id="offcanvasRightLabel" class="emailh">user@email.com</h6>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  <div class="offcanvas-body">
+    <div class="offcanvas-title"> 
+      <div style="position: relative;"  id="profilePhotoBtn" type="button" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-toggle="modal" data-bs-target="#exampleModal"><button class="profile-photo" type="button" ><i class="fa-solid fa-user-doctor position-relative"></i></button><span class="position-absolute bottom-0 translate-middle border border-light rounded-circle"></span></div>
+      <h5 class="userName" >User Name</h5>
     </div>
-    <div class="offcanvas-body">
-      <div class="offcanvas-title"> 
-        <div style="position: relative;"  id="profilePhotoBtn" type="button" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-toggle="modal" data-bs-target="#exampleModal"><button class="profile-photo" type="button" ><i class="fa-solid fa-user-doctor position-relative"></i></button><span class="position-absolute bottom-0 translate-middle border border-light rounded-circle"></span></div>
-        <h5 class="userName" >User Name</h5>
-      </div>
-      <hr>
-      <a href="profile.html">
-      <div class="profile-item"> 
-          <i class="fa-regular fa-user"></i>
-          <p>Your profile</p>
-      </div>
-      </a>
-      <hr>
-      <a href="patient.html">
-        <div class="profile-item">
-            <i class="fa-regular fa-address-card"></i>
-            <p>Your patients list</p>
-        </div>
-      </a>
-      <hr>
-      <div class="profile-item" id="logOutBtn" type="button" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-arrow-right-from-bracket"></i>
-          <p>Sign out</p>
-      </div>
-      <hr>
+    <hr>
+    <a href="profile.html">
+    <div class="profile-item"> 
+        <i class="fa-regular fa-user"></i>
+        <p>Your profile</p>
     </div>
+    </a>
+    <hr>
+    <a href="patient.html">
+      <div class="profile-item">
+          <i class="fa-regular fa-address-card"></i>
+          <p>Your patients list</p>
+      </div>
+    </a>
+    <hr>
+    <div class="profile-item" id="logOutBtn" type="button" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <p>Sign out</p>
+    </div>
+    <hr>
   </div>
-  
+</div>
+
 <!-- Change profile modal -->
 <div class="modal fade changeProfileModal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Profile Image</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div class="modal-body">
-      <p>Having a profile photo helps recognizing your account</p>
-      <div class="profile-photo"><i class="fa-solid fa-user-doctor position-relative"></i></div>
-      <div>
-        <label for="photo-file">Update Profile</label>
-        <input type="file" id="photo-file" accept="image/jpeg, image/jpg. image/png" placeholder="Upload image">
-      </div>
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Profile Image</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+    <p>Having a profile photo helps recognizing your account</p>
+    <div class="profile-photo"><i class="fa-solid fa-user-doctor position-relative"></i></div>
+    <div>
+      <label for="photo-file">Update Profile</label>
+      <input type="file" id="photo-file" accept="image/jpeg, image/jpg. image/png" placeholder="Upload image">
     </div>
   </div>
+</div>
 </div>
 </div>
 
@@ -175,48 +142,6 @@
     <button type="button" class="btn-close close" ></button>
   </section>
 
-  <!-- <section class="container right-panel-active" id="container">
-    <div class="form-container sign-up-container">
-      <form id="signUpForm">
-        <h1>Sign Up</h1>
-        <button class="social-container" type="button" id="googleBtnSignUp">
-          <a class="social">With Google <i class="fab fa-google"></i></a>
-        </button>
-        <span>or use your email for registration</span>
-        <input type="text" id="name" placeholder="Name" />
-        <input type="email" id="email" placeholder="Email" />
-        <input type="password" id="password" placeholder="Password" />
-        <button class="btn" id="signUpBtn" type="button">Sign Up</button>
-      </form>
-    </div>
-    <div class="form-container sign-in-container">
-      <form id="signInForm">
-        <h1>Sign In</h1>
-        <button class="social-container" type="button" id="googleBtnSignIn">
-          <a class="social">With Google <i class="fab fa-google"></i></a>
-        </button>
-        <span>or use your account</span>
-        <input type="email" id="uEmail" placeholder="Email" />
-        <input type="password" id="uPassword" placeholder="Password" />
-        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: var(--main-blue)">Forgot your password?</a>
-        <button id="signInBtn" class="btn" type="button">Sign In</button>
-      </form>
-    </div>
-    <div class="overlay-container">
-      <div class="overlay">
-        <div class="overlay-panel overlay-left">
-          <h1>Welcome Back!</h1>
-          <p>Please login with your personal info</p>
-          <button class="ghost btn" id="signIn">Sign In</button>
-        </div>
-        <div class="overlay-panel overlay-right">
-          <h1>Hello, Friend!</h1>
-          <p>Enter your personal details and start your journey with us</p>
-          <button class="ghost btn" id="signUp">Sign Up</button>
-        </div> 
-      </div>
-    </div>
-  </section> -->
   
   
   <section class="container" id="container">
@@ -263,8 +188,11 @@
 
 </section>
 <script src="signInUpScript.js"></script>
-<script src="signUpFunction.js"  type="module"></script>
+<script type="module">
+  import authStateHandler from "./authState.js";
+  authStateHandler();
+</script> 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
-
+<script src="signUpFunction.js"  type="module"></script>
 </html>

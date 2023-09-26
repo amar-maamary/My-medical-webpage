@@ -84,7 +84,7 @@
   </div>
   <div class="offcanvas-body">
     <div class="offcanvas-title"> 
-      <div style="position: relative;"  id="profilePhotoBtn" type="button" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-toggle="modal" data-bs-target="#exampleModal"><button class="profile-photo" type="button" ><i class="fa-solid fa-user-doctor position-relative"></i></button><span class="position-absolute bottom-0 translate-middle border border-light rounded-circle"></span></div>
+      <div style="position: relative;" id="profilePhotoBtn" type="button" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-toggle="modal" data-bs-target="#exampleModal"><button class="profile-photo" type="button" ><i class="fa-solid fa-user-doctor position-relative"></i></button><span class="position-absolute bottom-0 translate-middle border border-light rounded-circle"></span></div>
       <h5 class="userName" >User Name</h5>
     </div>
     <hr>
@@ -202,6 +202,13 @@
 
 </section>
 <script src="signInUpScript.js"></script>
+<script>
+  verEmail.value = localStorage.getItem("homeEmail") || "";
+</script>
+<script type="module">
+  import authStateHandler from "./authState.js";
+  authStateHandler();
+</script> 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 <script src="signInFunction.js"  type="module"></script>
