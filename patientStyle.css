@@ -1,50 +1,15 @@
 :root{
     --main-orange: #FF8A5B;
     --main-blue: #25CED1;
+    --main-color: #a7eff8;
     --main-gray: #F4F4F4;
     --main-transparent-gray: #f4f4f4cc;
     --main-font-color: rgba(0, 0, 0, 0.55);
     --main-box-shadow:0 .5rem 1rem rgba(0,0,0,0.1) ;
-    --orange: rgb(248, 140, 98);
+    --orange: rgb(248, 140, 98); 
+    --green: rgb(172, 241, 132);
 }
-.generalDataDiv{
-    margin: 50px 4%!important;
-    width: 90%;
-    height: 40vh;
-    display: grid;
-    margin: auto;
-    padding: 50px 0px; 
-    text-align: center;
-    grid-template: 1fr / 1fr 1fr 1fr 1fr;
-    justify-content: center;
-}
-
-.svg_box {
-	/* margin: 0 auto; */
-	width: 100%;
-	/* display: block; */
-    position: relative;
-    top: -72px!important;
-
-}
-#text{
- height: 20px;
-}
-svg {
-	width: 100%;
-	height: auto;
-	max-width: 400px;
-	max-height: 400px;
-	/* padding: 0; */
-	/* margin: 0 auto; */
-	/* display: block; */
-}
-#myTimer{
-    fill: var(--main-font-color);
-    font-weight: 500;
-}
-
-
+/* Page structure when user not signin */
 #privacy-error{
     display: none;
 }
@@ -58,7 +23,13 @@ svg {
     background-color: #fc9f7ac9;
     font-size: 20px!important;
     border-color: var(--main-orange);
-  }
+}
+
+.bi-x-octagon-fill{
+    font-size: 30px!important;
+    padding-right: 20px;
+}
+
 .alert button{
     border: none!important;
     box-shadow: none;
@@ -68,10 +39,7 @@ svg {
     padding: 25px 20px!important;
     background-color: transparent!important;
 }
-.bi-x-octagon-fill{
-    font-size: 30px!important;
-    padding-right: 20px;
-}
+
 .logImage{
     border-radius: 0.5rem;
     width: 50%!important;
@@ -82,13 +50,243 @@ svg {
     display: block;
     margin: auto;
     margin-bottom: 5%;
-  }
+}
+
+/* General data section */
+.generalDataDiv{
+    margin: 50px 4%!important;
+    width: 90%;
+    height: 40vh;
+    display: grid;
+    padding: 50px 0px; 
+    text-align: center;
+    grid-template: 1fr / 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    box-shadow: var(--main-box-shadow);
+}
+/* patients-nb */
+.patients-nb-section{
+    margin-left: -20px;
+}
 .generalDataDiv .fa-circle-user{
     font-size: 40px;
-    color: #fc9f7ac9;
+    color: #25ced188;
     margin-bottom: 30px;
 }
 .generalDataDiv h5{
     color: rgba(0, 0, 0, 0.3);
     font-weight: 500;
 }
+#nb-of-patients{
+    margin-bottom: 0px;
+}
+
+/* done patient numbers */
+.svg_box {
+	width: 100%;
+    position: relative;
+    top: -72px!important;
+    left: -150px!important;
+}
+svg {
+	width: 100%;
+	height: auto;
+	max-width: 400px;
+	max-height: 400px;
+}
+#myTimer{
+    /* fill: rgb(122, 170, 94); */
+    fill: var(--main-orange);
+    font-weight: 500;
+}
+#text{
+    font-weight: 500;
+}
+/* Canceled Section */
+.canceled-section{
+    text-align: center;
+    justify-self: start;
+}
+.canceled-section .fa-user-xmark{
+    font-size: 30px;
+    /* color: #fc9f7ac9; */
+    color: var(--main-orange);
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+/* Progress lines */
+.progress-section{
+    justify-self: start;
+    margin-right: 100px;
+    margin-left: -50px;
+}
+.progress-bar{
+    background-color: var(--main-blue);
+}
+.progress{
+    width: 120%;
+}
+
+.main-body{
+    width: 90%;
+    margin: 50px 4%!important;
+    box-shadow: var(--main-box-shadow);
+    text-align: center;
+    padding: 20px 20px; 
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.5rem;
+}
+
+/* key-events */
+.key-events{
+    display: grid;
+    grid-template: 1fr/ 1fr 2fr 1fr;
+    /* border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.5rem; */
+    justify-content: center;
+    /* text-align: center; */
+    height: auto;
+    /* width: 90%; */
+    width: 100%;
+    /* margin: 50px 4%!important; */
+    /* padding: 20px 20px;  */
+}
+/* Filter  */
+.key-events .filter{
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr;
+    width:120px;
+    box-shadow: var(--main-box-shadow);
+    font-size: 18px !important;
+    border: 4px solid rgba(0,0,0,0.1) !important;
+    border-color: var(--main-blue)!important;
+    border-radius: 0.5rem;
+    padding-top: 7px!important;
+    padding-right: 12px;
+    background-color: transparent!important;
+    .fa-filter{
+        font-size: 1.5rem;
+        padding-top: 2px;
+    }
+}
+.key-events .filter:active{
+    background-color: var(--main-gray)!important;
+}
+.key-events .filter:hover{
+    border-color: var(--main-color)!important;
+}
+.key-events .filter:focus{
+    border-color: var(--main-orange)!important;
+}
+.key-events .filter h5{
+    font-weight: 500;
+    margin-left: 10px;
+}
+.key-events li:not(.dropdown-divider){
+    padding: 2px  20px !important;
+    margin: 0px!important;
+    box-sizing: border-box;
+    font-weight: 400!important;
+    cursor: pointer;
+}
+.key-events .dropdown-menu p{
+    padding:0px !important;
+    margin-bottom: 0px!important;
+    /* color: black !important; */
+    width: 100%;
+    padding: .25rem 1rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+}
+.key-events li:hover{
+    background-color: var(--main-blue);
+}
+.key-events li:focus{
+    background-color: var(--main-orange);
+}
+.key-events li.active{
+    background-color: var(--main-orange)!important;
+}
+
+/* Style the search field */
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    float: left;
+    width: 80%;
+    border-radius: 0.5rem;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: var(--main-gray);
+  }
+
+  form.example input[type=text]:focus{
+    border-color: var(--main-blue)!important;
+    background-color: white;
+  }
+  
+  /* Style the submit button */
+  form.example button {
+    float: left;
+    width: 10%;
+    padding:6px 5px;
+    background: var(--main-blue);
+    border-radius: 0.5rem;
+    font-size: 17px;
+    border-left: none; /* Prevent double borders */
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    cursor: pointer;
+  }
+  
+  form.example button:focus {
+    background-color: var(--main-gray)!important;
+    background: var(--main-gray);
+    border-color: var(--main-orange)!important;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  /* Add patient section */
+  .add-patient-section{
+    justify-self: end;
+  }
+  #add-patient-btn{
+    background-color: var(--main-orange);
+    color: white!important;
+  }
+  #add-patient-btn .bi-person-plus-fill{
+    color: white!important;
+    padding-right: 5px;
+  }
+  #add-patient-btn:hover{
+    background-color: white!important;
+    color: var(--main-font-color)!important;
+
+    .bi-person-plus-fill{
+        color: var(--main-font-color)!important;
+    }
+  }
+  #add-patient-btn:focus{
+    background-color: white!important;
+    color: var(--main-font-color)!important;
+
+    .bi-person-plus-fill{
+        color: var(--main-font-color)!important;
+    }
+  }
+
+  .sperator{
+    margin-top: 20px;
+    height: 5px!important;
+    border-radius: 0.5rem;
+    background-color: var(--main-orange);
+  }

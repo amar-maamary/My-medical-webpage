@@ -48,7 +48,7 @@ function loader() {
 		circle.setAttribute("stroke-dasharray", angle + ", 20000");
 		myTimer.innerHTML = parseInt(angle/219.8*100) + '%';
 
-		if (angle >= 219.8) {
+		if (angle >= 109.9) {
 			window.clearInterval(window.timer);
 			console.log('Stopped in IF statment');
 		}
