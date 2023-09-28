@@ -191,14 +191,48 @@
         </ul>
       </div>
       <form class="example" action="action_page.php">
-        <input class="form-control" type="text" placeholder="Search by name or id ..." name="search">
+        <input class="form-control" type="text" placeholder="Search by name or #ID ..." name="search">
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
       <div class="add-patient-section">
         <button  id="add-patient-btn" type="button" class="btn"><i class="bi bi-person-plus-fill"></i>Add patient</button>
       </div>
     </div>
+
+    <div id="patient-card">
+      
+    </div>
     <hr class="sperator">
+
+    <div class="titles row-">
+      <input type="checkbox" class="title-check">
+      <p class="name">NAME</p>
+      <p>#ID</p>
+      <p>STATUS</p>
+      <p>LAST VISIT</p>
+      <p>DIAGNOSIS</p>
+      <p style=" justify-self: center;">ACTIONS</p> 
+    </div>
+    <div class="patients-list">
+      <div class="row-">
+        <input type="checkbox" class="title-check">
+        <div class="name">
+          <img id="patient-img" src="https://img.freepik.com/free-photo/beautiful-flowers-with-water-drops_23-2150705665.jpg">
+          <div>
+            <p id="patient-name">Amar Maamary</p>
+            <p><i class="fa-regular fa-calendar-check"></i> 12 Jun 11:00 AM</p>
+          </div>
+        </div>
+        <p>p-5678</p>
+        <p class="patient-status active-p">Active</p>
+        <p>22 / 3/ 2023</p>
+        <p id="diagnosis">Depression</p>
+        <div class="actions">
+          <i class="fa-regular fa-pen-to-square"></i>
+          <i class="fa-solid fa-trash-can"></i>
+        </div>
+      </div>
+    </div>
   </section>
 </section>
 

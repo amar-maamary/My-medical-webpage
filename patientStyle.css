@@ -9,6 +9,12 @@
     --orange: rgb(248, 140, 98); 
     --green: rgb(172, 241, 132);
 }
+body{
+    background-color: var(--main-gray);
+}
+.footer{
+    background-color: white;
+}
 /* Page structure when user not signin */
 #privacy-error{
     display: none;
@@ -128,6 +134,7 @@ svg {
     width: 120%;
 }
 
+/* Main body */
 .main-body{
     width: 90%;
     margin: 50px 4%!important;
@@ -136,6 +143,7 @@ svg {
     padding: 20px 20px; 
     border: 1px solid rgba(0,0,0,.125);
     border-radius: 0.5rem;
+    background-color: white;
 }
 
 /* key-events */
@@ -144,12 +152,11 @@ svg {
     grid-template: 1fr/ 1fr 2fr 1fr;
     /* border: 1px solid rgba(0,0,0,.125);
     border-radius: 0.5rem; */
-    justify-content: center;
     /* text-align: center; */
     height: auto;
     /* width: 90%; */
     width: 100%;
-    /* margin: 50px 4%!important; */
+    padding: 0px 50px!important;
     /* padding: 20px 20px;  */
 }
 /* Filter  */
@@ -220,7 +227,7 @@ form.example input[type=text] {
     border-radius: 0.5rem;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
-    background-color: var(--main-gray);
+    background-color: var(--main-transparent-gray);
   }
 
   form.example input[type=text]:focus{
@@ -285,8 +292,101 @@ form.example input[type=text] {
   }
 
   .sperator{
-    margin-top: 20px;
+    margin-top: 40px;
     height: 5px!important;
     border-radius: 0.5rem;
     background-color: var(--main-orange);
   }
+
+  /* Titles */
+  .titles{
+    margin-top: 30px;
+    padding-top: 20px!important;
+    background-color: var(--main-transparent-gray);
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+  }
+  .row-{
+    border-bottom: 1px solid var(--main-font-color);
+    display: grid;
+    grid-template: 1fr/ 1fr 2fr 1fr 1fr 1fr 1fr 2fr;
+    justify-content: space-between;
+    justify-items: start;
+    align-items: center;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    padding: 10px 0px;
+  }
+  .title-check{
+    height: auto;
+    justify-self: center;
+    margin-top: -15px;
+  }
+  .titles p{
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .name{
+    justify-self: start!important;
+    display: flex;
+    flex-direction: row;
+    margin-left: -30px;
+    font-size: 14px;
+  }
+
+  /* Patients */
+  #patient-img{
+    border-radius: 50%;
+    width:60px; 
+    height: 60px;
+    object-fit: cover;
+    margin: 0px;
+    margin-right: 10px;
+    padding:0px;
+  }
+  #patient-name{
+    /* align-self: start; */
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .patients-list p{
+    font-size: 16px;
+  }
+  /* .patient-status{
+    padding-left: 10px;
+  } */
+  .active-p::before{
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 0.25rem;
+    background-color: var(--main-orange);
+    margin-right: 8px;
+  }
+  #diagnosis{
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .actions{
+    justify-self: center;
+    /* display: grid;
+    grid-template: 1fr / 1fr 1fr; */
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+    align-items: start;
+    margin-top: -20px;
+  }
+  .actions i{
+    font-size: 18px;
+  }
+.fa-trash-can{
+    color: var(--main-orange);
+}
+.fa-pen-to-square{
+    color: var(--main-blue);
+}
