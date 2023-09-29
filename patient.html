@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@500&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link href="patientStyle.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.min.js"></script>
+
 </head>
 
 <body>
@@ -208,7 +210,7 @@
             <div class="inputs-group">
               <div class="mb-3">
                 <label for="gender" class="form-label">Gender <span class="important">*</span></label>
-                <select class="form-select" id="inputGroupSelect01" required>
+                <select class="form-select" id="inputGroupSelect01 gender" required>
                   <option  value="1" selected>Male</option>
                   <option value="2">Female</option>
                 </select>
@@ -222,7 +224,72 @@
                 <input type="date" class="form-control" id="date-of-birth" placeholder="mm/dd/yy"  required>
               </div>
             </div>
+            <!-- row 3 -->
+            <div class="inputs-group">
+              <div class="mb-3">
+                <label for="address" class="form-label">Address <span class="important">*</span></label>
+                <input type="text" class="form-control" id="address" placeholder="City, street, building"  required>
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Contact <span class="important">*</span></label>
+                <input type="tel" class="form-control" id="phone" placeholder="ex: +961 03 456 678"  required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="ex: john@gmail.com">
+              </div>
+            </div>
           </div>
+          <!-- Medical data section -->
+          <div>
+            <div class="patient-form-s-title">
+              <h4>Medical Info</h4>
+            </div>
+            <!-- row 1 -->
+            <div class="inputs-group">
+              <div class="mb-3">
+                <label for="height" class="form-label">Height (m)</label>
+                <input type="number" class="form-control" id="height" placeholder="ex: 160"  required>
+              </div>
+              <div class="mb-3">
+                <label for="weight" class="form-label">Weight (kg)</label>
+                <input type="number" class="form-control" id="weight" placeholder="ex: 50"  required>
+              </div>
+              <div class="mb-3">
+                <label for="blood-group" class="form-label">Blood Group <span class="important">*</span></label>
+                <select class="form-select" id="inputGroupSelect01 blood-group" required>
+                  <option  value="1" selected>A+</option>
+                  <option value="2">A-</option>
+                  <option value="3">B+</option>
+                  <option value="4">B-</option>
+                  <option value="5">O+</option>
+                  <option value="6">O-</option>
+                  <option value="7">AB+</option>
+                  <option value="8">AB-</option>
+                </select>
+              </div>
+            </div>
+              <div class="inputs-group">
+                <div class="mb-3">
+                  <label for="chronic-diseases" class="form-label">Chronic diseases</label>
+                  <input type="text" class="form-control" id="chronic-diseases" placeholder="ex: Hypertension, DM"  required>
+                </div>
+                <div class="mb-3">
+                  <label for="allergies" class="form-label">Allergies</label>
+                  <input type="text" class="form-control" id="allergies" placeholder="ex: Malignant hyperthermia"  required>
+                </div>
+                <div class="mb-3">
+                  <label for="diagnosis" class="form-label">Diagnosis</label>
+                  <input type="text" class="form-control" id="diagnosis" placeholder="ex: Depression"  required>
+                </div>
+              </div>
+            </div>
+            <!-- Appointement data section -->
+            <div>
+              <div class="patient-form-s-title">
+              <h4>Appointements Info</h4>
+            </div>
+          
       </form>
       </div>
   </section>
@@ -275,7 +342,7 @@
         <p>p-0001</p>
         <p class="patient-status active-p">Active</p>
         <p>22 / 3/ 2023</p>
-        <p id="diagnosis">Depression</p>
+        <p id="patient-diagnosis">Depression</p>
         <div class="actions">
           <i class="fa-regular fa-pen-to-square"></i>
           <i class="fa-solid fa-trash-can"></i>
@@ -294,7 +361,7 @@
         <p>p-0002</p>
         <p class="patient-status non-active-p">Non-active</p>
         <p>15 / 5/ 2023</p>
-        <p id="diagnosis">EatingDisorder</p>
+        <p id="patient-diagnosis">EatingDisorder</p>
         <div class="actions">
           <i class="fa-regular fa-pen-to-square"></i>
           <i class="fa-solid fa-trash-can"></i>
@@ -313,7 +380,7 @@
         <p>p-0003</p>
         <p class="patient-status new-p">New patient</p>
         <p>-</p>
-        <p id="diagnosis">-</p>
+        <p id="patient-diagnosis">-</p>
         <div class="actions">
           <i class="fa-regular fa-pen-to-square"></i>
           <i class="fa-solid fa-trash-can"></i>
@@ -332,7 +399,7 @@
         <p>p-0004</p>
         <p class="patient-status active-p">Active</p>
         <p>22 / 3/ 2023</p>
-        <p id="diagnosis">Depression</p>
+        <p id="patient-diagnosis">Depression</p>
         <div class="actions">
           <i class="fa-regular fa-pen-to-square"></i>
           <i class="fa-solid fa-trash-can"></i>

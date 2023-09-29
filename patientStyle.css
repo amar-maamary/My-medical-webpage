@@ -181,20 +181,20 @@ svg {
 #add-patient-form .inputs-group{
   display: grid;
   grid-template: 1fr / 1fr 1fr 1fr;
-  column-gap: 20px;
-  margin: 0 10px;
+  column-gap: 50px;
+  margin: 0 20px;
 }
 #add-patient-form label {
   font-weight: 450;
 }
-#add-patient-form  .form-control,#add-patient-form  #inputGroupSelect01 {
-  background-color: var(--main-transparent-gray);
+#add-patient-form  .form-control, #add-patient-form  .form-select {
+  background-color: var(--main-transparent-gray)!important;
   opacity: 0.7;
   margin-bottom: 1.5em;
 }
-#add-patient-form  .form-control:focus,  #add-patient-form  #inputGroupSelect01:focus{
+#add-patient-form  .form-control:focus,  #add-patient-form  .form-select:focus{
   background-color: white;
-  box-shadow: 0 0 0 0.25rem #a7eff8;
+  box-shadow: 0 0 0 0.25rem #a7eff8!important;
 }
 
 /* Main body */
@@ -455,7 +455,7 @@ form.example input[type=text] {
     margin-right: 8px;
   }
 
-  #diagnosis{
+  #patient-diagnosis{
     font-weight: 500;
     font-size: 18px;
     text-align: left;

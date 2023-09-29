@@ -55,17 +55,7 @@ function loader() {
 		angle += angle_increment;
 	}.bind(this), interval);
 };
-/*--------------------------------------
 
-Reference: http://jsfiddle.net/JwkYm/528/
-
-----------------------------------------*/
-
-//Reset button
-function ResetBtn() {
-	window.clearInterval(window.timer);
-	loader();
-};
 
 const closeBtns = document.querySelectorAll(".close");
 closeBtns.forEach((btn) =>{
@@ -75,3 +65,10 @@ closeBtns.forEach((btn) =>{
         parentAlert.style.display = "none";
 })
 })
+
+
+  
+  
+
+
+
