@@ -35,12 +35,15 @@ onAuthStateChanged(auth, (user) => {
       signUpButton.style.display = "none";
       profileForm.style.display = "block";
 
-      // var firebaseRef = ref(database, 'users/' + user.uid);
-      // onValue(firebaseRef, (snapshot) =>{
-      //   snapshot.forEach((element) => {
-      //     console.log(element.val());
-      //   });
-      // })
+      var image = localStorage.getItem("profileImg") || user.photoURL ;
+      console.log(image); 
+          profilePhoto.forEach(photo =>{
+          if (image === null){
+            photo.innerHTML = `<i class="fa-solid fa-user-doctor"></i>`;
+          }else{
+            photo.innerHTML = `<img src = "${image}" class="profile-main-photo">`;
+          }
+        })
 
       onValue( ref(database, 'users/' + user.uid), (snapshot) => {
         userName.forEach(one =>{
@@ -48,31 +51,29 @@ onAuthStateChanged(auth, (user) => {
         });
         userEmail.innerText = (snapshot.val() && snapshot.val().email) || 'Anonymous';
 
-        // localStorage.getItem("profileImg")
-        var imagedata = snapshot.val() && snapshot.val().profile_picture ;
-        console.log(imagedata)
-        var image = imagedata  || user.photoURL ;
-        console.log(image)
-        profilePhoto.forEach(photo =>{
-          if (image === null || image === "Anonymous"){
-            photo.innerHTML = `<i class="fa-solid fa-user-doctor"></i>`;
-          }else{
-            photo.innerHTML = `<img src = "${image}" class="profile-main-photo">` || `<img src = "${image}" class="profile-main-photo">`|| `<i class="fa-solid fa-user-doctor"></i>`;
-          }
-        })
+        
+        // var imagedata = snapshot.val() && snapshot.val().profile_picture ;
+        // console.log(imagedata)
+        // var image = imagedata  || user.photoURL ;
+        // console.log(image)
+        // profilePhoto.forEach(photo =>{
+        //   if (image === null || image === "Anonymous"){
+        //     photo.innerHTML = `<i class="fa-solid fa-user-doctor"></i>`;
+        //   }else{
+        //     photo.innerHTML = `<img src = "${image}" class="profile-main-photo">` || `<img src = "${image}" class="profile-main-photo">`|| `<i class="fa-solid fa-user-doctor"></i>`;
+        //   }
+        // })
       });
       
       photoFile.addEventListener("change", (e) =>{
+        var urlink = URL.createObjectURL(e.target.files[0]);
         profilePhoto.forEach(photo =>{
-          var urlink = URL.createObjectURL(photoFile.files[0]);
-          console.log("urlink: " + urlink);
-          photo.innerHTML = `<img src = "${urlink}" class="profile-main-photo">`
-          // console.log("urlink: " + urlink);
-          update(ref(database, 'users/' + user.uid), {
-            profile_picture: urlink,
-            })
-          // localStorage.setItem("profileImg", urlink);
+          photo.innerHTML = `<img src = " ${urlink} " class="profile-main-photo">`
+          // update(ref(database, 'users/' + user.uid), {
+          //   profile_picture: urlink,
+          //   })
         })
+        localStorage.setItem("profileImg", urlink);
       })
     } 
     else {

@@ -55,6 +55,7 @@ body{
     border-bottom-right-radius: 0.5rem;
     display: block;
     margin: auto;
+    margin-top: 50px;
     margin-bottom: 5%;
 }
 
@@ -134,7 +135,7 @@ svg {
     width: 120%;
 }
 /* Patient actions div */
-.patient-actions-section{
+/* .patient-actions-section{
   width: 90%;
   margin: 50px 4%!important;
   box-shadow: var(--main-box-shadow);
@@ -143,14 +144,24 @@ svg {
   border: 1px solid rgba(0,0,0,.125);
   border-radius: 0.5rem;
   background-color: white;
-}
+} */
 
 #patient-form-div{
   border: 1px solid rgba(0,0,0,.125);
   border-radius: 0.5rem;
+  background-color: white;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 .progress{
   background-color: var(--main-gray);
+}
+#add-patient-modal .modal-body{
+  padding: 0px;
+}
+#add-patient-modal .modal-content{
+  border-radius: 0.5rem;
+  border-color: rgba(0,0,0,.125);
 }
 #patient-form-div .progress{
   width: 100%;
@@ -158,7 +169,7 @@ svg {
   border-top-left-radius: 0px; */
   border-radius: 0px;
   height: 6px;
-  border-top: 1px solid rgba(0,0,0,0.1);
+  /* border-top: 1px solid rgba(0,0,0,0.1); */
   border-bottom: 1px solid rgba(0,0,0,0.1);
   background-color: var(--main-transparent-gray);
 }
@@ -168,9 +179,11 @@ svg {
   padding: 20px;
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
+  display: grid;
+  grid-template: 1fr/ 30fr 1fr;
 }
 #add-patient-form{
-  padding: 30px;
+  padding: 40px;
   text-align: left;
 }
 .patient-form-s-title h4{
@@ -195,6 +208,65 @@ svg {
 #add-patient-form  .form-control:focus,  #add-patient-form  .form-select:focus{
   background-color: white;
   box-shadow: 0 0 0 0.25rem #a7eff8!important;
+}
+
+#add-patient-form  #patient-file-btn{
+  border-radius: 0.5rem;
+  background-color: var(--main-blue);
+  color: var(--main-font-color);
+  box-shadow: var(--main-box-shadow);
+  border: 4px solid rgba(0,0,0,0.1) !important;
+  padding: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 45%;
+}
+#add-patient-form  #patient-file-btn:hover, #add-patient-form  #patient-file-btn:focus{
+  border:  4px solid  #7be0e0!important;
+  box-shadow: none!important;
+}
+#add-patient-form  #patient-file-btn:active {
+  transform: scale(0.95);
+  background-color: var(--main-color);
+}
+
+#save-patient-changes{
+  display: none;
+  border-color: var(--main-blue)!important;
+  background-color: transparent;
+}
+#save-patient-changes:active{
+  background-color: var(--main-gray)!important;
+}
+#save-patient-changes:hover{
+  border-color: var(--main-color)!important;
+}
+#save-patient-changes:focus{
+  border-color: var(--main-orange)!important;
+}
+#add-patient-main-btn{
+  background-color: var(--main-orange);
+  color: white!important;
+}
+#add-patient-main-btn .bi-person-plus-fill{
+  color: white!important;
+  padding-right: 5px;
+}
+#add-patient-main-btn:hover{
+  background-color: white!important;
+  color: var(--main-font-color)!important;
+
+  .bi-person-plus-fill{
+      color: var(--main-font-color)!important;
+  }
+}
+#add-patient-main-btn:focus{
+  background-color: white!important;
+  color: var(--main-font-color)!important;
+
+  .bi-person-plus-fill{
+      color: var(--main-font-color)!important;
+  }
 }
 
 /* Main body */
@@ -330,15 +402,15 @@ form.example input[type=text] {
   .add-patient-section{
     justify-self: end;
   }
-  #add-patient-btn{
+  #add-patient-nav-btn{
     background-color: var(--main-orange);
     color: white!important;
   }
-  #add-patient-btn .bi-person-plus-fill{
+  #add-patient-nav-btn .bi-person-plus-fill{
     color: white!important;
     padding-right: 5px;
   }
-  #add-patient-btn:hover{
+  #add-patient-nav-btn:hover{
     background-color: white!important;
     color: var(--main-font-color)!important;
 
@@ -346,7 +418,7 @@ form.example input[type=text] {
         color: var(--main-font-color)!important;
     }
   }
-  #add-patient-btn:focus{
+  #add-patient-nav-btn:focus{
     background-color: white!important;
     color: var(--main-font-color)!important;
 
