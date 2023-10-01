@@ -555,7 +555,7 @@ function savePatientChanges(patientData) {
   const index = patients.indexOf(patientData);
   if (index !== -1) {
     patients[index] = patientData;
-    localStorage.setItem("patients", JSON.stringify(patients));
+    localStorage.setItem("patients" , JSON.stringify(patients));
   }
 
   // Close the add patient form

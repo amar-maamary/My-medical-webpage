@@ -696,7 +696,7 @@ header{
 }
 .footer-in-grid{
     display: grid;
-    grid-template: auto/ auto auto auto ;
+    grid-template: auto/ auto auto auto auto;
     justify-items: end;
     column-gap: 20px;
 

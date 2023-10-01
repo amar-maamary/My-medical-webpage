@@ -142,6 +142,7 @@ onAuthStateChanged(auth, (user) => {
   container.style.backgroundColor = "var(--main-gray)";
   container.style.textAlign = 'center';
   container.style.height = 'auto';
+  window.location.replace("http://127.0.0.1:5500/profile.html");
 } 
   else {
   // User is signed out
