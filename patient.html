@@ -344,19 +344,68 @@
 </div>
 
 <!-- Profile modal -->
-<div class="modal modal2" id="add-patient-modal">
-  <div class="modal-dialog modal-dialog-centered modal-xl">
+<div class="modal modal2" id="patient-profile-modal">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-body">
+        <div class="profile-card">
+          <div class="profile-card-header">
+            <div class="profile-image">
+              <img src="" alt="Patient Image" id="profile-image">
+            </div>
+            <div style="justify-self: start; padding-left: 20px; padding-top: 20px;"> 
+              <h2 id="profile-name"></h2>
+              <h3 style="text-align: left;"><i class="fa-solid fa-star-of-life"></i><span id="profile-diagnosis"></span></h3>
+            </div>
+            <button type="button" class="btn-close" onclick="closePatientProfile()" id="close-profile-card"></button>
+          </div>
+          <div class="profile-details">
+            <hr>
+            <div class="first-pcard-grid">
+            <div>
+            <p><strong>D.O.B:</strong> <span id="profile-dob"></span></p>
+            <p><strong>Gender:</strong> <span id="profile-gender"></span></p>
+            <p><strong>Age:</strong> <span id="profile-age"></span></p>
+            </div>
+            <div>
+              <p><strong><i class="fa-solid fa-ruler-vertical"></i></strong> <span id="profile-height"></span></p>
+              <p><strong><i class="fa-solid fa-weight-scale"></i></strong> <span id="profile-weight"></span></p>
+              <p><strong><i class="fa-solid fa-droplet"></i></strong> <span id="profile-bloodgr"></span></p>
+            </div>
+          </div>
+            <hr>
+            <p><strong><i class="fa-solid fa-phone"></i></strong><span id="profile-phone"></span></p>
+            <p><strong><i class="fa-solid fa-envelope"></i></strong><span id="profile-email"></span></p>
+            <p><strong><i class="fa-solid fa-location-dot"></i></strong> <span id="profile-address"></span></p>
+            <hr>
+            <!-- <p><strong><i class="fa-solid fa-ruler-vertical"></i></strong> <span id="profile-height"></span></p>
+            <p><strong><i class="fa-solid fa-weight-scale"></i></strong> <span id="profile-weight"></span></p>
+            <p><strong><i class="fa-solid fa-droplet"></i></strong> <span id="profile-bloodgr"></span></p> -->
+            <!-- <hr> -->
+            <div class="left-text">
+              <p><strong>Chronic Diseases:</strong> <span id="profile-chronic-diseases"></span></p>
+              <p><strong>Allergies:</strong> <span id="profile-allergies"></span></p>
+            </div>
+            <hr>
+            <div class="left-text">
+            <p><strong><i class="fa-solid fa-calendar-check"></i></strong> <span id="profile-last-appo"></span></p>
+            <p><strong><i class="fa-solid fa-calendar-plus"></i></strong> <span id="profile-next-appo"></span></p>
+          </div>
+            <hr>
+            <p style="margin: auto 50px!important;"><strong><i class="fa-solid fa-comment-medical"></i></strong> <span id="profile-notes"></span></p>
 
+            <!-- Add more patient details here -->
+          </div>
+          </div>
+        </div>
+        
       </div>
-      <div class="modal-footer">
+      <!-- <div class="modal-footer">
         <button id="save-patient-changes" type="button" class="btn">Save changes</button>
         <button id="add-patient-main-btn" type="submit" form="add-patient-form" class="btn" ><i class="bi bi-person-plus-fill"></i>Add patient</button>
-      </div>
+      </div> -->
     </div>
   </div>
-</div>
 
 <!-- Patients section -->
   <section class="main-body">

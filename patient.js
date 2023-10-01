@@ -48,6 +48,9 @@ closeBtns.forEach((btn) =>{
 })
 })
 
+/////////////////////////////////   Patients general data   /////////////////////////////////
+
+
 /////////////////////////////////   Add Patient button /////////////////////////////////
 // displaying the modal
 const addPatientNavButton = document.getElementById("add-patient-nav-btn");
@@ -55,11 +58,12 @@ const addPatientModal = document.getElementById("add-patient-modal");
 addPatientNavButton.addEventListener("click", ()=>{
     addPatientModal.style.display = "block";
 })
-// close the model btn
+// close the add patient model btn
 const closeModal = document.getElementById("closeModal");
 closeModal.addEventListener("click", ()=>{
     addPatientModal.style.display = "none";
 })
+
 
 // Importing the add patient from
 const addPatientForm = document.getElementById("add-patient-form");
@@ -140,7 +144,6 @@ function checkNonActivePatients(){
 }
 
 
-
 // Progress circle
 // var body = document.getElementsByTagName('body')[0].onload=function() {loader()};
 function loader() {
@@ -173,8 +176,7 @@ function loader() {
 
 
 // Adding functionality to the form submit
-addPatientForm.addEventListener("submit", (e) => {
-  e.preventDefault();
+function addNewPatient(){
   // Importing the profile input
   var patientPhotoFile = document.getElementById("patient-file");
   // Creating a patient element
@@ -202,7 +204,7 @@ addPatientForm.addEventListener("submit", (e) => {
     profileSrc:"https://www.transparentpng.com/thumb/user/blue-male-user-profile-transparent-png-2lbgMx.png",
     //  URL.createObjectURL(patientPhotoFile.files[0]) || 
     completed: false,
-    patientID: "p-"+  Math.floor(Math.random() * (10000 - 999 + 1)) + 999, 
+    patientID: "p-"+  Math.floor(Math.random() * (10000 - 999 + 1)), 
   }
   // Pushing to other patients array and update it
   patients.push(patient);
@@ -220,6 +222,10 @@ addPatientForm.addEventListener("submit", (e) => {
   loader();
   checkActivePatients();
   checkNonActivePatients()
+}
+addPatientForm.addEventListener("submit", (e) =>{
+  e.preventDefault();
+  addNewPatient();
 })
 
 function displayPatients() {
@@ -233,16 +239,16 @@ function displayPatients() {
     patientElement.innerHTML =`
     <input type="checkbox" class="check">
     <div class="name">
-      <img id="patient-img" src="${patientPerson.profileSrc}">
+      <img class="patient-img" src="${patientPerson.profileSrc}">
       <div>
-        <p id="patient-name">${patientPerson.firstName} ${patientPerson.lastName}</p>
-        <p><i class="fa-regular fa-calendar-check"></i> ${patientPerson.nextAppointementDate} ${patientPerson.nextAppointementTime}</p>
+        <p class="patient-name">${patientPerson.firstName} ${patientPerson.lastName}</p>
+        <p><i class="fa-regular fa-calendar-plus"></i> ${patientPerson.nextAppointementDate} ${patientPerson.nextAppointementTime}</p>
       </div>
     </div>
     <p>${patientPerson.patientID}</p>
     <p class="patient-status ${patientPerson.status.toLowerCase()}-p">${patientPerson.status}</p>
     <p>${patientPerson.lastAppointementDate}</p>
-    <p id="patient-diagnosis">${patientPerson.diagnosis}</p>
+    <p class="patient-diagnosis">${patientPerson.diagnosis}</p>
     <div class="actions">
       <i class="fa-regular fa-pen-to-square" type="button"></i>
       <i class="fa-solid fa-trash-can" type="button"></i>
@@ -252,9 +258,15 @@ function displayPatients() {
     var checkbox = patientElement.querySelector(".check");
     checkbox.checked = patientPerson.completed;
 
-
     patientsList.appendChild(patientElement);
     console.log(patientsList)
+
+    // open profile btn
+    var patientImgBtn = patientElement.querySelector(".patient-img");
+    patientImgBtn.addEventListener("click", (e)=>{
+      patientProfileModal.style.display = "block";
+      showPatientProfile(patientPerson);
+    })
 
     //delete btn actions
     var deleteBtn = patientElement.querySelector(".fa-trash-can");
@@ -283,17 +295,13 @@ function displayPatients() {
       loader();
     })
 
-    //edit btn actions
-    // editBtn.addEventListener("click", (e) => {
-    //   var inputText = content.querySelector("input");
-    //   inputText.removeAttribute("readonly");
-    //   inputText.focus();
-    //   inputText.addEventListener("blur", () => {
-    //     todoItem.content = inputText.value; // E.TARGERT.VALUE
-    //     inputText.setAttribute("readonly", true);
-    //     localStorage.setItem("todos", JSON.stringify(todos));
-    //   })
-    // })
+    //  Edit button
+    var editBtn = patientElement.querySelector(".fa-regular.fa-pen-to-square");
+    editBtn.addEventListener("click", () => {
+      console.log(editBtn);
+      populateEditForm(patientPerson);
+      console.log("blou")
+    });
   })
 }
 displayPatients();
@@ -303,7 +311,7 @@ checkNonActivePatients();
 
 
 
-// Add an event listener to the filter button
+// Filter button
 const filterButton = document.getElementById("menu1");
 
 // Add event listeners to the filter options
@@ -362,23 +370,22 @@ function displayFilteredPatients(filteredPatients) {
 
   // Loop through the filtered patients and display them
   filteredPatients.forEach((patientPerson) => {
-    // Create and display patient elements similar to your existing code
-    // ...
+    
     var patientElement = document.createElement("div");
     patientElement.classList.add("row-");
     patientElement.innerHTML =`
     <input type="checkbox" class="check">
     <div class="name">
-      <img id="patient-img" src="${patientPerson.profileSrc}">
+      <img class="patient-img" type="button" src="${patientPerson.profileSrc}">
       <div>
-        <p id="patient-name">${patientPerson.firstName} ${patientPerson.lastName}</p>
-        <p><i class="fa-regular fa-calendar-check"></i> ${patientPerson.nextAppointementDate} ${patientPerson.nextAppointementTime}</p>
+        <p class="patient-name">${patientPerson.firstName} ${patientPerson.lastName}</p>
+        <p><i class="fa-regular fa-calendar-plus"></i> ${patientPerson.nextAppointementDate} ${patientPerson.nextAppointementTime}</p>
       </div>
     </div>
     <p>${patientPerson.patientID}</p>
     <p class="patient-status ${patientPerson.status.toLowerCase()}-p">${patientPerson.status}</p>
     <p>${patientPerson.lastAppointementDate}</p>
-    <p id="patient-diagnosis">${patientPerson.diagnosis}</p>
+    <p class="patient-diagnosis">${patientPerson.diagnosis}</p>
     <div class="actions">
       <i class="fa-regular fa-pen-to-square" type="button"></i>
       <i class="fa-solid fa-trash-can" type="button"></i>
@@ -391,6 +398,12 @@ function displayFilteredPatients(filteredPatients) {
 
     patientsList.appendChild(patientElement);
     console.log(patientsList)
+
+    var patientImgBtn = patientElement.querySelector(".patient-img");
+    patientImgBtn.addEventListener("click", (e)=>{
+      patientProfileModal.style.display = "block";
+      showPatientProfile(patientPerson);
+    })
 
     //delete btn actions
     var deleteBtn = patientElement.querySelector(".fa-trash-can");
@@ -419,17 +432,139 @@ function displayFilteredPatients(filteredPatients) {
       loader();
     })
 
-    //edit btn actions
-    // editBtn.addEventListener("click", (e) => {
-    //   var inputText = content.querySelector("input");
-    //   inputText.removeAttribute("readonly");
-    //   inputText.focus();
-    //   inputText.addEventListener("blur", () => {
-    //     todoItem.content = inputText.value; // E.TARGERT.VALUE
-    //     inputText.setAttribute("readonly", true);
-    //     localStorage.setItem("todos", JSON.stringify(todos));
-    //   })
-    // })
+    //  Edit button
+    var editBtn = patientElement.querySelector(".fa-regular.fa-pen-to-square");
+    editBtn.addEventListener("click", () => {
+      populateEditForm(patientPerson);
+    });
   })
 
+}
+
+/////////////////////////////////   Profile   /////////////////////////////////
+const patientProfileModal = document.getElementById("patient-profile-modal");
+// close the patient profile model btn
+function closePatientProfile(){
+  patientProfileModal.style.display = "none";
+}
+function showPatientProfile(patient) {
+  const profileImage = document.getElementById("profile-image");
+  const profileName = document.getElementById("profile-name");
+  const profileGender = document.getElementById("profile-gender");
+  const profileAge = document.getElementById("profile-age");
+  const profileDiagnosis  = document.getElementById("profile-diagnosis");
+  const profileDOB  = document.getElementById("profile-dob");
+  const profileAddress  = document.getElementById("profile-address");
+  const profilePhone  = document.getElementById("profile-phone");
+  const selector = document.querySelector(".fa-star-of-life");
+  const profileEmail  = document.getElementById("profile-email");
+  const profileHeight  = document.getElementById("profile-height");
+  const profileWeight  = document.getElementById("profile-weight");
+  const profileBloodGr  = document.getElementById("profile-bloodgr");
+  const profileChronicDiseases  = document.getElementById("profile-chronic-diseases");
+  const profileAllergies  = document.getElementById("profile-allergies");
+  const profileLastAppo = document.getElementById("profile-last-appo");
+  const profileNextAppo  = document.getElementById("profile-next-appo");
+  const profileNotes  = document.getElementById("profile-notes");
+
+  // Populate the profile card with patient details
+  profileImage.src = patient.profileSrc;
+  profileName.innerText = `${patient.firstName} ${patient.secondName} ${patient.lastName}`;
+  profileGender.innerText = patient.gender;
+  profileAge.innerText = patient.age;
+  profileDiagnosis.innerText = patient.diagnosis;
+  profileDOB.innerText = patient.dOB;
+  profileAddress.innerText = patient.address;
+  profilePhone.innerText = patient.phone;
+  selector.className = "";
+  selector.classList.add(patient.status.toLowerCase() +"-p-selector", "fa-solid" , "fa-star-of-life");
+  profileEmail.innerText = patient.email;
+  profileHeight.innerText = patient.height || "Unkown";
+  profileWeight.innerText = patient.weight || "Unkown" ;
+  profileBloodGr.innerText = patient.bloodGroup;
+  profileChronicDiseases.innerText = patient.chronicDiseases || "none" ;
+  profileAllergies.innerText = patient.allergies || "none";
+  profileLastAppo.innerText = patient.lastAppointementDate || "none";
+  profileNextAppo.innerText = patient.nextAppointementDate + " " +  patient.nextAppointementTime ;
+  profileNotes.innerText = patient.notes || "none";
+
+  // Display the profile card
+  const profileCard = document.querySelector(".profile-card");
+  profileCard.style.display = "block";
+}
+
+function populateEditForm(patientData) {
+  // Populate the edit form fields with patientData
+  // Show the add patient modal for editing
+  // Add an event listener for saving changes
+  // ...
+  document.getElementById("first-name").value = patientData.firstName;
+  document.getElementById("second-name").value = patientData.secondName;
+  document.getElementById("last-name").value = patientData.lastName;
+  document.getElementById("gender").value = patientData.gender;
+  document.getElementById("age").value = patientData.age;
+  document.getElementById("date-of-birth").value = patientData.dOB;
+  document.getElementById("address").value = patientData.address;
+  document.getElementById("phone").value = patientData.phone;
+  document.getElementById("email").value = patientData.email;
+  document.getElementById("height").value = patientData.height;
+  document.getElementById("weight").value = patientData.weight;
+  document.getElementById("blood-group").value = patientData.bloodGroup;
+  document.getElementById("chronic-diseases").value = patientData.chronicDiseases;
+  document.getElementById("allergies").value = patientData.allergies;
+  document.getElementById("diagnosis").value = patientData.diagnosis;
+  document.getElementById("last-appointement-date").value = patientData.lastAppointementDate;
+  document.getElementById("next-appointement-date").value = patientData.nextAppointementDate;
+  document.getElementById("next-appointement-time").value = patientData.nextAppointementTime;
+  document.getElementById("status").value = patientData.status;
+  document.getElementById("notes").value = patientData.notes;
+
+  // Show the add patient form for editing
+  addPatientModal.style.display = "block";
+
+  // Add a submit event listener for saving changes
+  addPatientForm.removeEventListener("submit", addNewPatient); // Remove the old event listener
+  addPatientForm.addEventListener("submit", () => {
+    savePatientChanges(patientData);
+  });
+}
+
+function savePatientChanges(patientData) {
+ // Update the patient's data with the edited values
+  patientData.firstName = document.getElementById("first-name").value;
+  patientData.secondName = document.getElementById("second-name").value;
+  patientData.lastName = document.getElementById("last-name").value;
+  patientData.gender = document.getElementById("gender").value ;
+  patientData.age = document.getElementById("age").value ;
+  patientData.dOB = document.getElementById("date-of-birth").value;
+  patientData.address = document.getElementById("address").value;
+  patientData.phone = document.getElementById("phone").value ;
+  patientData.email = document.getElementById("email").value ;
+  patientData.height = document.getElementById("height").value;
+  patientData.weight = document.getElementById("weight").value;
+  patientData.bloodGroup = document.getElementById("blood-group").value;
+  patientData.chronicDiseases = document.getElementById("chronic-diseases").value ;
+  patientData.allergies = document.getElementById("allergies").value ;
+  patientData.diagnosis = document.getElementById("diagnosis").value;
+  patientData.lastAppointementDate = document.getElementById("last-appointement-date").value;
+  patientData.nextAppointementDate = document.getElementById("next-appointement-date").value;
+  patientData.nextAppointementTime = document.getElementById("next-appointement-time").value;
+  patientData.status = document.getElementById("status").value;
+  patientData.notes = document.getElementById("notes").value ;
+
+  // Update the patient in the patients array
+  const index = patients.indexOf(patientData);
+  if (index !== -1) {
+    patients[index] = patientData;
+    localStorage.setItem("patients", JSON.stringify(patients));
+  }
+
+  // Close the add patient form
+  addPatientModal.style.display = "none";
+
+  // Update the displayed patients
+  displayPatients();
+  loader();
+  checkActivePatients();
+  checkNonActivePatients();
 }
