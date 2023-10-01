@@ -552,7 +552,6 @@ function savePatientChanges(patientData) {
   patientData.status = document.getElementById("status").value;
   patientData.notes = document.getElementById("notes").value ;
 
-  // Update the patient in the patients array
   const index = patients.indexOf(patientData);
   if (index !== -1) {
     patients[index] = patientData;
