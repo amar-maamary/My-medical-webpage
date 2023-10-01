@@ -11,6 +11,10 @@
 }
 body{
     background-color: var(--main-gray);
+    padding: 0!important;
+}
+.main{
+  padding-top: 50px;
 }
 .footer{
     background-color: white;
@@ -517,7 +521,7 @@ form.example input[type=text] {
     background-color: var(--main-font-color);
     margin-right: 8px;
   }
-  .new-p::before{
+  .new-patient-p::before{
     content: "";
     display: inline-block;
     width: 15px;
