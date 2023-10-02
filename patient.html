@@ -148,7 +148,7 @@
       </div>
       <div class="canceled-section">
         <i class="fa-solid fa-user-xmark"></i>
-        <h1 id="nb-of-patients">120</h1>
+        <h1 id="nb-of-canceled-patients">120</h1>
         <h5>Canceled</h5>
       </div>
       <div class="svg_box">
@@ -186,7 +186,7 @@
                 <button type="button" class="btn-close" id="closeModal"></button>
               </div>
               <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
               <form id="add-patient-form">
                 <!-- General data section -->
@@ -327,17 +327,186 @@
                       <textarea class="form-control" id="notes" placeholder="Enter any important notes"></textarea>
                     </div>
                   </div>
-                  <div class="inputs-group">
+                  <!-- <div class="inputs-group">
                     <label for="patient-file" id="patient-file-btn">Upload Photo</label>
                     <input type="file" id="patient-file" accept="image/jpeg, image/jpg. image/png" style="display: none;" placeholder="Upload image">
-                  </div>
+                  </div> -->
             </form>
             </div>
         </section>
       </div>
       <div class="modal-footer">
-        <button id="save-patient-changes" type="button" class="btn">Save changes</button>
         <button id="add-patient-main-btn" type="submit" form="add-patient-form" class="btn" ><i class="bi bi-person-plus-fill"></i>Add patient</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Edit patient modal -->
+<div class="modal modal2" id="edit-patient-modal">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-body">
+        <section class="patient-actions-section">
+          <div id="edit-patient-form-div">
+              <div id="edit-patient-form-title">
+                <h3>Patient Form</h3>
+                <button type="button" class="btn-close" id="closeEditModal"></button>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <form id="edit-patient-form">
+                <!-- General data section -->
+                <div>
+                  <div class="patient-form-s-title">
+                    <h4>General Info</h4>
+                  </div>
+                  <!-- row 1 -->
+                  <div class="inputs-group">
+                    <div class="mb-3">
+                      <label for="edit-first-name" class="form-label">First name <span class="important">*</span></label>
+                      <input type="text" class="form-control" id="edit-first-name" placeholder="ex: John"  required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="edit-second-name" class="form-label">Second name <span class="important">*</span></label>
+                      <input type="text" class="form-control" id="edit-second-name" placeholder="ex: Steve"  required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="edit-last-name" class="form-label">Last name <span class="important">*</span></label>
+                      <input type="text" class="form-control" id="edit-last-name" placeholder="ex: Doe"  required>
+                    </div>
+                  </div>
+                  <!-- row 2 -->
+                  <div class="inputs-group">
+                    <div class="mb-3">
+                      <label for="edit-gender" class="form-label">Gender <span class="important">*</span></label>
+                      <select class="form-select" id="edit-gender" required>
+                        <option  value="Choose" selected>Choose...</option>
+                        <option  value="Male">Male</option>
+                        <option value="Female">Female</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="edit-age" class="form-label">Age <span class="important">*</span></label>
+                      <input type="number" class="form-control" id="edit-age" placeholder="Enter your age"  required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="edit-date-of-birth" class="form-label">Date of birth <span class="important">*</span></label>
+                      <input type="date" class="form-control" id="edit-date-of-birth" placeholder="mm/dd/yy"  required>
+                    </div>
+                  </div>
+                  <!-- row 3 -->
+                  <div class="inputs-group">
+                    <div class="mb-3">
+                      <label for="edit-address" class="form-label">Address <span class="important">*</span></label>
+                      <input type="text" class="form-control" id="edit-address" placeholder="City, street, building"  required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="edit-phone" class="form-label">Contact <span class="important">*</span></label>
+                      <input type="tel" class="form-control" id="edit-phone" placeholder="ex: +961 03 456 678"  required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="edit-email" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="edit-email" placeholder="ex: john@gmail.com">
+                    </div>
+                  </div>
+                </div>
+                <!-- Medical data section -->
+                <div>
+                  <div class="patient-form-s-title">
+                    <h4>Medical Info</h4>
+                  </div>
+                  <!-- row 1 -->
+                  <div class="inputs-group">
+                    <div class="mb-3">
+                      <label for="edit-height" class="form-label">Height (m)</label>
+                      <input type="number" class="form-control" id="edit-height" placeholder="ex: 160">
+                    </div>
+                    <div class="mb-3">
+                      <label for="edit-weight" class="form-label">Weight (kg)</label>
+                      <input type="number" class="form-control" id="edit-weight" placeholder="ex: 50">
+                    </div>
+                    <div class="mb-3">
+                      <label for="edit-blood-group" class="form-label">Blood Group <span class="important">*</span></label>
+                      <select class="form-select" id="edit-blood-group" required>
+                        <option  value="Choose" selected>Choose...</option>
+                        <option  value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                      </select>
+                    </div>
+                  </div>
+                    <div class="inputs-group">
+                      <div class="mb-3">
+                        <label for="edit-chronic-diseases" class="form-label">Chronic diseases</label>
+                        <input type="text" class="form-control" id="edit-chronic-diseases" placeholder="ex: Hypertension, DM" >
+                      </div>
+                      <div class="mb-3">
+                        <label for="edit-allergies" class="form-label">Allergies</label>
+                        <input type="text" class="form-control" id="edit-allergies" placeholder="ex: Malignant hyperthermia" >
+                      </div>
+                      <div class="mb-3">
+                        <label for="edit-diagnosis" class="form-label">Diagnosis</label>
+                        <input type="text" class="form-control" id="edit-diagnosis" placeholder="ex: Depression">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Appointement data section -->
+                  <div>
+                    <div class="patient-form-s-title">
+                    <h4>Appointements Info</h4>
+                  </div>
+                <!-- row 1 -->
+                  <div class="inputs-group">
+                    <div class="mb-3">
+                      <label for="edit-last-appointement-date" class="form-label">Last appointement date</label>
+                      <input type="date" class="form-control" id="edit-last-appointement-date" placeholder="mm/dd/yy" >
+                    </div>
+                    <div class="mb-3">
+                      <label for="edit-next-appointement-date" class="form-label">Next appointement date</label>
+                      <input type="date" class="form-control" id="edit-next-appointement-date" placeholder="mm/dd/yy">
+                    </div>
+                    <div class="mb-3">
+                      <label for="edit-next-appointement-time" class="form-label">Next appointement time</label>
+                      <input type="time" class="form-control" id="edit-next-appointement-time" placeholder="ex: 11:00 AM" >
+                    </div>
+                  </div>
+                  <!-- row 2 -->
+                  <div class="inputs-group">
+                    <div class="mb-3">
+                      <label for="edit-status" class="form-label">Status <span class="important">*</span></label>
+                      <select class="form-select" id="edit-status" required>
+                        <option  value="Choose" selected>Choose...</option>
+                        <option  value="Active">Active</option>
+                        <option value="Non-active">Non-active</option>
+                        <option value="New-patient">New-patient</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="inputs-group">
+                    <div class="mb-3" style="grid-column-end: 4; grid-column-start: 1;">
+                      <label for="edit-notes" class="form-label">Notes</label>
+                      <textarea class="form-control" id="edit-notes" placeholder="Enter any important notes"></textarea>
+                    </div>
+                  </div>
+                  <!-- <div class="inputs-group">
+                    <label for="patient-file" id="patient-file-btn">Upload Photo</label>
+                    <input type="file" id="patient-file" accept="image/jpeg, image/jpg. image/png" style="display: none;" placeholder="Upload image">
+                  </div> -->
+            </form>
+            </div>
+        </section>
+      </div>
+      <div class="modal-footer">
+        <button id="edit-patient-main-btn" type="submit" form="edit-patient-form" class="btn" >Edit patient</button>
       </div>
     </div>
   </div>
@@ -421,6 +590,8 @@
           <li role="presentation"><p role="menuitem" tabindex="-1">New-patient</p></li>
           <li role="presentation"><p role="menuitem" tabindex="-1">Completed</p></li>
           <li role="presentation"><p role="menuitem" tabindex="-1">Not Completed</p></li> 
+          <li role="presentation"><p role="menuitem" tabindex="-1">Canceled</p></li>
+          <li role="presentation"><p role="menuitem" tabindex="-1">Not Canceled</p></li> 
           <li role="presentation" class="dropdown-divider"></li>
           <li role="presentation"><p role="menuitem" tabindex="-1">All</p></li>
           

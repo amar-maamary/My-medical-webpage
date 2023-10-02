@@ -75,6 +75,10 @@ let numberOfPatientsContainer = document.getElementById("nb-of-patients");
 let numberOfPatients = parseInt(localStorage.getItem("numberOfPatients")) || 0;
 numberOfPatientsContainer.innerText = numberOfPatients;
 console.log(numberOfPatients);
+//Number of canceled patients
+let numberOfCanceledPatientsContainer = document.getElementById("nb-of-canceled-patients");
+let numberOfCanceledPatients = parseInt(localStorage.getItem("numberOfCanceledPatients")) || 0;
+numberOfCanceledPatientsContainer.innerText = numberOfCanceledPatients;
 
 // Number of done patients 
 let numberOfDonePatients = parseInt(localStorage.getItem("numberOfDonePatients")) || 0;
@@ -91,6 +95,20 @@ function updateDonePatients(){
     }
   }, 0);
   localStorage.setItem("numberOfDonePatients",  numberOfDonePatients.toString());
+}
+
+function updateCanceledPatients(){
+  numberOfCanceledPatients = patients.reduce((acc, curv) => {
+    if (curv.canceled) {
+      console.log("canceled");
+      return acc + 1;
+    } else {
+      console.log("non-canceled");
+      return acc;
+    }
+  }, 0);
+  localStorage.setItem("numberOfCanceledPatients",  numberOfCanceledPatients.toString());
+  numberOfCanceledPatientsContainer.innerText = numberOfCanceledPatients;
 }
 // Active and non-active patients
 var activePatients = parseInt(localStorage.getItem("activePatients")) || 0;
@@ -204,6 +222,7 @@ function addNewPatient(){
     profileSrc:"https://www.transparentpng.com/thumb/user/blue-male-user-profile-transparent-png-2lbgMx.png",
     //  URL.createObjectURL(patientPhotoFile.files[0]) || 
     completed: false,
+    canceled: false,
     patientID: "p-"+  Math.floor(Math.random() * (10000 - 999 + 1)), 
   }
   // Pushing to other patients array and update it
@@ -261,12 +280,21 @@ function displayPatients() {
     patientsList.appendChild(patientElement);
     console.log(patientsList)
 
+    if(patientPerson.canceled){
+      patientElement.classList.add("canceled");
+    }
+    else{
+      patientElement.classList.remove("canceled");
+    }
+    updateCanceledPatients();
+
     // open profile btn
     var patientImgBtn = patientElement.querySelector(".patient-img");
     patientImgBtn.addEventListener("click", (e)=>{
       patientProfileModal.style.display = "block";
       showPatientProfile(patientPerson);
     })
+
 
     //delete btn actions
     var deleteBtn = patientElement.querySelector(".fa-trash-can");
@@ -276,6 +304,7 @@ function displayPatients() {
       numberOfPatients--;
       localStorage.setItem("numberOfPatients", numberOfPatients.toString());
       numberOfPatientsContainer.innerText = numberOfPatients;
+      updateCanceledPatients();
       updateDonePatients();
       checkActivePatients();
       checkNonActivePatients()
@@ -283,11 +312,27 @@ function displayPatients() {
       loader()
     })
 
+    //Cancel Button 
+    var cancelBtn = patientElement.querySelector(".fa-ban");
+    cancelBtn.addEventListener("click", (e)=>{
+      if(patientPerson.canceled){
+        patientElement.classList.remove("canceled");
+        patientPerson.canceled = false;
+      }
+      else{
+        patientElement.classList.add("canceled");
+        patientPerson.canceled = true;
+      }
+      localStorage.setItem("patients", JSON.stringify(patients));
+      updateCanceledPatients()
+    })
+
     // checkbox event
     checkbox.addEventListener("change", (e) =>{
       console.log("checked")
       patientPerson.completed = checkbox.checked;
       localStorage.setItem("patients", JSON.stringify(patients));
+      updateCanceledPatients()
       updateDonePatients();
       checkActivePatients()
       checkNonActivePatients()
@@ -300,7 +345,6 @@ function displayPatients() {
     editBtn.addEventListener("click", () => {
       console.log(editBtn);
       populateEditForm(patientPerson);
-      console.log("blou")
     });
   })
 }
@@ -332,6 +376,10 @@ filterOptions.forEach((option) => {
       } else if (selectedFilter === "Completed" && patient.completed) {
         return true;
       } else if (selectedFilter === "Not Completed" && !patient.completed) {
+        return true;
+      } else if (selectedFilter === "Canceled" && patient.canceled) {
+        return true;
+      } else if (selectedFilter === "Not Canceled" && !patient.canceled) {
         return true;
       } else if (selectedFilter === "All") {
         return true; // Show all patients when "All" is selected
@@ -370,13 +418,12 @@ function displayFilteredPatients(filteredPatients) {
 
   // Loop through the filtered patients and display them
   filteredPatients.forEach((patientPerson) => {
-    
     var patientElement = document.createElement("div");
     patientElement.classList.add("row-");
     patientElement.innerHTML =`
     <input type="checkbox" class="check">
     <div class="name">
-      <img class="patient-img" type="button" src="${patientPerson.profileSrc}">
+      <img class="patient-img" src="${patientPerson.profileSrc}">
       <div>
         <p class="patient-name">${patientPerson.firstName} ${patientPerson.lastName}</p>
         <p><i class="fa-regular fa-calendar-plus"></i> ${patientPerson.nextAppointementDate} ${patientPerson.nextAppointementTime}</p>
@@ -395,15 +442,24 @@ function displayFilteredPatients(filteredPatients) {
     var checkbox = patientElement.querySelector(".check");
     checkbox.checked = patientPerson.completed;
 
-
     patientsList.appendChild(patientElement);
     console.log(patientsList)
 
+    if(patientPerson.canceled){
+      patientElement.classList.add("canceled");
+    }
+    else{
+      patientElement.classList.remove("canceled");
+    }
+    updateCanceledPatients();
+
+    // open profile btn
     var patientImgBtn = patientElement.querySelector(".patient-img");
     patientImgBtn.addEventListener("click", (e)=>{
       patientProfileModal.style.display = "block";
       showPatientProfile(patientPerson);
     })
+
 
     //delete btn actions
     var deleteBtn = patientElement.querySelector(".fa-trash-can");
@@ -413,6 +469,7 @@ function displayFilteredPatients(filteredPatients) {
       numberOfPatients--;
       localStorage.setItem("numberOfPatients", numberOfPatients.toString());
       numberOfPatientsContainer.innerText = numberOfPatients;
+      updateCanceledPatients();
       updateDonePatients();
       checkActivePatients();
       checkNonActivePatients()
@@ -420,11 +477,27 @@ function displayFilteredPatients(filteredPatients) {
       loader()
     })
 
+    //Cancel Button 
+    var cancelBtn = patientElement.querySelector(".fa-ban");
+    cancelBtn.addEventListener("click", (e)=>{
+      if(patientPerson.canceled){
+        patientElement.classList.remove("canceled");
+        patientPerson.canceled = false;
+      }
+      else{
+        patientElement.classList.add("canceled");
+        patientPerson.canceled = true;
+      }
+      localStorage.setItem("patients", JSON.stringify(patients));
+      updateCanceledPatients()
+    })
+
     // checkbox event
     checkbox.addEventListener("change", (e) =>{
       console.log("checked")
       patientPerson.completed = checkbox.checked;
       localStorage.setItem("patients", JSON.stringify(patients));
+      updateCanceledPatients()
       updateDonePatients();
       checkActivePatients()
       checkNonActivePatients()
@@ -435,9 +508,11 @@ function displayFilteredPatients(filteredPatients) {
     //  Edit button
     var editBtn = patientElement.querySelector(".fa-regular.fa-pen-to-square");
     editBtn.addEventListener("click", () => {
+      console.log(editBtn);
       populateEditForm(patientPerson);
     });
-  })
+    })
+
 
 }
 
@@ -493,64 +568,66 @@ function showPatientProfile(patient) {
   profileCard.style.display = "block";
 }
 
+var editPatientModal = document.getElementById("edit-patient-modal");
 function populateEditForm(patientData) {
   // Populate the edit form fields with patientData
   // Show the add patient modal for editing
   // Add an event listener for saving changes
   // ...
-  document.getElementById("first-name").value = patientData.firstName;
-  document.getElementById("second-name").value = patientData.secondName;
-  document.getElementById("last-name").value = patientData.lastName;
-  document.getElementById("gender").value = patientData.gender;
-  document.getElementById("age").value = patientData.age;
-  document.getElementById("date-of-birth").value = patientData.dOB;
-  document.getElementById("address").value = patientData.address;
-  document.getElementById("phone").value = patientData.phone;
-  document.getElementById("email").value = patientData.email;
-  document.getElementById("height").value = patientData.height;
-  document.getElementById("weight").value = patientData.weight;
-  document.getElementById("blood-group").value = patientData.bloodGroup;
-  document.getElementById("chronic-diseases").value = patientData.chronicDiseases;
-  document.getElementById("allergies").value = patientData.allergies;
-  document.getElementById("diagnosis").value = patientData.diagnosis;
-  document.getElementById("last-appointement-date").value = patientData.lastAppointementDate;
-  document.getElementById("next-appointement-date").value = patientData.nextAppointementDate;
-  document.getElementById("next-appointement-time").value = patientData.nextAppointementTime;
-  document.getElementById("status").value = patientData.status;
-  document.getElementById("notes").value = patientData.notes;
+  document.getElementById("edit-first-name").value = patientData.firstName;
+  document.getElementById("edit-second-name").value = patientData.secondName;
+  document.getElementById("edit-last-name").value = patientData.lastName;
+  document.getElementById("edit-gender").value = patientData.gender;
+  document.getElementById("edit-age").value = patientData.age;
+  document.getElementById("edit-date-of-birth").value = patientData.dOB;
+  document.getElementById("edit-address").value = patientData.address;
+  document.getElementById("edit-phone").value = patientData.phone;
+  document.getElementById("edit-email").value = patientData.email;
+  document.getElementById("edit-height").value = patientData.height;
+  document.getElementById("edit-weight").value = patientData.weight;
+  document.getElementById("edit-blood-group").value = patientData.bloodGroup;
+  document.getElementById("edit-chronic-diseases").value = patientData.chronicDiseases;
+  document.getElementById("edit-allergies").value = patientData.allergies;
+  document.getElementById("edit-diagnosis").value = patientData.diagnosis;
+  document.getElementById("edit-last-appointement-date").value = patientData.lastAppointementDate;
+  document.getElementById("edit-next-appointement-date").value = patientData.nextAppointementDate;
+  document.getElementById("edit-next-appointement-time").value = patientData.nextAppointementTime;
+  document.getElementById("edit-status").value = patientData.status;
+  document.getElementById("edit-notes").value = patientData.notes;
 
   // Show the add patient form for editing
-  addPatientModal.style.display = "block";
+  editPatientModal.style.display = "block";
 
   // Add a submit event listener for saving changes
-  addPatientForm.removeEventListener("submit", addNewPatient); // Remove the old event listener
-  addPatientForm.addEventListener("submit", () => {
+  // addPatientForm.removeEventListener("submit", addNewPatient); // Remove the old event listener
+  editPatientModal.addEventListener("submit", (e) => {
+    e.preventDefault();
     savePatientChanges(patientData);
   });
 }
 
 function savePatientChanges(patientData) {
  // Update the patient's data with the edited values
-  patientData.firstName = document.getElementById("first-name").value;
-  patientData.secondName = document.getElementById("second-name").value;
-  patientData.lastName = document.getElementById("last-name").value;
-  patientData.gender = document.getElementById("gender").value ;
-  patientData.age = document.getElementById("age").value ;
-  patientData.dOB = document.getElementById("date-of-birth").value;
-  patientData.address = document.getElementById("address").value;
-  patientData.phone = document.getElementById("phone").value ;
-  patientData.email = document.getElementById("email").value ;
-  patientData.height = document.getElementById("height").value;
-  patientData.weight = document.getElementById("weight").value;
-  patientData.bloodGroup = document.getElementById("blood-group").value;
-  patientData.chronicDiseases = document.getElementById("chronic-diseases").value ;
-  patientData.allergies = document.getElementById("allergies").value ;
-  patientData.diagnosis = document.getElementById("diagnosis").value;
-  patientData.lastAppointementDate = document.getElementById("last-appointement-date").value;
-  patientData.nextAppointementDate = document.getElementById("next-appointement-date").value;
-  patientData.nextAppointementTime = document.getElementById("next-appointement-time").value;
-  patientData.status = document.getElementById("status").value;
-  patientData.notes = document.getElementById("notes").value ;
+  patientData.firstName = document.getElementById("edit-first-name").value;
+  patientData.secondName = document.getElementById("edit-second-name").value;
+  patientData.lastName = document.getElementById("edit-last-name").value;
+  patientData.gender = document.getElementById("edit-gender").value ;
+  patientData.age = document.getElementById("edit-age").value ;
+  patientData.dOB = document.getElementById("edit-date-of-birth").value;
+  patientData.address = document.getElementById("edit-address").value;
+  patientData.phone = document.getElementById("edit-phone").value ;
+  patientData.email = document.getElementById("edit-email").value ;
+  patientData.height = document.getElementById("edit-height").value;
+  patientData.weight = document.getElementById("edit-weight").value;
+  patientData.bloodGroup = document.getElementById("edit-blood-group").value;
+  patientData.chronicDiseases = document.getElementById("edit-chronic-diseases").value ;
+  patientData.allergies = document.getElementById("edit-allergies").value ;
+  patientData.diagnosis = document.getElementById("edit-diagnosis").value;
+  patientData.lastAppointementDate = document.getElementById("edit-last-appointement-date").value;
+  patientData.nextAppointementDate = document.getElementById("edit-next-appointement-date").value;
+  patientData.nextAppointementTime = document.getElementById("edit-next-appointement-time").value;
+  patientData.status = document.getElementById("edit-status").value;
+  patientData.notes = document.getElementById("edit-notes").value ;
 
   const index = patients.indexOf(patientData);
   if (index !== -1) {
@@ -559,11 +636,10 @@ function savePatientChanges(patientData) {
   }
 
   // Close the add patient form
-  addPatientModal.style.display = "none";
+  editPatientModal.style.display = "none";
 
   // Update the displayed patients
   displayPatients();
-  loader();
   checkActivePatients();
   checkNonActivePatients();
 }

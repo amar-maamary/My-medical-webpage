@@ -140,7 +140,7 @@ svg {
 }
 /* Patient actions div */
 
-#patient-form-div{
+#patient-form-div, #edit-patient-form-div{
   border: 1px solid rgba(0,0,0,.125);
   border-radius: 0.5rem;
   background-color: white;
@@ -150,14 +150,14 @@ svg {
 .progress{
   background-color: var(--main-gray);
 }
-#add-patient-modal .modal-body{
+#add-patient-modal .modal-body, #edit-patient-modal .modal-body{
   padding: 0px;
 }
-#add-patient-modal .modal-content{
+#add-patient-modal .modal-content, #edit-patient-modal .modal-content{
   border-radius: 0.5rem;
   border-color: rgba(0,0,0,.125);
 }
-#patient-form-div .progress{
+#patient-form-div .progress, #edit-patient-form-div .progress{
   width: 100%;
   /* border-top-right-radius: 0px;
   border-top-left-radius: 0px; */
@@ -166,7 +166,7 @@ svg {
   border-bottom: 1px solid #dee2e6;
   background-color: var(--main-transparent-gray);
 }
-#patient-form-title{
+#patient-form-title, #edit-patient-form-title{
   background-color: var(--main-transparent-gray);
   border-radius: 0.5rem;
   padding: 20px;
@@ -175,7 +175,7 @@ svg {
   display: grid;
   grid-template: 1fr/ 30fr 1fr;
 }
-#add-patient-form{
+#add-patient-form , #edit-patient-form{
   padding: 40px;
   text-align: left;
 }
@@ -184,21 +184,21 @@ svg {
   margin-bottom: 20px;
 }
 
-#add-patient-form .inputs-group{
+#add-patient-form .inputs-group, #edit-patient-form .inputs-group{
   display: grid;
   grid-template: 1fr / 1fr 1fr 1fr;
   column-gap: 50px;
   margin: 0 20px;
 }
-#add-patient-form label {
+#add-patient-form label, #edit-patient-form label {
   font-weight: 450;
 }
-#add-patient-form  .form-control, #add-patient-form  .form-select {
+#add-patient-form  .form-control, #add-patient-form  .form-select , #edit-patient-form  .form-control, #edit-patient-form  .form-select{
   background-color: var(--main-transparent-gray)!important;
   opacity: 0.7;
   margin-bottom: 1.5em;
 }
-#add-patient-form  .form-control:focus,  #add-patient-form  .form-select:focus{
+#add-patient-form  .form-control:focus,  #add-patient-form  .form-select:focus, #edit-patient-form  .form-control:focus,  #edit-patient-form  .form-select:focus{
   background-color: white;
   box-shadow: 0 0 0 0.25rem #a7eff8!important;
 }
@@ -223,21 +223,7 @@ svg {
   background-color: var(--main-color);
 }
 
-#save-patient-changes{
-  display: none;
-  border-color: var(--main-blue)!important;
-  background-color: transparent;
-}
-#save-patient-changes:active{
-  background-color: var(--main-gray)!important;
-}
-#save-patient-changes:hover{
-  border-color: var(--main-color)!important;
-}
-#save-patient-changes:focus{
-  border-color: var(--main-orange)!important;
-}
-#add-patient-main-btn{
+#add-patient-main-btn , #edit-patient-main-btn{
   background-color: var(--main-orange);
   color: white!important;
 }
@@ -245,7 +231,7 @@ svg {
   color: white!important;
   padding-right: 5px;
 }
-#add-patient-main-btn:hover{
+#add-patient-main-btn:hover , #edit-patient-main-btn:hover{
   background-color: white!important;
   color: var(--main-font-color)!important;
 
@@ -253,7 +239,7 @@ svg {
       color: var(--main-font-color)!important;
   }
 }
-#add-patient-main-btn:focus{
+#add-patient-main-btn:focus, #edit-patient-main-btn:focus{
   background-color: white!important;
   color: var(--main-font-color)!important;
 
@@ -446,9 +432,10 @@ form.example input[type=text] {
     align-items: center;
     margin-right: 10px;
     margin-left: 10px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     font-weight: 400;
     padding: 10px 0px;
+    padding-top: 20px;
   }
   .row-.titles{
     border-color: var(--main-orange);
@@ -544,7 +531,19 @@ form.example input[type=text] {
     color: var(--main-blue);
     cursor: pointer;
 }
-
+.row-.canceled:after{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 80%;
+  height: 0%;
+  border: 1px solid var(--main-orange);
+  margin: auto;
+  transform: translate(35px, -7px);
+}
+.row-.canceled{
+  background-color: var(--main-gray);
+}
 
 /* Profile Card Container */
 .profile-card {
