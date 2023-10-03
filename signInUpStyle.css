@@ -219,3 +219,12 @@ body{
   text-decoration: underline!important;
   cursor: pointer;
 }
+#openVerEmailBtn{
+  border: none!important;
+  box-shadow: none!important;
+  background-color: var(--main-gray);
+  font-size: 16px!important;
+  padding: 0!important;
+  color: var(--main-blue)!important;
+  text-decoration: underline;
+}

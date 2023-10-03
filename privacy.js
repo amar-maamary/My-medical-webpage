@@ -18,7 +18,7 @@ const database = getDatabase(app);
 const auth = getAuth();
 
 onAuthStateChanged(auth, (user) => {
-    const bodyMain = document.getElementById("patient-page-body");
+    const bodyMain = document.querySelector(".page-body");
     const privacyError = document.getElementById("privacy-error");
     if (user) {
       bodyMain.style.display ="block";

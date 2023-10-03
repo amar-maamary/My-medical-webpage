@@ -161,7 +161,7 @@
     <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
         </div>
         <div class="sign-footer">
-          <p>Forgot your password? <a data-bs-toggle="modal" data-bs-target="#exampleModal">Click here</a></p>
+          <p>Forgot your password? <button id="openVerEmailBtn" type="button" onclick="openVerModal()">Click here</button></p>
         </div>
         <button type="submit" class="btn submit-btn" id="signInBtn">Log in to your account</button>
       </form>
@@ -178,12 +178,12 @@
 
 
 <!-- Modal -->
-<section class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<section class="modal"id="verEmailModal">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title" id="exampleModalLabel">Password Reset</h3>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" onclick="closeVerModal()"></button>
       </div>
       <div class="modal-body">
         <span class="important">Lost your password? </span> Please enter your email address. You will receive a link to create a new password.
@@ -191,7 +191,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn" id="sendVerificationEmailBtn">Send Email</button>
-        <button type="button" class="btn" id="closeBtn" data-bs-dismiss="modal">Back To Sign In</button>
+        <button type="button" class="btn" id="closeBtn" onclick="closeVerModal()">Back To Sign In</button>
       </div>
     </div>
   </div>
@@ -201,6 +201,12 @@
 <script src="signInUpScript.js"></script>
 <script>
   verEmail.value = localStorage.getItem("homeEmail") || "";
+  function openVerModal(){
+    verEmailModal.style.display="block";
+  }
+  function closeVerModal(){
+    verEmailModal.style.display="none"; 
+  }
 </script>
 <script type="module">
   import authStateHandler from "./authState.js";

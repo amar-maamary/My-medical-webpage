@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@500&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="profile.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -127,6 +128,54 @@
 </div>
 
 
+<section id="privacy-error">
+  <section class="alert alert-dismissible" id = "negativeAlert" role="alert">
+    <i class="bi bi-x-octagon-fill"></i><strong>Sorry ! </strong><span id="errorAlertMessage"> You need to sign in to get your profile data.</span>
+    <button type="button" class="btn-close close" ></button>
+  </section>
+  <img  src="https://i.pinimg.com/originals/21/fa/6b/21fa6bf976b9b3e7ce096fcf8efc4b2e.gif" class="logImage">
+</section>
+
+<section class="page-body">
+  <div class="prof-first-div card">
+    <div class="prof-column">
+      <img src="https://img.freepik.com/free-photo/beautiful-flowers-with-water-drops_23-2150705665.jpg" class="prof-imag">
+      <hr>
+      <div class="prof-social-icons">
+        <a href="" class="prof-linkedin"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="" class="prof-twitter"><i class="fa-brands fa-square-twitter"></i></a>
+        <a href="" class="prof-facebook"><i class="fa-brands fa-square-facebook"></i></a>
+      </div>
+    </div>
+    <div>
+      <h2><input class="prof-user-name input"  placeholder="Username" type="text" value="Amar Maamary" readonly></h2>
+      <h3><input class="prof-user-job-title input"  placeholder="Job title" type="text" value="Psychologist" readonly></h3>
+      <hr class="design-hr">
+      <!-- <div class="contacts-prof-info-div"> -->
+        <!-- <p><strong><i class="fa-solid fa-phone"></i></strong><input class="prof-user-phone input" type="phone" value="+961 71008377"></p>
+        <p><strong><i class="fa-solid fa-envelope"></i></strong><input class="prof-user-email input" type="email" value="kamar.maamary@gmail.com"></p>
+        <p><strong><i class="fa-solid fa-location-dot"></i></strong> <input class="prof-user-address input" type="text" value="Tripoli, Mharram, Mas2oud & Harba"></p> -->
+      <textarea class="description"  placeholder="Description" readonly>A Psychologist is a trained scientist specializing in studying the human mind to facilitate behavior change in clients. They employ their expertise to analyze and comprehend mental processes, providing effective guidance for individuals seeking psychological support and personal development.</textarea>
+    </div>
+    <div class="contacts-prof-info-div">
+      <p><strong><i class="fa-solid fa-phone"></i></strong><input class="prof-user-phone input" placeholder="Phone number" type="phone" value="+961 71008377" readonly></p>
+      <p><strong><i class="fa-solid fa-envelope"></i></strong><input class="prof-user-email input"  placeholder="Email" type="email" value="kamar.maamary@gmail.com" readonly></p>
+      <p><strong><i class="fa-solid fa-location-dot"></i></strong> <input class="prof-user-address input"  placeholder="Address" type="text" value="Tripoli, Mharram, Mas2oud & Harba" readonly></p>
+      <p><strong><i class="fa-solid fa-hospital"></i></strong> <input class="prof-user-hospital input"  placeholder="Hospital" type="text" value="American university of Beirut Medical Center" readonly></p>
+    </div>
+  </div>
+  <div class="experiences-div card">
+    <h2>Experience</h2>
+    <textarea class="experience-description"  placeholder="Description" readonly></textarea>
+    <div class="experience-info">
+      <p><strong><i class="fa-solid fa-hospital"></i></strong> <input class="experience-hospital input"  placeholder="Hospital" type="text" readonly></p>
+      <p><strong><i class="fa-solid fa-calendar"></i></strong> <input class="experience-start-date input"  placeholder="Start Date" type="text" readonly></p>
+      <p><strong><i class="fa-solid fa-calendar-check"></i></strong> <input class="experience-end-date input"  placeholder="End Date" type="text" readonly></p>
+    </div>
+  </div>
+</section>
+
+
   <!-- Footer -->
   <section class="footer"> 
     <div> 
@@ -148,11 +197,12 @@
   </section>
 
   </section>
-  <script src="script.js"></script>
+  <script src="profile.js"></script>
   <script type="module">
     import authStateHandler from "./authState.js";
     authStateHandler();
   </script>
+  <script type="module" src="privacy.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 

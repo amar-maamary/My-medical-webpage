@@ -130,6 +130,7 @@ sendVerificationEmailBtn.addEventListener("click", (e)=>{
   sendPasswordResetEmail(auth, email)
   .then(() => {
     positiveAlert.style.display = "block";
+    verEmailModal.style.display = "none";
     positiveAlertMessage.innerText = "Password Reset email is successfully sent!";
     emailInput.value = "";
   })
