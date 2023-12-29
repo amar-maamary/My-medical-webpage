@@ -52,21 +52,59 @@ body{
     margin-bottom: 5%;
 }
 .prof-first-div{
-    display: grid;
-    grid-template: 1fr/ auto auto 1fr;
-    column-gap: 50px;
     margin: 50px 4%!important;
     width: 90%;
     height: auto;
     padding: 50px 50px; 
-    justify-content: start;
     box-shadow: var(--main-box-shadow);
 }
-.prof-first-div .prof-column{
-    margin-top: 40px;
+.socials{
+    display: none;
+}
+.socials-grid{
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr ;
+}
+.socials input{
+    margin-top: 10px;
+    border-radius: 0.25rem;
+    padding: 4px;
+}
+#saveBtn{
+    display: none;
+}
+.fa-floppy-disk{
+    padding-right: 10px;
+}
+.prof-grid{
+    display: grid;
+    grid-template: 1fr/ auto auto 1fr;
+    column-gap: 50px;
+    justify-content: start;
+}
+.prof-first-div input:focus, .prof-first-div textarea:focus{
+    outline: 1px solid rgba(0,0,0,0.1) !important;
+    border-radius: 0.25rem;
+    background-color: var(--main-transparent-gray);
+    }
+.btns-container{
+    position: absolute!important;
+    right:50px;
+    top: 40px;
+}
+.btns-container button{
+    color: var(--main-font-color);
+}
+.fa-square-plus{
+    padding-right: 10px; 
+}
+.fa-pen-to-square{
+    padding-right: 10px;
 }
 .prof-imag{
-    border-radius: 0.5rem;
+    border-radius: 50%;
+    border: 3px solid var(--main-color) ;
+    /* #d3d2d2 */
     width:200px;
     height: 200px;
     object-fit: cover;
@@ -74,14 +112,14 @@ body{
     z-index: 4!important; */
 }
 .prof-social-icons{
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    column-gap: 40px;
 }
 .fa-square-twitter , .fa-linkedin, .fa-square-facebook{
     font-size: 30px;
+    color: #c4c2c2;
 }
 .fa-square-twitter:hover{
     color: var(--main-blue);
@@ -92,7 +130,6 @@ body{
 .fa-square-facebook:hover{
     color: rgb(34, 73, 133);
 }
-
 .prof-first-div h3{
     font-size: 1.1rem;
 }
@@ -113,10 +150,19 @@ body{
     z-index: 2;
 } */
 .contacts-prof-info-div{
-    margin-top: 100px;
+    margin-top: 50px;
+}
+.fa-graduation-cap{
+    color: var(--main-orange);
+    padding-right: 10px;
+}
+.prof-user-job-title{
+    color: var(--main-orange);
+    font-style: italic;
 }
 .contacts-prof-info-div .fa-solid{
     margin-right: 10px;
+    color: var(--main-blue);
 }
 .prof-first-div input{
     border: none;
@@ -130,6 +176,9 @@ body{
     justify-content: start;
     box-shadow: var(--main-box-shadow);
 }
+.experiences-div h2{
+    color: var(--main-blue)
+}
 .experiences-div input{
     border: none;
 }
@@ -141,8 +190,81 @@ body{
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.experiences-div  i {
+    color: var(--main-orange);
+    margin-right: 10px;
+}
 .experience-info{
     display: grid;
     grid-template: 1fr/ 1fr 1fr 1fr;
     justify-content: space-around;
+}
+#saveExperienceBtn{
+    display: none;
+}
+.experiences-div input:focus, .experiences-div textarea:focus{
+    outline: 1px solid rgba(0,0,0,0.1) !important;
+    border-radius: 0.25rem;
+    background-color: var(--main-transparent-gray);
+    } 
+      
+hr{
+    box-shadow: 0px 2px 8px var(--main-orange);
+}
+
+/* todo div */
+.add-todo-div{
+    margin: 50px 4%!important;
+    width: 90%;
+    height: auto;
+    padding: 50px 50px; 
+    justify-content: start;
+    box-shadow: var(--main-box-shadow);
+}
+.add-todo-div h2{
+    color: var(--main-blue)
+}
+#addToDoForm{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.add-todo-div label {
+    font-weight: 450;
+}
+.add-todo-div input[type="text"]{
+    width: 40%;
+}
+.add-todo-div form .form-control {
+background-color: #eeebf3;
+opacity: 0.7;
+margin-bottom: 1.5em;
+}
+.add-todo-div form .form-control:focus{
+background-color: white;
+box-shadow: 0 0 0 0.25rem #a7eff8;
+}
+.form-check{
+margin-left: 20px;
+}
+.personal-input{
+border: 1px solid var(--main-color);
+}
+.personal-input:checked {
+background-color: var(--main-blue);
+border-color: var(--main-blue);
+}
+.personal-input:focus{
+    box-shadow: 0 0 0 0.25rem var(--main-color);
+} 
+
+.business-input:checked {
+    background-color: var(--main-orange);
+    border-color: var(--main-orange);
+}
+.business-input:focus{
+    box-shadow: 0 0 0 0.25rem #ff895bd5;
+} 
+.business-input{
+    border: 1px solid #ff895bd5;
 }

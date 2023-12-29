@@ -281,11 +281,12 @@ svg {
     height: 50px;
     box-shadow: var(--main-box-shadow);
     font-size: 18px !important;
-    border: 4px solid rgba(0,0,0,0.1) !important;
-    border-color: var(--main-blue)!important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    border-color: #ced4da!important;
     border-radius: 0.5rem;
-    padding-top: 7px!important;
-    padding-right: 12px;
+    /* padding-top: 7px!important; */
+    padding: 9px !important;
+    /* padding-right: 12px; */
     background-color: transparent!important;
     .fa-filter{
         font-size: 1.5rem;
@@ -298,9 +299,9 @@ svg {
 .key-events .filter:hover{
     border-color: var(--main-color)!important;
 }
-.key-events .filter:focus{
+/* .key-events .filter:focus{
     border-color: var(--main-orange)!important;
-}
+} */
 .key-events .filter h5{
     font-weight: 500;
     margin-left: 10px;
@@ -354,20 +355,21 @@ form.example input[type=text] {
   form.example button {
     float: left;
     width: 10%;
-    padding:6px 5px;
+    padding:10px 5px;
     background: var(--main-blue);
     border-radius: 0.5rem;
     font-size: 17px;
     border-left: none; /* Prevent double borders */
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
+    border: none!important;
     cursor: pointer;
   }
   
   form.example button:focus {
-    background-color: var(--main-gray)!important;
-    background: var(--main-gray);
-    border-color: var(--main-orange)!important;
+    background-color: var(--main-color)!important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    /* border-color: var(--main-orange)!important; */
   }
   
   /* Clear floats */
@@ -392,7 +394,7 @@ form.example input[type=text] {
   #add-patient-nav-btn:hover{
     background-color: white!important;
     color: var(--main-font-color)!important;
-
+  
     .bi-person-plus-fill{
         color: var(--main-font-color)!important;
     }
@@ -506,7 +508,6 @@ form.example input[type=text] {
     background-color: var(--main-blue);
     margin-right: 8px;
   }
-
   .patient-diagnosis{
     font-weight: 500;
     font-size: 18px;

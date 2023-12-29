@@ -138,40 +138,90 @@
 
 <section class="page-body">
   <div class="prof-first-div card">
-    <div class="prof-column">
-      <img src="https://img.freepik.com/free-photo/beautiful-flowers-with-water-drops_23-2150705665.jpg" class="prof-imag">
-      <hr>
-      <div class="prof-social-icons">
-        <a href="" class="prof-linkedin"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="" class="prof-twitter"><i class="fa-brands fa-square-twitter"></i></a>
-        <a href="" class="prof-facebook"><i class="fa-brands fa-square-facebook"></i></a>
+    <div class="btns-container">
+      <button class="btn" type="button" id="editBtn"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+      <button class="btn" style="border-color: var(--main-blue)!important" type="button" id="saveBtn"><i class="fa-regular fa-floppy-disk"></i> Save</button>
+    </div>
+    <div class="prof-grid">
+      <div class="prof-column">
+        <img src="https://img.freepik.com/free-photo/beautiful-flowers-with-water-drops_23-2150705665.jpg" class="prof-imag">
+        <hr>
+        <div class="prof-social-icons">
+          <a href="" class="prof-linkedin"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="" class="prof-twitter"><i class="fa-brands fa-square-twitter"></i></a>
+          <a href="" class="prof-facebook"><i class="fa-brands fa-square-facebook"></i></a>
+        </div>
       </div>
+      <div>
+        <h2><input class="prof-user-name input"  placeholder="Username" type="text" value="Amar Maamary" readonly></h2>
+        <h3><i class="fa-solid fa-graduation-cap"></i> <input class="prof-user-job-title input"  placeholder="Job title" type="text" value="Psychologist" readonly></h3>
+        <hr class="design-hr">
+        <textarea class="description"  placeholder="Description" readonly>A Psychologist is a trained scientist specializing in studying the human mind to facilitate behavior change in clients. They employ their expertise to analyze and comprehend mental processes, providing effective guidance for individuals.</textarea>
+      </div>
+      <div class="contacts-prof-info-div">
+        <p><strong><i class="fa-solid fa-phone"></i></strong><input class="prof-user-phone input" placeholder="Phone number" type="phone" value="+961 71008377" readonly></p>
+        <p><strong><i class="fa-solid fa-envelope"></i></strong><input class="prof-user-email input"  placeholder="Email" type="email" value="kamar.maamary@gmail.com" readonly></p>
+        <p><strong><i class="fa-solid fa-location-dot"></i></strong> <input class="prof-user-address input"  placeholder="Address" type="text" value="Tripoli, Mharram, Mas2oud & Harba" readonly></p>
+        <p><strong><i class="fa-solid fa-school"></i></strong> <input class="prof-user-school input"  placeholder="University" type="text" value="American university of Beirut" readonly></p>
+        <hr>
+        <p><strong><i style="color:var(--main-orange)" class="fa-solid fa-hospital"></i></strong> <input class="prof-user-hospital input"  placeholder="Hospital" type="text" value="American university of Beirut Medical Center" readonly></p>
+
+      </div>
+      
     </div>
-    <div>
-      <h2><input class="prof-user-name input"  placeholder="Username" type="text" value="Amar Maamary" readonly></h2>
-      <h3><input class="prof-user-job-title input"  placeholder="Job title" type="text" value="Psychologist" readonly></h3>
-      <hr class="design-hr">
-      <!-- <div class="contacts-prof-info-div"> -->
-        <!-- <p><strong><i class="fa-solid fa-phone"></i></strong><input class="prof-user-phone input" type="phone" value="+961 71008377"></p>
-        <p><strong><i class="fa-solid fa-envelope"></i></strong><input class="prof-user-email input" type="email" value="kamar.maamary@gmail.com"></p>
-        <p><strong><i class="fa-solid fa-location-dot"></i></strong> <input class="prof-user-address input" type="text" value="Tripoli, Mharram, Mas2oud & Harba"></p> -->
-      <textarea class="description"  placeholder="Description" readonly>A Psychologist is a trained scientist specializing in studying the human mind to facilitate behavior change in clients. They employ their expertise to analyze and comprehend mental processes, providing effective guidance for individuals seeking psychological support and personal development.</textarea>
-    </div>
-    <div class="contacts-prof-info-div">
-      <p><strong><i class="fa-solid fa-phone"></i></strong><input class="prof-user-phone input" placeholder="Phone number" type="phone" value="+961 71008377" readonly></p>
-      <p><strong><i class="fa-solid fa-envelope"></i></strong><input class="prof-user-email input"  placeholder="Email" type="email" value="kamar.maamary@gmail.com" readonly></p>
-      <p><strong><i class="fa-solid fa-location-dot"></i></strong> <input class="prof-user-address input"  placeholder="Address" type="text" value="Tripoli, Mharram, Mas2oud & Harba" readonly></p>
-      <p><strong><i class="fa-solid fa-hospital"></i></strong> <input class="prof-user-hospital input"  placeholder="Hospital" type="text" value="American university of Beirut Medical Center" readonly></p>
+    <div class="socials">
+      <div class="socials-grid">
+      <input class= "linkeidn" placeholder="Linkedin Link">
+      <input class= "twitter" placeholder="Twitter Link">
+      <input class= "facebook" placeholder="Facebook Link">
+      </div>
     </div>
   </div>
   <div class="experiences-div card">
     <h2>Experience</h2>
-    <textarea class="experience-description"  placeholder="Description" readonly></textarea>
-    <div class="experience-info">
-      <p><strong><i class="fa-solid fa-hospital"></i></strong> <input class="experience-hospital input"  placeholder="Hospital" type="text" readonly></p>
-      <p><strong><i class="fa-solid fa-calendar"></i></strong> <input class="experience-start-date input"  placeholder="Start Date" type="text" readonly></p>
-      <p><strong><i class="fa-solid fa-calendar-check"></i></strong> <input class="experience-end-date input"  placeholder="End Date" type="text" readonly></p>
+    <div class="btns-container">
+      <button class="btn" type="button" id="editExperienceBtn"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+      <button class="btn" style="border-color: var(--main-blue)!important" type="button" id="saveExperienceBtn"><i class="fa-regular fa-floppy-disk"></i> Save</button>
     </div>
+    <div style="margin-left: 20px; margin-top: 10px;">
+      <textarea class="experience-description"  placeholder="Description" readonly></textarea>
+      <div class="experience-info">
+        <p><strong><i class="fa-solid fa-hospital"></i></strong> <input class="experience-hospital input"  placeholder="Hospital" type="text" readonly></p>
+        <p><strong><i class="fa-solid fa-calendar"></i></strong> <input class="experience-start-date input"  placeholder="mm/dd/yy" type="text" readonly></p>
+        <p><strong><i class="fa-solid fa-calendar-check"></i></strong> <input class="experience-end-date input"  placeholder="mm/dd/yy" type="text" readonly></p>
+      </div>
+      <hr>
+    </div>
+  </div>
+  <div class="add-todo-div card">
+    <h2>Add A ToDo </h2>
+    <form id="addToDoForm">
+      <div class="mb-3">
+        <label for="todoDescription" class="form-label">What's on your todo?</label>
+        <input type="text" class="form-control" id="todoDescription" placeholder="Enter Description"  required>
+      </div>
+      <div class="mb-3">
+        <label for="category" class="form-label">Pick a category</label>
+        <div class="form-check">
+          <input class="form-check-input business-input" type="radio" name="category" id="business" checked>
+          <label class="form-check-label" for="business">
+            Business
+          </label>
+        </div>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input personal-input" type="radio" name="category" id="personal">
+        <label class="form-check-label" for="personal">
+          Personal
+        </label>
+      </div>
+        <div class="mb-3">
+          <label for="todoDescription" class="form-label">What's the due date?</label>
+          <input type="text" class="form-control" id="todoDescription" placeholder="Enter Description"  required>
+        </div>
+      </div>
+
+    </form>
   </div>
 </section>
 
@@ -203,6 +253,7 @@
     authStateHandler();
   </script>
   <script type="module" src="privacy.js"></script>
+  <script src="profileData.js" type="module"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 

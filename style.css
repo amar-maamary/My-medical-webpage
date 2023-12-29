@@ -36,11 +36,13 @@ button{
     color: var(--main-font-color);
     box-shadow: var(--main-box-shadow);
     font-size: 18px !important;
-    border: 4px solid rgba(0,0,0,0.1) !important;
-    padding: 7px;
+    /* border: 4px solid rgba(0,0,0,0.1) !important; */
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    padding: 10px;
 }
 button:hover, button:focus{
-    border:  4px solid  #7be0e0!important;
+    /* border:  4px solid  #7be0e0!important; */
+    border: 1px solid rgba(0,0,0,0.1) !important;
     box-shadow: none!important;
 }
 button:active {
@@ -180,22 +182,29 @@ button:active {
     color: var(--main-font-color);
     box-shadow: var(--main-box-shadow);
     font-size: 18px !important;
-    border: 4px solid rgba(0,0,0,0.1) !important;
+    /* border: 4px solid rgba(0,0,0,0.1) !important; */
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    box-sizing: border-box;
 }
 .get-sign-up-form{
     background-color: var(--main-orange);
     color: var(--main-font-color);
     box-shadow: var(--main-box-shadow);
     font-size: 18px !important;
-    border: 4px solid rgba(0,0,0,0.1) !important;
+    /* border: 4px solid rgba(0,0,0,0.1) !important; */
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    box-sizing: border-box;
+    background-color: #ff895bf1;
 }
 .get-sign-up-form:hover, .get-sign-up-form:focus, .get-sign-up-form.active{
-    border:  4px solid #fda17c!important;
+    /* border:  4px solid #fda17c!important; */
+    background-color: #ff895bd5;
     box-shadow: none!important;
 }
 .get-sign-in-form:hover, .get-sign-in-form:focus, .get-sign-in-form.active{
-    border:  4px solid  #7be0e0!important;
+    /* border:  4px solid  #7be0e0!important; */
     box-shadow: none!important;
+    background-color: #6ececed8;
 }
 /* Profile section in Nav */
 .profile:hover{

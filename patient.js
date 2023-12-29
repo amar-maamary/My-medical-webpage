@@ -65,6 +65,8 @@ closeModal.addEventListener("click", ()=>{
 })
 
 
+
+
 // Importing the add patient from
 const addPatientForm = document.getElementById("add-patient-form");
 // Crating a list for my patients data
@@ -569,11 +571,11 @@ function showPatientProfile(patient) {
 }
 
 var editPatientModal = document.getElementById("edit-patient-modal");
+closeEditModal.addEventListener("click", ()=>{
+  editPatientModal.style.display = "none";
+})
+
 function populateEditForm(patientData) {
-  // Populate the edit form fields with patientData
-  // Show the add patient modal for editing
-  // Add an event listener for saving changes
-  // ...
   document.getElementById("edit-first-name").value = patientData.firstName;
   document.getElementById("edit-second-name").value = patientData.secondName;
   document.getElementById("edit-last-name").value = patientData.lastName;
