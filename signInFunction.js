@@ -162,7 +162,7 @@ onAuthStateChanged(auth, (user) => {
     update(ref(database, 'users/' + uid), {
       last_login: new Date(),
     }).then(() => {
-      document.location.href = '/profile.html';  
+      document.location.href = 'profile.html';  
     }).catch((error) => {
       console.error("Error updating user data:", error);
     });
