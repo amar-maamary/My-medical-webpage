@@ -93,6 +93,7 @@ function signWithGoogleFunction(){
         username : username,
         email: email,
       });
+      console.log("username");
       positiveAlert.style.display = "block";
       positiveAlertMessage.innerText = `Welcome ${username}, User is successfully created!`;
     } else {
@@ -157,13 +158,22 @@ onAuthStateChanged(auth, (user) => {
     uname.style.display = "block";
   })
 
+    // Perform database update 
+    update(ref(database, 'users/' + uid), {
+      last_login: new Date(),
+    }).then(() => {
+      document.location.href = '/profile.html';  
+    }).catch((error) => {
+      console.error("Error updating user data:", error);
+    });
+ 
+
   positiveAlert.style.display = "block";
   
   container.innerHTML = `<img class="logImage" src="https://i.pinimg.com/originals/4e/26/c4/4e26c49b5f91d42e883f4b2cbf34d772.gif">`;
   container.style.backgroundColor = "var(--main-gray)";
   container.style.textAlign = 'center';
   container.style.height = 'auto';
-  document.location.href = '/profile.html';
 } 
   else {
   // User is signed out

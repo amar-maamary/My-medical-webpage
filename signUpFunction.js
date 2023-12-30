@@ -1,7 +1,12 @@
  // Import the functions you need from the SDKs you need
- import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
- import { getDatabase, set, ref, update, onValue } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
- import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, getAdditionalUserInfo, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
+//  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
+//  import { getDatabase, set, ref, update, onValue } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
+//  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, getAdditionalUserInfo, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
+import { getDatabase, set, ref, update, onValue } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, getAdditionalUserInfo, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
+
+
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -41,6 +46,7 @@ signUpForm.addEventListener("submit", (e) =>{
       username : username,
       email: email,
     })
+    console.log(username)
     positiveAlert.style.display = "block";
     positiveAlertMessage.innerText =  ` Welcome ${username}, User is successfully created! `;
   })
@@ -106,6 +112,7 @@ function signWithGoogleFunction(){
   .catch((error) => {
     // negativeAlert.classList.add("show");
     negativeAlert.style.display = "block";
+    console.error("Firebase Database Error:", error);
     switch (error.code) {
       case 'auth/user-disabled':
         errorAlertMessage.innerText = ` The '${email}' user account has been disabled by an administrator.`;
@@ -136,13 +143,21 @@ onAuthStateChanged(auth, (user) => {
     uname.style.display = "block";
   })
 
+  // Perform database update 
+  update(ref(database, 'users/' + uid), {
+    last_login: new Date(),
+  }).then(() => {
+    document.location.href = '/profile.html';  
+  }).catch((error) => {
+    console.error("Error updating user data:", error);
+  });
+
   positiveAlert.style.display = "block";
   
   container.innerHTML = `<img class="logImage" src="https://i.pinimg.com/originals/4e/26/c4/4e26c49b5f91d42e883f4b2cbf34d772.gif">`;
   container.style.backgroundColor = "var(--main-gray)";
   container.style.textAlign = 'center';
   container.style.height = 'auto';
-  document.location.href = '/profile.html';
 
 } 
   else {
