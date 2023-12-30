@@ -28,6 +28,6 @@ onAuthStateChanged(auth, (user) => {
       // User is signed out, show the sign-in and sign-up buttons
       bodyMain.style.display ="none";
       privacyError.style.display ="block";
-      document.location.href = '/sign-in-page.html';
+      document.location.href = 'sign-in-page.html';
     }
   });
