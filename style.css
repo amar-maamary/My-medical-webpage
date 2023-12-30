@@ -430,7 +430,7 @@ color: var(--main-orange);
 .introduction{
     /* https://www.grantthornton.in/globalassets/1.-member-firms/india/new-homepage/media/1.-hero-banners_repeat-visits/1440x600px_hero_banner_shutterstock_1089540233.jpg */
     /* https://hips.hearstapps.com/hmg-prod/images/types-of-doctors-1600114658.jpg?crop=1xw:0.8425829875518672xh;center,top&resize=1200:* */
-    background-image: linear-gradient(to right,  #0cd2c8ab,rgba(255, 255, 255, 0),  rgba(255, 255, 255, 0), #0cd2c8ab), url("https://www.grantthornton.in/globalassets/1.-member-firms/india/new-homepage/media/1.-hero-banners_repeat-visits/1440x600px_hero_banner_shutterstock_1089540233.jpg");
+    background-image: linear-gradient(to right,  #0cd2c86b,rgba(255, 255, 255, 0),  rgba(255, 255, 255, 0), #0cd2c86b), url("https://www.grantthornton.in/globalassets/1.-member-firms/india/new-homepage/media/1.-hero-banners_repeat-visits/1440x600px_hero_banner_shutterstock_1089540233.jpg");
      /* https://info.primarycare.hms.harvard.edu/hubfs/6.23.jpg */
      /* https://imgix-prod.sgs.com/-/media/sgscorp/images/temporary/hero-medical-record-and-stethoscope-1600px.cdn.en-PT.1.png?fit=crop&crop=edges&auto=format&w=1200&h=630 */
      /* https://www.shutterstock.com/image-photo/doctor-diagnose-digital-patient-record-260nw-2148966661.jpg */
@@ -464,7 +464,9 @@ header{
 .main h5{
     padding-top: 2%;
     padding-bottom: 2%;
-    font-weight: 400;
+    font-weight: 350;
+    font-size: 18px!important;
+    line-height: 1.4;
 }
 #check-patients-btn{
     background-color: var(--main-orange);
@@ -491,11 +493,17 @@ header{
 }
 .about-div{
     margin: 4%;
+    margin-top: 0%!important;
     margin-left: 13%;
 }
+.about-div h2{
+    padding-bottom: 2%;
+}
 .about-div h5{
-    line-height: 1.4;
-    font-size: 22px;
+    line-height: 1.5;
+    font-size: 20px;
+    font-weight: 350;
+    margin-bottom: 5%;
 }
 .contact-us-btn{
     background-color: var(--main-blue);
@@ -505,7 +513,7 @@ header{
 }
 .random-image{
     width: 90%;
-    height: 400px;
+    height: 330px;
     border-radius: 0.5rem;
     box-shadow: var(--main-box-shadow);
     justify-self: end;
@@ -520,8 +528,8 @@ header{
     grid-template: 1fr 1fr / 1fr 1fr ;
     text-align: center;
     margin: 5%;
-    margin-top: 9%;
-    margin-bottom: 8%;
+    margin-top: 2%!important;
+    margin-bottom: 4%!important;
     column-gap: 10%;
 }
 .services-title{
@@ -539,7 +547,7 @@ header{
     justify-self: center;  
 }
 .services .bi{
-    font-size: 80px;
+    font-size: 60px;
 }
 .services h4{
     margin-top: 15px;
@@ -551,7 +559,7 @@ header{
 /*  Articles Nav    */
 .articles-nav{
     width:100%;
-    background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('https://www.oma.org/uploadedfiles/oma/media/pagetree/newsroom/omr/summer-2023/summer23-omr-landing-page-hrm-listicle.jpg');
+    background-image: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.2)),linear-gradient(to right,  #0cd2c86b,rgba(255, 255, 255, 0),  rgba(255, 255, 255, 0), #0cd2c86b), url('https://www.oma.org/uploadedfiles/oma/media/pagetree/newsroom/omr/summer-2023/summer23-omr-landing-page-hrm-listicle.jpg');
     background-size:cover;
     /* linear-gradient(to right, #0cd2c8,#0cd2c8a9,transparent, #0cd2c8a9), */
     /*  https://www.oma.org/contentassets/8beb95743d1a49099aedfc71f62e5dee/rxrenewal-aboutreport-resized.jpg*/
@@ -615,8 +623,8 @@ header{
 }
     
 .articles-nav .cards .card section h4{
-    font-weight:200;
-    font-size: 26px;
+    font-weight:250;
+    font-size: 24px;
 }
  
 
