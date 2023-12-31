@@ -194,34 +194,104 @@
     </div>
   </div>
   <div class="add-todo-div card">
+    <div>
     <h2>Add A ToDo </h2>
     <form id="addToDoForm">
-      <div class="mb-3">
-        <label for="todoDescription" class="form-label">What's on your todo?</label>
-        <input type="text" class="form-control" id="todoDescription" placeholder="Enter Description"  required>
+      <div class="input-grid-todo">
+        <div class="mb-3">
+          <label for="todoDescription" class="form-label">What's on your todo?</label>
+          <input type="text" class="form-control" id="todoDescription" placeholder="Enter Description"  required>
+        </div>
+        <div class="mb-3 todopara">
+          <label for="todoDueDate" class="form-label">What's the due date?</label>
+          <input type="date" class="form-control" id="todoDueDate" required>
+        </div>
       </div>
       <div class="mb-3">
         <label for="category" class="form-label">Pick a category</label>
         <div class="form-check">
-          <input class="form-check-input business-input" type="radio" name="category" id="business" checked>
+          <input class="form-check-input business-input" type="radio" name="category" id="business" value="business" checked>
           <label class="form-check-label" for="business">
             Business
           </label>
         </div>
       </div>
+
       <div class="form-check">
-        <input class="form-check-input personal-input" type="radio" name="category" id="personal">
+        <input class="form-check-input personal-input" type="radio" name="category" id="personal" value="personal">
         <label class="form-check-label" for="personal">
           Personal
         </label>
       </div>
-        <div class="mb-3">
-          <label for="todoDescription" class="form-label">What's the due date?</label>
-          <input type="text" class="form-control" id="todoDescription" placeholder="Enter Description"  required>
+      <div class="mb-3">
+        <button id="addTodoBtn" type="submit" form="addToDoForm" class="btn" >Add todo</button>
+      </div>
+    </form>
+  </div>
+  <div class="todolist">
+    <div class="todolist-title">
+      <h2><i class="bi bi-list-ul"></i> ToDo List</h2>
+      <div class="dropdown">
+        <button class="filter btn" type="button" id="menu1" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-filter"></i> Filter
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+          <li role="presentation"><p role="menuitem" tabindex="-1">Business</p></li>
+          <li role="presentation"><p role="menuitem" tabindex="-1">Personal</p></li>
+          <li role="presentation"><p role="menuitem" tabindex="-1">Completed</p></li>
+          <li role="presentation"><p role="menuitem" tabindex="-1">Not Completed</p></li>
+          <li role="presentation" class="dropdown-divider"></li>
+          <li role="presentation"><p role="menuitem" tabindex="-1">All</p></li> 
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="todo-list-div">
+        <div class="row-">
+          <input type="checkbox" class="check">
+          <div class="description">
+            <div >
+              <!-- <p id="todo-description">Buy some Milk</p>
+              <p class="date"><i class="fa-regular fa-calendar-check"></i> </p> -->
+              <input id="todo-description" value = "Buy some Milk" readonly><br>
+              <i class="fa-regular fa-calendar-check"></i><input class="date" type="date" readonly>
+            </div>
+          </div>
+          <div class="actions">
+            <i class="fa-regular fa-pen-to-square"></i>
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
+        </div>
+        <div class="row-">
+          <input type="checkbox" class="check">
+          <div class="description">
+            <div >
+              <p id="todo-description">Buy some Milk</p>
+              <p class="date"><i class="fa-regular fa-calendar-check"></i> 12 Jun 2023</p>
+            </div>
+          </div>
+          <div class="actions">
+            <i class="fa-regular fa-pen-to-square"></i>
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
+        </div>
+        <div class="row-">
+          <input type="checkbox" class="check">
+          <div class="description">
+            <div >
+              <p id="todo-description">Buy some Milk</p>
+              <p class="date"><i class="fa-regular fa-calendar-check"></i> 12 Jun 2023</p>
+            </div>
+          </div>
+          <div class="actions">
+            <i class="fa-regular fa-pen-to-square"></i>
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
         </div>
       </div>
+    </div>
 
-    </form>
+  </div>
   </div>
 </section>
 
