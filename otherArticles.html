@@ -169,7 +169,7 @@
     
   </section>
     <!-- Scripts -->
-    <script src="articlesScript.js"></script>
+    <!-- <script src="articlesScript.js"></script>
     <script>
     articlesDiv.innerHTML=''
    articles.fetchArticles('https://newsapi.org/v2/everything?' +
@@ -177,7 +177,16 @@
         'sortBy=publishedAt&' +
         'language=en&' + 
         'apiKey=cf47e25f0cec4ec4857160d98754e556');
-    </script> 
+    </script>  -->
+        <script src="test.js"></script>
+        <script>
+        articlesDiv.innerHTML=''
+       articles.fetchArticles('https://newsdata.io/api/1/news?' +
+        'q=NOT actors AND health AND medicine AND medical NOT films NOT LGBTQ&' +
+        'country=us&category=health&q=medical&' +
+        'language=en&' + 
+        'apiKey=pub_288443d8b7e3d8ae0992f6daa547ed3664c4e');
+        </script> 
     <script type="module">
       import authStateHandler from "./authState.js";
       authStateHandler();
