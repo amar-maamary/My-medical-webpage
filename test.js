@@ -187,10 +187,11 @@ mdNewsBtn.forEach(btn =>{
         articlesDiv.innerHTML = '';
         //create a var for the proper url
         var url = 'https://newsdata.io/api/1/news?' +
-            'q=NOT actors AND health AND medicine AND medical NOT films NOT LGBTQ&' +
-            'country=au,us&category=science,health&' +
-            'language=en&page=1704413640995892008&' + 
+            'q=NOT actor AND health AND medicine AND medical&' +
+            'country=us&category=health&' +
+            'language=en&' + 
             'apiKey=pub_288443d8b7e3d8ae0992f6daa547ed3664c4e';
+
         //calling functio form articles object
         articles.fetchArticles(url);
         otherNewsBtn.forEach(otherBt =>{
