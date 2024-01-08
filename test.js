@@ -58,10 +58,24 @@ let articles ={
     displayArticles: function(data){
         //accessing the articles object
         data = data.results;
-        
+        let lastDisplayedContent = null;
+
         //looping over all articles 
         data.forEach((articleData, i )=> {
             if (articleData.title !== null & articleData.description !== null & articleData.url !== null){
+            
+        // Combine title, description, and URL to create a unique identifier for the article
+        const currentContent = `${articleData.title}`.trim().toLowerCase();
+
+        // Skip if it's the same content as the previous one
+        if (currentContent === lastDisplayedContent) {
+            console.log("Skipped duplicate article:", currentContent);
+            return;
+        }
+        else{
+        // Update last displayed content
+        lastDisplayedContent = currentContent;
+        console.log("Displaying article:", currentContent);
             //creating a div to contain all the Articles
             var card = document.createElement("div");
             card.classList.add("card");
@@ -136,7 +150,7 @@ let articles ={
             articlesDiv.appendChild(card);
 
             // console.log(articlesDiv);
-            }
+            }}
         });
     }
 }
@@ -187,10 +201,10 @@ mdNewsBtn.forEach(btn =>{
         articlesDiv.innerHTML = '';
         //create a var for the proper url
         var url = 'https://newsdata.io/api/1/news?' +
-            'q=NOT actor AND health AND medicine AND medical&' +
-            'country=us&category=health&' +
-            'language=en&' + 
-            'apiKey=pub_288443d8b7e3d8ae0992f6daa547ed3664c4e';
+        'q=NOT actor AND health AND medical&' +
+        'country=us&' +
+        'language=en&' + 
+        'apiKey=pub_288443d8b7e3d8ae0992f6daa547ed3664c4e';
 
         //calling functio form articles object
         articles.fetchArticles(url);
