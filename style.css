@@ -71,7 +71,8 @@ button:active {
 }
 .loader-container h1{
     font-size: 2rem!important;
-    color: black!important;
+    color: rgb(27, 26, 26)!important;
+    font-family: 'Serif'!important;
     margin: 0!important;
     padding: 0!important;
 }
