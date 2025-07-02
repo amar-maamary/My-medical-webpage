@@ -559,7 +559,7 @@ header{
 /*  Articles Nav    */
 .articles-nav{
     width:100%;
-    background-image: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.2)),linear-gradient(to right,  #0cd2c86b,rgba(255, 255, 255, 0),  rgba(255, 255, 255, 0), #0cd2c86b), url('https://www.oma.org/uploadedfiles/oma/media/pagetree/newsroom/omr/summer-2023/summer23-omr-landing-page-hrm-listicle.jpg');
+    background-image: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.2)),linear-gradient(to right,  #0cd2c86b,rgba(255, 255, 255, 0),  rgba(255, 255, 255, 0), #0cd2c86b), url('https://www.postdicom.com/images/blog-posts/social-media-images/medical-imaging-science-and-applications-social.jpg');
     background-size:cover;
     /* linear-gradient(to right, #0cd2c8,#0cd2c8a9,transparent, #0cd2c8a9), */
     /*  https://www.oma.org/contentassets/8beb95743d1a49099aedfc71f62e5dee/rxrenewal-aboutreport-resized.jpg*/
@@ -567,7 +567,7 @@ header{
     /* https://img.freepik.com/premium-photo/healthcare-medical-doctor-working-with-professional-team-physician-nursing-assistant_34200-767.jpg?w=2000 */
     /* https://static.vecteezy.com/system/resources/previews/009/732/698/non_2x/healthcare-medical-services-doctor-holding-in-hand-red-heart-shape-and-medical-icon-network-connection-on-virtual-screen-health-care-medicine-technology-network-concept-illustration-vector.jpg */
    /* https://www.parents.com/thmb/mTkwpp5_LnFzER7oIUnw7kGu_O0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/MomPediatricianFever-2000-807830341ce24f36aac53d293a5e7d56.jpg */
-    background-position: left;
+    background-position: center;
     position:relative;
     padding:3vh 0;
     overflow:hidden;

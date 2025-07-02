@@ -35,6 +35,17 @@ window.addEventListener("load", function loading(){
     elements.style.display = "block";
 });
 
+///////////////////////////////// Updated image ///////////////////////////////
+fetch('https://api.pexels.com/v1/search?query=medical&per_page=1&page=' + Math.floor(Math.random() * 100), {
+  headers: {
+    Authorization: 'SCi2HzdpSIJw35OW7ntshcX227e3Q8vd556QchwTqffUil2uFi9UOEIg'
+  }
+})
+.then(response => response.json())
+.then(data => {
+  document.getElementById('random-image').src = data.photos[0].src.medium;
+});
+
 
 /////////////////////////////////   Moving Cards    /////////////////////////////////
 let navCardsDiv = document.querySelector(".cards");
